@@ -35,6 +35,9 @@
     "use-http": "^1.0.12"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "babel-preset-gatsby": "^0.4.8",
     "firebase-tools": "^8.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.2"

@@ -4,7 +4,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import MapStyles from './map-styles.json';
 import CustomMarker from './marker.png';
 
-const MAPS_API_KEY = 'AIzaSyCDKIcbVdcrstjcpUtcW8qmppkfTD2mRC8';
+export const MAPS_API_KEY = 'AIzaSyCDKIcbVdcrstjcpUtcW8qmppkfTD2mRC8';
 
 const directionsLink = () => {
   window.open(

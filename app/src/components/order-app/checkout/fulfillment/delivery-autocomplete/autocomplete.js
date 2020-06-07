@@ -1,5 +1,6 @@
 /* global google */
 import OrderStore from '../../../stores/order-store';
+import { MAPS_API_KEY } from '../../../../homepage/map';
 
 export const insertGoogleMapsScript = () =>
   new Promise((resolve, reject) => {
@@ -9,7 +10,7 @@ export const insertGoogleMapsScript = () =>
     }
     const script = document.createElement('script');
     script.id = 'autocomplete-script';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyALcryb0lm_s__qtyYX16o1IjdeDrt2NXc&libraries=places';
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}&libraries=places`;
     script.async = true;
     script.addEventListener('load', resolve);
     script.addEventListener('error', reject);
