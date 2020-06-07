@@ -1,6 +1,6 @@
-# The Meatball Stoppe: Nextjs App
+# The Meatball Stoppe: Gatsby App
 
-##### Version 5: [E. Stanley Jones](https://en.wikipedia.org/wiki/E._Stanley_Jones)
+##### Version 6: [F. F. Bruce](https://en.wikipedia.org/wiki/F._F._Bruce)
 
 The app repo for themeatballstoppe.com. If you're in the Orlando area, give us a visit! [YELP](https://www.yelp.com/biz/the-meatball-stoppe-orlando-2) - [Google Maps](https://goo.gl/maps/zQhgK1nnauw)
 
@@ -24,6 +24,10 @@ Backend: yarn serve (from functions/)
 ### Build-time rendering
 
 - Increasingly inspired by [JAM stack](https://jamstack.org/). Pre-rendered, statically served content + serverless cloud functions for backend/routes.
+
+### Update from v5
+
+- Migrated Nextjs to Gatsby
 
 ### Update from v4
 
