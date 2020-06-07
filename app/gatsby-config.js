@@ -7,17 +7,18 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // }
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'The Meatball Stoppe',
+        short_name: 'TMS',
+        description: 'Try our delicious, savory selections of authentic, specialty meatballs',
+        start_url: '/',
+        display: 'standalone',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        icon: 'src/images/favicon.png',
+      },
+    },
   ],
 };
