@@ -18,10 +18,12 @@
     "gatsby": "^2.22.15",
     "gatsby-image": "^2.4.5",
     "gatsby-plugin-google-analytics": "^2.3.3",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.9",
     "gatsby-plugin-offline": "^3.2.7",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.9",
+    "gatsby-plugin-styled-components": "^3.3.3",
     "gatsby-source-filesystem": "^2.3.8",
     "gatsby-transformer-sharp": "^2.5.3",
     "mobx": "^5.15.4",
@@ -39,7 +41,7 @@
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-proposal-decorators": "^7.10.1",
     "babel-preset-gatsby": "^0.4.8",
-    "firebase-tools": "^8.2.0",
+    "firebase-tools": "^8.4.2",
     "prettier": "^2.0.5",
     "typescript": "^3.9.2"
   }

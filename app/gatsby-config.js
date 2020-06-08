@@ -1,14 +1,14 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: 'UA-55491347-1',
       },
     },
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'The Meatball Stoppe',
         short_name: 'TMS',
@@ -20,5 +20,13 @@ module.exports = {
         icon: 'src/images/favicon.png',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: ['Vollkorn', 'Dancing Script'],
+        display: 'swap',
+      },
+    },
+    { resolve: 'gatsby-plugin-styled-components' },
   ],
 };
