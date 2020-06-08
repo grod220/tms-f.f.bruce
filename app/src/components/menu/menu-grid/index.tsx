@@ -1,10 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
-import MenuData from '../../shared/menu-data/standard-menu';
 import MenuItem from './menu-item';
 import FoodPicData from './food-pic-data';
 import FoodPicSquare from './food-pic-square';
+import { MenuItemsAndPricesQuery } from '../../../../graphql-types';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const Container = styled.div`
   column-width: 35rem;
@@ -36,7 +37,29 @@ const shuffle = (array) => {
 };
 
 const interweaveData = () => {
-  const MenuArr = MenuData.map((section, i) => <MenuItem {...section} key={i + FoodPicData.length} />);
+  const data: MenuItemsAndPricesQuery = useStaticQuery(graphql`
+    query MenuPreviewPanels {
+      allContentfulMenuVersion(filter: { type: { eq: "Meat" } }) {
+        edges {
+          node {
+            type
+            categories {
+              title
+              menuItems {
+                title
+                price
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const menuCategories = data.allContentfulMenuVersion.edges[0].node.categories;
+
+  const MenuArr = menuCategories.map((categoryData, i) => (
+    <MenuItem category={categoryData.title} menuItems={categoryData.menuItems} key={i + FoodPicData.length} />
+  ));
   const FoodPicArr = shuffle(FoodPicData.map((foodObj, i) => <FoodPicSquare {...foodObj} key={i} />));
   const largerLength = MenuArr.length > FoodPicArr.length ? MenuArr.length : FoodPicArr.length;
   const interwoven = [];

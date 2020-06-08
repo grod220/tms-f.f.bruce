@@ -5114,6 +5114,8 @@ export type QueryAllSitePageArgs = {
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5392,6 +5394,8 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Date']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -5402,6 +5406,14 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -5591,6 +5603,8 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -5682,6 +5696,8 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -6289,6 +6305,17 @@ export type MenuItemsAndPricesQueryVariables = {};
 
 
 export type MenuItemsAndPricesQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
+        Pick<ContentfulMenuVersion, 'type'>
+        & { categories?: Maybe<Array<Maybe<(
+          Pick<ContentfulCategory, 'title'>
+          & { menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>> }
+        )>>> }
+      ) }> } };
+
+export type MenuPreviewPanelsQueryVariables = {};
+
+
+export type MenuPreviewPanelsQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
         Pick<ContentfulMenuVersion, 'type'>
         & { categories?: Maybe<Array<Maybe<(
           Pick<ContentfulCategory, 'title'>
