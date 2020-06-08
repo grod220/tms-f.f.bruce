@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 import addZeroIfNeeded from '../../../utilities/add-zero';
+import { ContentfulMenuItem } from '../../../../graphql-types';
 
 const Wrapper = styled.div`
   display: ${(props) => (props.activeSection === props.category ? 'flex' : 'none')};
@@ -27,13 +28,19 @@ const Price = styled.span`
   color: #902e2d;
 `;
 
-const SectionDescription = ({ category, items, activeSection, opacity }) => (
+interface SectionDescriptionProps {
+  menuItems: Pick<ContentfulMenuItem, 'title' | 'price'>[];
+  activeSection: string;
+  opacity: number;
+  category: string;
+}
+
+const SectionDescription = ({ category, menuItems, activeSection, opacity }: SectionDescriptionProps) => (
   <Wrapper activeSection={activeSection} category={category} opacity={opacity}>
     <AllItems>
-      {items.map((item, i) => (
+      {menuItems.map((item, i) => (
         <LineItem key={i}>
-          {item.name} :: <Price>{'$' + addZeroIfNeeded(item.price)}</Price>
-          {item.extra && <i>({item.extra})</i>}
+          {item.title} :: <Price>{'$' + addZeroIfNeeded(item.price)}</Price>
         </LineItem>
       ))}
     </AllItems>

@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -27,6 +28,27 @@ module.exports = {
         display: 'swap',
       },
     },
-    { resolve: 'gatsby-plugin-styled-components' },
+    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: '8fhpgddd51q7',
+        accessToken: 'G***dRTA', // TODO: Make env var
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        documentPaths: ['./src/**/*.{ts,tsx}'],
+      },
+    },
   ],
 };
