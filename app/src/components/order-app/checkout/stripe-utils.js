@@ -28,8 +28,8 @@ export default async function handleCheckoutRequest(showSpinner, showError) {
   showSpinner(true);
   try {
     const res = await fetch(
-      // 'http://localhost:5001/tms-e-stanley-jones/us-central1/function/stripe/order',
-      'https://us-central1-tms-e-stanley-jones.cloudfunctions.net/function/stripe/order',
+      // 'http://localhost:5001/tms-f-f-bruce/us-central1/function/stripe/order',
+      'https://us-central1-tms-f-f-bruce.cloudfunctions.net/function/stripe/order',
       {
         headers: {
           'Content-Type': 'application/json',

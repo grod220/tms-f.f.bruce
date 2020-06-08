@@ -25,3 +25,24 @@ jobs:
         run: yarn build
       - name: Deploy to Firebase
         run: yarn deploy
+
+  firebase-functions:
+    name: Firebase Functions Deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./functions
+    env:
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: "10.x"
+      - name: Install firebase func packages
+        run: yarn install
+      - name: Typescript build
+        run: yarn build
+      - name: Deploy to Firebase
+        run: yarn deploy
