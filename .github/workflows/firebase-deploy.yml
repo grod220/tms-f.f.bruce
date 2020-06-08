@@ -13,6 +13,7 @@ jobs:
         working-directory: ./app
     env:
       FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      CONTENTFUL_SECRET: ${{ secrets.CONTENTFUL_SECRET }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 10.x
