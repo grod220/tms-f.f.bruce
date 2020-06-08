@@ -6,7 +6,8 @@ The app repo for themeatballstoppe.com. If you're in the Orlando area, give us a
 
 ## Technologies used
 
-- React (Nextjs)
+- React (Gatsby)
+- Contentful CMS for menu
 - Styled-components
 - Google Maps api
 - Facebook api
