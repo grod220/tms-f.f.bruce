@@ -10,6 +10,8 @@ import {
   Maybe,
 } from '../../../../../../graphql-types';
 import {removeHashes} from '../../../../../utilities/contentful-formatter';
+import OrderStore from '../../../stores/order-store';
+import MenuItemModal from './modal';
 
 const ItemContainer = styled.div`
   border: ${({ hasItem }) => (hasItem ? '3px solid #84bf5b' : '1px solid #cecece')};
@@ -81,15 +83,15 @@ interface MenuItemProps {
 
 const MenuItem = ({ itemData }: MenuItemProps) => {
   const [modal, setModal] = useState(false);
-  // const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.name).length;
+  const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.title).length;
   return (
     <>
-      {/*{modal && <MenuItemModal {...itemData} category={category} closeFunc={() => setModal(false)} />}*/}
+      {modal && <MenuItemModal {...itemData} closeFunc={() => setModal(false)} />}
       <ItemContainer
-        // hasItem={OrderStore.shoppingCart.map((item) => item.dishName).includes(itemData.name)}
+        hasItem={OrderStore.shoppingCart.map((item) => item.dishName).includes(itemData.title)}
         onClick={() => setModal(!modal)}
       >
-        {/*{itemCount > 0 && <ItemCounter>{itemCount}</ItemCounter>}*/}
+        {itemCount > 0 && <ItemCounter>{itemCount}</ItemCounter>}
         <LeftSide>
           <ItemTitle>{removeHashes(itemData.title)}</ItemTitle>
           <Description>{itemData.description?.description}</Description>
