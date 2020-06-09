@@ -8,7 +8,7 @@ import ItemStore from '../../../stores/item-store';
 import AddToCart from './add-to-cart';
 
 import './modal.css';
-import {ContentfulMenuItemDescriptionTextNode, ContentfulSizes, Maybe,} from '../../../../../../graphql-types';
+import {CtflMenuItem} from './index';
 
 const Content = styled.div`
   width: 100%;
@@ -58,23 +58,20 @@ const Name = styled.div`
 `;
 
 interface ModalProps {
-  title?: string;
-  price?: number;
-  description?: Pick<ContentfulMenuItemDescriptionTextNode, 'description'>;
-  image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>;
+  itemData: CtflMenuItem;
   closeFunc: () => any;
 }
 
-const Modal = observer(({ title, price, description, image, closeFunc }: ModalProps) => {
+const Modal = observer(({ itemData, closeFunc }: ModalProps) => {
   ReactModal.setAppElement('#___gatsby');
   const itemStoreInstance = new ItemStore();
-  itemStoreInstance.basePrice = price;
-  itemStoreInstance.dishName = title;
-  // if (options) {
-  //   itemStoreInstance.selectionsRequired = options.filter((option) =>
+  itemStoreInstance.basePrice = itemData.price;
+  itemStoreInstance.dishName = itemData.title;
+  // if (itemData.options) {
+  //   itemStoreInstance.selectionsRequired = itemData.options.filter((option) =>
   //     option.choices.some((choice) => choice.selection),
   //   ).length;
-  //   itemStoreInstance.additionsRequired = options
+  //   itemStoreInstance.additionsRequired = itemData.options
   //     .filter((option) => option.minimum)
   //     .reduce((acc, option) => {
   //       acc[option.name] = option.minimum;
@@ -100,18 +97,18 @@ const Modal = observer(({ title, price, description, image, closeFunc }: ModalPr
         </svg>
       </Dismiss>
       <Content>
-        {image && (
+        {itemData.image && (
           <>
             <ImageContainer>
-              <ImageHero image={image.sizes.src} />
+              <ImageHero image={itemData.image.fluid.src} />
             </ImageContainer>
           </>
         )}
         <Description>
           <Name>
-            <div>{title}</div>
+            <div>{itemData.title}</div>
           </Name>
-          <div>{description?.description}</div>
+          <div>{itemData.description?.description}</div>
         </Description>
         {/*<MenuItemOptions store={itemStoreInstance} options={options} />*/}
         {/* @ts-ignore */}

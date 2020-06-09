@@ -6332,7 +6332,10 @@ export type OnlineOrderingQuery = { allContentfulMenuVersion: { edges: Array<{ n
           Pick<ContentfulCategory, 'title'>
           & { menuItems?: Maybe<Array<Maybe<(
             Pick<ContentfulMenuItem, 'title' | 'price'>
-            & { image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>, description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>> }
+            & { description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>, image?: Maybe<{ fluid?: Maybe<Pick<ContentfulFluid, 'src'>> }>, options?: Maybe<Array<Maybe<(
+              Pick<ContentfulOption, 'title' | 'maximum' | 'minimum'>
+              & { freeOptionItem?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'id' | 'title' | 'price'> | Pick<ContentfulOptionItem, 'id' | 'title' | 'price'>>>>, pricedOptionItems?: Maybe<Array<Maybe<Pick<ContentfulOptionItem, 'title' | 'price'>>>> }
+            )>>> }
           )>>> }
         )>>> }
       ) }> } };

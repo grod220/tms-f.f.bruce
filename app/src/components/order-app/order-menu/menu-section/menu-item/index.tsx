@@ -3,15 +3,10 @@ import {useState} from 'react';
 import styled from 'styled-components';
 
 import formatPrice from '../../../../../utilities/add-zero';
-import {
-  ContentfulMenuItem,
-  ContentfulMenuItemDescriptionTextNode,
-  ContentfulSizes,
-  Maybe,
-} from '../../../../../../graphql-types';
 import {removeHashes} from '../../../../../utilities/contentful-formatter';
 import OrderStore from '../../../stores/order-store';
 import MenuItemModal from './modal';
+import {CtflCategory} from '../index';
 
 const ItemContainer = styled.div`
   border: ${({ hasItem }) => (hasItem ? '3px solid #84bf5b' : '1px solid #cecece')};
@@ -74,19 +69,14 @@ const RightSide = styled.div`
   background-image: url(${({ image }) => image});
 `;
 
-interface MenuItemProps {
-  itemData: Pick<ContentfulMenuItem, 'title' | 'price'> & {
-    description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
-    image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>;
-  };
-}
+export type CtflMenuItem = CtflCategory['menuItems'][number];
 
-const MenuItem = ({ itemData }: MenuItemProps) => {
+const MenuItem = ({ itemData }: { itemData: CtflMenuItem }) => {
   const [modal, setModal] = useState(false);
   const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.title).length;
   return (
     <>
-      {modal && <MenuItemModal {...itemData} closeFunc={() => setModal(false)} />}
+      {modal && <MenuItemModal itemData={itemData} closeFunc={() => setModal(false)} />}
       <ItemContainer
         hasItem={OrderStore.shoppingCart.map((item) => item.dishName).includes(itemData.title)}
         onClick={() => setModal(!modal)}
@@ -99,7 +89,7 @@ const MenuItem = ({ itemData }: MenuItemProps) => {
             <Price>${formatPrice(itemData.price)}</Price>
           </Details>
         </LeftSide>
-        {itemData.image && <RightSide image={itemData.image.sizes.src} />}
+        {itemData.image && <RightSide image={itemData.image.fluid.src} />}
       </ItemContainer>
     </>
   );

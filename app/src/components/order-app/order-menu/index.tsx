@@ -29,13 +29,34 @@ const OrderMenu = observer(({ activeTab }: { activeTab: string }) => {
               menuItems {
                 title
                 price
+                description {
+                  description
+                }
                 image {
-                  sizes(maxWidth: 590) {
+                  fluid(maxWidth: 590) {
                     src
                   }
                 }
-                description {
-                  description
+                options {
+                  title
+                  maximum
+                  minimum
+                  freeOptionItem {
+                    ... on ContentfulOptionItem {
+                      id
+                      title
+                      price
+                    }
+                    ... on ContentfulMenuItem {
+                      id
+                      title
+                      price
+                    }
+                  }
+                  pricedOptionItems {
+                    title
+                    price
+                  }
                 }
               }
             }

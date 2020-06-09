@@ -2,13 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import MenuItem from './menu-item';
-import {
-    ContentfulCategory,
-    ContentfulMenuItem,
-    ContentfulMenuItemDescriptionTextNode,
-    ContentfulSizes,
-    Maybe,
-} from '../../../../../graphql-types';
+import {OnlineOrderingQuery,} from '../../../../../graphql-types';
 import {removeHashes} from '../../../../utilities/contentful-formatter';
 
 const CategoryTitle = styled.h2`
@@ -23,22 +17,9 @@ const MenuItems = styled.div`
   user-select: none;
 `;
 
-interface MenuSectionProps {
-  category: Pick<ContentfulCategory, 'title'> & {
-    menuItems?: Maybe<
-      Array<
-        Maybe<
-          Pick<ContentfulMenuItem, 'title' | 'price'> & {
-            description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
-            image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>;
-          }
-        >
-      >
-    >;
-  };
-}
+export type CtflCategory = OnlineOrderingQuery['allContentfulMenuVersion']['edges'][number]['node']['categories'][number];
 
-const MenuSection = ({ category }: MenuSectionProps) => {
+const MenuSection = ({ category }: { category: CtflCategory }) => {
   return (
     <>
       <CategoryTitle>{removeHashes(category.title)}</CategoryTitle>
