@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 import formatPrice from '../../../../../utilities/add-zero';
 import {
-  ContentfulAssetFile,
   ContentfulMenuItem,
   ContentfulMenuItemDescriptionTextNode,
+  ContentfulSizes,
   Maybe,
 } from '../../../../../../graphql-types';
 import {removeHashes} from '../../../../../utilities/contentful-formatter';
@@ -75,7 +75,7 @@ const RightSide = styled.div`
 interface MenuItemProps {
   itemData: Pick<ContentfulMenuItem, 'title' | 'price'> & {
     description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
-    image?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>;
+    image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>;
   };
 }
 
@@ -97,7 +97,7 @@ const MenuItem = ({ itemData }: MenuItemProps) => {
             <Price>${formatPrice(itemData.price)}</Price>
           </Details>
         </LeftSide>
-        {itemData.image && <RightSide image={itemData.image.file.url} />}
+        {itemData.image && <RightSide image={itemData.image.sizes.src} />}
       </ItemContainer>
     </>
   );

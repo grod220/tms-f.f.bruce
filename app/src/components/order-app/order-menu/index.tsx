@@ -29,13 +29,13 @@ const OrderMenu = observer(({ activeTab }: { activeTab: string }) => {
               menuItems {
                 title
                 price
+                image {
+                  sizes(maxWidth: 590) {
+                    src
+                  }
+                }
                 description {
                   description
-                }
-                image {
-                  file {
-                    url
-                  }
                 }
               }
             }

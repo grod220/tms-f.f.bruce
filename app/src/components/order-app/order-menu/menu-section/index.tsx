@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import MenuItem from './menu-item';
 import {
-    ContentfulAssetFile,
     ContentfulCategory,
     ContentfulMenuItem,
     ContentfulMenuItemDescriptionTextNode,
+    ContentfulSizes,
     Maybe,
 } from '../../../../../graphql-types';
 import {removeHashes} from '../../../../utilities/contentful-formatter';
@@ -30,7 +30,7 @@ interface MenuSectionProps {
         Maybe<
           Pick<ContentfulMenuItem, 'title' | 'price'> & {
             description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
-            image?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>;
+            image?: Maybe<{ sizes?: Maybe<Pick<ContentfulSizes, 'src'>> }>;
           }
         >
       >
