@@ -1,9 +1,9 @@
 import React from 'react';
-import { observer } from 'mobx-react-lite';
+import {observer} from 'mobx-react-lite';
 import styled from 'styled-components';
 
 import OrderStore from '../stores/order-store';
-import SectionTab from './section-tab';
+import {Section} from './section-tab';
 
 const CartCount = styled.div`
   background-color: #8f2e2d;
@@ -25,10 +25,14 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+const CHECKOUT_TAB = 'Checkout';
+
 const CheckoutTab = observer(() => {
   return (
     <Wrapper>
-      <SectionTab>Checkout</SectionTab>
+      <Section onClick={() => (OrderStore.activeTab = CHECKOUT_TAB)} active={OrderStore.activeTab === CHECKOUT_TAB}>
+        Checkout
+      </Section>
       {OrderStore.shoppingCart.length > 0 && <CartCount>{OrderStore.shoppingCart.length}</CartCount>}
     </Wrapper>
   );

@@ -48,7 +48,6 @@ const OrderMenu = observer(({ activeTab }: { activeTab: string }) => {
     .map((edge) => edge.node)
     .filter((menu) => menu.type === activeTab)[0];
 
-  console.log(activeMenuData);
   return (
     <Container>
       <Content>
