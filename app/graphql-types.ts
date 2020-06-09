@@ -6323,6 +6323,20 @@ export type MenuPreviewPanelsQuery = { allContentfulMenuVersion: { edges: Array<
         )>>> }
       ) }> } };
 
+export type OnlineOrderingQueryVariables = {};
+
+
+export type OnlineOrderingQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
+        Pick<ContentfulMenuVersion, 'type'>
+        & { categories?: Maybe<Array<Maybe<(
+          Pick<ContentfulCategory, 'title'>
+          & { menuItems?: Maybe<Array<Maybe<(
+            Pick<ContentfulMenuItem, 'title' | 'price'>
+            & { description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>, image?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }> }
+          )>>> }
+        )>>> }
+      ) }> } };
+
 export type MenuVersionDataQueryVariables = {};
 
 

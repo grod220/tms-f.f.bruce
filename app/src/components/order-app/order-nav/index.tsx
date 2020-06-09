@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { observer } from 'mobx-react-lite';
+import {observer} from 'mobx-react-lite';
 
 import SectionTab from './section-tab';
 import CheckoutTab from './checkout-tab';
-import { graphql, useStaticQuery } from 'gatsby';
-import { MenuVersionDataQuery } from '../../../../graphql-types';
+import {graphql, useStaticQuery} from 'gatsby';
+import {MenuVersionDataQuery} from '../../../../graphql-types';
 
 const Container = styled.div`
   height: 7rem;
@@ -60,9 +60,8 @@ const OrderNav = observer(({ catering }: { catering: boolean }) => {
           {allMenuVersions
             .filter((menuVersion) => menus.includes(menuVersion))
             .sort((a, b) => menuComparator(menus, a, b))
-            .map((menuVersion) => menuVersion.split('#').shift().trim())
             .map((menuVersion) => (
-              <SectionTab key={menuVersion}>{menuVersion}</SectionTab>
+              <SectionTab key={menuVersion} menuVersion={menuVersion} />
             ))}
         </MenuNavItemsWrapper>
         <CheckoutTab />

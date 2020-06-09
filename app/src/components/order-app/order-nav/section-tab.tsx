@@ -1,9 +1,10 @@
-import React from 'react';
-import { observer } from 'mobx-react-lite';
+import * as React from 'react';
+import {observer} from 'mobx-react-lite';
 import styled from 'styled-components';
-import { media } from '../../../utilities/media';
+import {media} from '../../../utilities/media';
 
 import OrderStore from '../stores/order-store';
+import {removeHashes} from '../../../utilities/contentful-formatter';
 
 const Section = styled.div`
   color: ${({ active }) => (active ? '#902e2d' : '#4c4c4c')};
@@ -26,10 +27,10 @@ const Section = styled.div`
   `}
 `;
 
-const SectionTab = observer(({ children: title }) => {
+const SectionTab = observer(({ menuVersion }: { menuVersion: string }) => {
   return (
-    <Section onClick={() => (OrderStore.activeTab = title)} active={OrderStore.activeTab === title}>
-      {title}
+    <Section onClick={() => (OrderStore.activeTab = menuVersion)} active={OrderStore.activeTab === menuVersion}>
+      {removeHashes(menuVersion)}
     </Section>
   );
 });

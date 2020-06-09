@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import {useState} from 'react';
 import styled from 'styled-components';
 
 import formatPrice from '../../../../../utilities/add-zero';
-import VeggieSVG from '../../legend/veggie-mark.svg';
-import GlutenFreePNG from '../../legend/gluten-free-icon.png';
-import MenuItemModal from './modal';
-import OrderStore from '../../../stores/order-store';
+import {
+  ContentfulAssetFile,
+  ContentfulMenuItem,
+  ContentfulMenuItemDescriptionTextNode,
+  Maybe,
+} from '../../../../../../graphql-types';
+import {removeHashes} from '../../../../../utilities/contentful-formatter';
 
 const ItemContainer = styled.div`
   border: ${({ hasItem }) => (hasItem ? '3px solid #84bf5b' : '1px solid #cecece')};
@@ -50,24 +54,10 @@ const Description = styled.p`
   color: #4c4c4c;
 `;
 
-const SVG = styled.img`
-  margin-left: 7px;
-`;
-
 const Details = styled.div`
   margin: 8px 0 0 0;
   display: flex;
   align-items: center;
-`;
-
-const VeganPlus = styled.span`
-  color: #017f00;
-  font-size: 18px;
-`;
-
-const Wheat = styled.img`
-  margin-left: 7px;
-  width: 21px;
 `;
 
 const LeftSide = styled.div`
@@ -82,29 +72,32 @@ const RightSide = styled.div`
   background-image: url(${({ image }) => image});
 `;
 
-const MenuItem = ({ itemData, category }) => {
+interface MenuItemProps {
+  itemData: Pick<ContentfulMenuItem, 'title' | 'price'> & {
+    description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
+    image?: Maybe<{ file?: Maybe<Pick<ContentfulAssetFile, 'url'>> }>;
+  };
+}
+
+const MenuItem = ({ itemData }: MenuItemProps) => {
   const [modal, setModal] = useState(false);
-  const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.name).length;
+  // const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.name).length;
   return (
     <>
-      {modal && <MenuItemModal {...itemData} category={category} closeFunc={() => setModal(false)} />}
+      {/*{modal && <MenuItemModal {...itemData} category={category} closeFunc={() => setModal(false)} />}*/}
       <ItemContainer
-        hasItem={OrderStore.shoppingCart.map((item) => item.dishName).includes(itemData.name)}
-        onClick={() => !itemData.isPromo && setModal(!modal)}
-        isPromo={itemData.isPromo}
+        // hasItem={OrderStore.shoppingCart.map((item) => item.dishName).includes(itemData.name)}
+        onClick={() => setModal(!modal)}
       >
-        {itemCount > 0 && <ItemCounter>{itemCount}</ItemCounter>}
+        {/*{itemCount > 0 && <ItemCounter>{itemCount}</ItemCounter>}*/}
         <LeftSide>
-          <ItemTitle>{itemData.name}</ItemTitle>
-          <Description>{itemData.description}</Description>
+          <ItemTitle>{removeHashes(itemData.title)}</ItemTitle>
+          <Description>{itemData.description?.description}</Description>
           <Details>
-            {itemData.price && <Price>${formatPrice(itemData.price)}</Price>}
-            {itemData.gf && <Wheat src={GlutenFreePNG} />}
-            {(itemData.vegetarian || itemData.vegan) && <SVG width="16px" src={VeggieSVG} />}
-            {itemData.vegan && <VeganPlus>+</VeganPlus>}
+            <Price>${formatPrice(itemData.price)}</Price>
           </Details>
         </LeftSide>
-        {itemData.image && <RightSide image={itemData.image} />}
+        {itemData.image && <RightSide image={itemData.image.file.url} />}
       </ItemContainer>
     </>
   );
