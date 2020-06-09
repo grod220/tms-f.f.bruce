@@ -30,13 +30,14 @@ const MenuNavItemsWrapper = styled.div`
   display: flex;
 `;
 
-const MENU_SORT_ORDER = ['Meat', 'Vegetarian', 'Vegan', 'Gluten Free'];
+const CATERING_MENUS = ['Catering Menu'];
+const NORMAL_MENUS = ['Meat', 'Vegetarian', 'Vegan', 'Gluten Free #meat'];
 
-const menuComparator = (a: string, b: string): number => {
-  return MENU_SORT_ORDER.indexOf(a) - MENU_SORT_ORDER.indexOf(b);
+const menuComparator = (menus: string[], a: string, b: string): number => {
+  return menus.indexOf(a) - menus.indexOf(b);
 };
 
-const OrderNav = observer(() => {
+const OrderNav = observer(({ catering }: { catering: boolean }) => {
   const menuVersionData: MenuVersionDataQuery = useStaticQuery(graphql`
     query MenuVersionData {
       allContentfulMenuVersion {
@@ -48,14 +49,21 @@ const OrderNav = observer(() => {
       }
     }
   `);
+
   const allMenuVersions = menuVersionData.allContentfulMenuVersion.edges.map((edge) => edge.node.type);
+  const menus = catering ? CATERING_MENUS : NORMAL_MENUS;
+
   return (
     <Container>
       <Content>
         <MenuNavItemsWrapper>
-          {allMenuVersions.sort(menuComparator).map((menuVersion) => (
-            <SectionTab>{menuVersion}</SectionTab>
-          ))}
+          {allMenuVersions
+            .filter((menuVersion) => menus.includes(menuVersion))
+            .sort((a, b) => menuComparator(menus, a, b))
+            .map((menuVersion) => menuVersion.split('#').shift().trim())
+            .map((menuVersion) => (
+              <SectionTab key={menuVersion}>{menuVersion}</SectionTab>
+            ))}
         </MenuNavItemsWrapper>
         <CheckoutTab />
       </Content>

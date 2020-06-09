@@ -15,11 +15,12 @@ const initializeModule = (catering) => {
   if (catering) {
     OrderStore.orderType = 'catering';
     OrderStore.fulfillmentOption = 'delivery';
+    OrderStore.activeTab = 'Catering Menu';
   } else {
     OrderStore.orderType = 'normal';
     OrderStore.fulfillmentOption = 'pickup';
+    OrderStore.activeTab = 'Meat';
   }
-  OrderStore.activeTab = 'Full menu';
   OrderStore.dateStore.fulfillmentDate = getNextAvailableFulfillmentDateStr();
   OrderStore.dateStore.fulfillmentTime = getNextAvailableFulfillmentTimeStr();
 };
@@ -29,7 +30,7 @@ const OrderApp = observer(({ catering }) => {
 
   return (
     <>
-      <OrderNav />
+      <OrderNav catering={catering} />
       {OrderStore.activeTab && (OrderStore.activeTab === 'Checkout' ? <Checkout /> : <OrderMenu />)}
     </>
   );

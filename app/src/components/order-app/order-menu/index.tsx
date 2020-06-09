@@ -97,16 +97,16 @@ const OrderMenu = observer(() => {
   //   }
   // `);
   const fullMenu = OrderStore.orderType === 'catering' ? cateringMenu : standardMenu;
-  // const activeMenu = filterMenu(OrderStore.activeTab, fullMenu);
+  const activeMenu = filterMenu(OrderStore.activeTab, fullMenu);
 
   return (
     <Container>
-      <Content>
-        <Legend />
-        {activeMenu.map((categoryAndItemsObj, i) => (
-          <MenuSection data={categoryAndItemsObj} key={i} />
-        ))}
-      </Content>
+      {/*<Content>*/}
+      {/*  <Legend />*/}
+      {/*  {activeMenu.map((categoryAndItemsObj, i) => (*/}
+      {/*    <MenuSection data={categoryAndItemsObj} key={i} />*/}
+      {/*  ))}*/}
+      {/*</Content>*/}
     </Container>
   );
 });
