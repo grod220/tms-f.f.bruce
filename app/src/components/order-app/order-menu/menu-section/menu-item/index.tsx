@@ -6,21 +6,18 @@ import formatPrice from '../../../../../utilities/add-zero';
 import {removeHashes} from '../../../../../utilities/contentful-formatter';
 import OrderStore from '../../../stores/order-store';
 import MenuItemModal from './modal';
-import {CtflCategory} from '../index';
+import {ContentfulMenuItem} from '../../../../../../graphql-types';
 
-const ItemContainer = styled.div`
+const ItemContainer = styled.div<{ hasItem: boolean }>`
   border: ${({ hasItem }) => (hasItem ? '3px solid #84bf5b' : '1px solid #cecece')};
   min-height: 120px;
   display: flex;
   justify-content: space-between;
   position: relative;
 
-  ${({ isPromo }) =>
-    !isPromo &&
-    `
-    &:hover {
-        cursor: pointer;
-    }`}
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const ItemCounter = styled.div`
@@ -61,7 +58,7 @@ const LeftSide = styled.div`
   padding: 12px;
 `;
 
-const RightSide = styled.div`
+const RightSide = styled.div<{ image: string }>`
   flex: 0 0 160px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -69,9 +66,7 @@ const RightSide = styled.div`
   background-image: url(${({ image }) => image});
 `;
 
-export type CtflMenuItem = CtflCategory['menuItems'][number];
-
-const MenuItem = ({ itemData }: { itemData: CtflMenuItem }) => {
+const MenuItem = ({ itemData }: { itemData: ContentfulMenuItem }) => {
   const [modal, setModal] = useState(false);
   const itemCount = OrderStore.shoppingCart.filter((item) => item.dishName === itemData.title).length;
   return (
@@ -89,7 +84,7 @@ const MenuItem = ({ itemData }: { itemData: CtflMenuItem }) => {
             <Price>${formatPrice(itemData.price)}</Price>
           </Details>
         </LeftSide>
-        {itemData.image && <RightSide image={itemData.image.fluid.src} />}
+        {itemData.image && <RightSide image={itemData.image.fluid?.src as string} />}
       </ItemContainer>
     </>
   );

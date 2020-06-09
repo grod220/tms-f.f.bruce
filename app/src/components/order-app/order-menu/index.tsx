@@ -3,7 +3,7 @@ import {observer} from 'mobx-react-lite';
 import styled from 'styled-components';
 import MenuSection from './menu-section';
 import {graphql, useStaticQuery} from 'gatsby';
-import {OnlineOrderingQuery} from '../../../../graphql-types';
+import {ContentfulCategory, OnlineOrderingQuery} from '../../../../graphql-types';
 
 const Container = styled.div`
   display: flex;
@@ -73,8 +73,8 @@ const OrderMenu = observer(({ activeTab }: { activeTab: string }) => {
     <Container>
       <Content>
         {/*<Legend />*/}
-        {activeMenuData?.categories.map((category, i) => (
-          <MenuSection category={category} key={i} />
+        {activeMenuData?.categories?.map((category, i) => (
+          <MenuSection category={category as ContentfulCategory} key={i} />
         ))}
       </Content>
     </Container>

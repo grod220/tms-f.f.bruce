@@ -6,9 +6,10 @@ import {observer} from 'mobx-react-lite';
 import OrderStore from '../../../stores/order-store';
 import ItemStore from '../../../stores/item-store';
 import AddToCart from './add-to-cart';
+import MenuItemOptions from './menu-item-options';
 
 import './modal.css';
-import {CtflMenuItem} from './index';
+import {ContentfulMenuItem, ContentfulOption} from '../../../../../../graphql-types';
 
 const Content = styled.div`
   width: 100%;
@@ -37,7 +38,7 @@ const Dismiss = styled.div`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px, rgba(0, 0, 0, 0.04) 0px 4px 4px;
 `;
 
-const ImageHero = styled.div`
+const ImageHero = styled.div<{ image: string }>`
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
@@ -58,26 +59,17 @@ const Name = styled.div`
 `;
 
 interface ModalProps {
-  itemData: CtflMenuItem;
+  itemData: ContentfulMenuItem;
   closeFunc: () => any;
 }
 
 const Modal = observer(({ itemData, closeFunc }: ModalProps) => {
   ReactModal.setAppElement('#___gatsby');
-  const itemStoreInstance = new ItemStore();
-  itemStoreInstance.basePrice = itemData.price;
-  itemStoreInstance.dishName = itemData.title;
-  // if (itemData.options) {
-  //   itemStoreInstance.selectionsRequired = itemData.options.filter((option) =>
-  //     option.choices.some((choice) => choice.selection),
-  //   ).length;
-  //   itemStoreInstance.additionsRequired = itemData.options
-  //     .filter((option) => option.minimum)
-  //     .reduce((acc, option) => {
-  //       acc[option.name] = option.minimum;
-  //       return acc;
-  //     }, {});
-  // }
+  const itemStoreInstance = new ItemStore(
+    itemData.title as string,
+    itemData.price as number,
+    itemData.options as ContentfulOption[] | undefined,
+  );
 
   return (
     <ReactModal
@@ -100,7 +92,7 @@ const Modal = observer(({ itemData, closeFunc }: ModalProps) => {
         {itemData.image && (
           <>
             <ImageContainer>
-              <ImageHero image={itemData.image.fluid.src} />
+              <ImageHero image={itemData.image.fluid?.src as string} />
             </ImageContainer>
           </>
         )}
@@ -110,7 +102,7 @@ const Modal = observer(({ itemData, closeFunc }: ModalProps) => {
           </Name>
           <div>{itemData.description?.description}</div>
         </Description>
-        {/*<MenuItemOptions store={itemStoreInstance} options={options} />*/}
+        <MenuItemOptions store={itemStoreInstance} options={itemData.options as ContentfulOption[] | undefined} />
         {/* @ts-ignore */}
         <AddToCart shoppingCart={OrderStore.shoppingCart} itemStore={itemStoreInstance} closeFunc={closeFunc} />
       </Content>

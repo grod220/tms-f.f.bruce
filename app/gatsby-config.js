@@ -37,15 +37,15 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
+        name: 'images',
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
+      resolve: 'gatsby-plugin-graphql-codegen',
       options: {
         documentPaths: ['./src/**/*.{ts,tsx}'],
       },

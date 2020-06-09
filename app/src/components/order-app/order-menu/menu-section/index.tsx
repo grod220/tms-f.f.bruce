@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import MenuItem from './menu-item';
-import {OnlineOrderingQuery,} from '../../../../../graphql-types';
+import {ContentfulCategory, ContentfulMenuItem} from '../../../../../graphql-types';
 import {removeHashes} from '../../../../utilities/contentful-formatter';
 
 const CategoryTitle = styled.h2`
@@ -17,15 +17,13 @@ const MenuItems = styled.div`
   user-select: none;
 `;
 
-export type CtflCategory = OnlineOrderingQuery['allContentfulMenuVersion']['edges'][number]['node']['categories'][number];
-
-const MenuSection = ({ category }: { category: CtflCategory }) => {
+const MenuSection = ({ category }: { category: ContentfulCategory }) => {
   return (
     <>
-      <CategoryTitle>{removeHashes(category.title)}</CategoryTitle>
+      <CategoryTitle>{removeHashes(category?.title)}</CategoryTitle>
       <MenuItems>
-        {category.menuItems.map((item, i) => (
-          <MenuItem itemData={item} key={i} />
+        {category.menuItems?.map((item, i) => (
+          <MenuItem itemData={item as ContentfulMenuItem} key={i} />
         ))}
       </MenuItems>
     </>

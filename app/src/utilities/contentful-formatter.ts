@@ -1,1 +1,1 @@
-export const removeHashes = (str: string | undefined): string | undefined => str?.split('#').shift().trim();
+export const removeHashes = (str: string | undefined | null): string | undefined => str?.split('#')?.shift()?.trim();
