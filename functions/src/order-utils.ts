@@ -19,8 +19,10 @@ export const formatCart = (
       quantity: 1,
     };
 
-    if (item.allChoices.length) {
-      lineItem.description = formatDescription(item.allChoices);
+    const allChoices = item.options.flatMap((option) => option.choices);
+
+    if (allChoices.length) {
+      lineItem.description = formatDescription(allChoices);
     }
     return lineItem;
   });
@@ -69,8 +71,10 @@ export const formatPaymentIntentObj = (
 
   reqBody.shoppingCart
     .map((item) => {
-      if (item.allChoices.length) {
-        return `${item.dishName} (${formatDescription(item.allChoices)})`;
+      const allChoices = item.options.flatMap((option) => option.choices);
+
+      if (allChoices.length) {
+        return `${item.dishName} (${formatDescription(allChoices)})`;
       } else {
         return item.dishName;
       }

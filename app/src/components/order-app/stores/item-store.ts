@@ -44,10 +44,6 @@ export class ItemStore {
     }
   }
 
-  @computed get allChoices() {
-    return this.options.flatMap((option) => option.choices);
-  }
-
   hasChosenMaximumItems(optionObj: ContentfulOptionWithChoices): boolean {
     const totalOptionItems = (optionObj.pricedOptionItems?.length ?? 0) + (optionObj.freeOptionItem?.length ?? 0);
     return totalOptionItems === optionObj.choices.length;

@@ -28,8 +28,8 @@ export default async function handleCheckoutRequest(showSpinner, showError) {
   showSpinner(true);
   try {
     const res = await fetch(
-      // 'http://localhost:5001/tms-f-f-bruce/us-central1/function/stripe/order',
-      'https://us-central1-tms-f-f-bruce.cloudfunctions.net/function/stripe/order',
+      'http://localhost:5001/tms-f-f-bruce/us-central1/function/stripe/order',
+      // 'https://us-central1-tms-f-f-bruce.cloudfunctions.net/function/stripe/order',
       {
         headers: {
           'Content-Type': 'application/json',
@@ -42,8 +42,8 @@ export default async function handleCheckoutRequest(showSpinner, showError) {
     if (!res.ok) {
       throw Error(`Error from Firebase Func: ${jsonResponse.error}`);
     }
-    const stripe = await loadStripe('pk_live_ivfkFrzhLuZbUiZRVkvsBwI3');
-    // const stripe = await loadStripe('pk_test_OaDvLsgEGQbshVWpSFMQMm1k');
+    // const stripe = await loadStripe('pk_live_ivfkFrzhLuZbUiZRVkvsBwI3');
+    const stripe = await loadStripe('pk_test_OaDvLsgEGQbshVWpSFMQMm1k');
     const result = await stripe.redirectToCheckout({
       sessionId: jsonResponse.id,
     });
