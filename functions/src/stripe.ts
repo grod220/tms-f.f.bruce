@@ -6,8 +6,8 @@ import * as Sentry from '@sentry/node';
 
 const bodyParser = require('body-parser');
 
-// const STRIPE_SECRET = config().secrets.stripe_prod_secret;
-const STRIPE_SECRET = config().secrets.stripe_dev_secret;
+const STRIPE_SECRET = config().secrets.stripe_prod_secret;
+// const STRIPE_SECRET = config().secrets.stripe_dev_secret;
 const stripe = new Stripe(STRIPE_SECRET, { apiVersion: '2020-03-02' });
 
 const app = express();
