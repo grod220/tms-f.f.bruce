@@ -10,7 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "experimentalDecorators": true,
-    "lib": ["es2020"]
+    "lib": ["es2019"]
   },
   "compileOnSave": true,
   "include": ["src"]
