@@ -78,7 +78,7 @@ const MenuItem = ({ itemData }: { itemData: ContentfulMenuItem }) => {
       >
         {itemCount > 0 && <ItemCounter>{itemCount}</ItemCounter>}
         <LeftSide>
-          <ItemTitle>{removeHashes(itemData.title)}</ItemTitle>
+          <ItemTitle>{(removeHashes(itemData.title) ?? '').replace(/\b\S/g, (t) => t.toUpperCase())}</ItemTitle>
           <Description>{itemData.description?.description}</Description>
           <Details>
             <Price>${formatPrice(itemData.price)}</Price>

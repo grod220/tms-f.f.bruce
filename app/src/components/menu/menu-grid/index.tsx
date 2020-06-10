@@ -39,7 +39,7 @@ const shuffle = (array) => {
 const interweaveData = () => {
   const data: MenuItemsAndPricesQuery = useStaticQuery(graphql`
     query MenuPreviewPanels {
-      allContentfulMenuVersion(filter: { type: { eq: "Meat" } }) {
+      allContentfulMenuVersion(filter: { type: { eq: "Full menu" } }) {
         edges {
           node {
             type

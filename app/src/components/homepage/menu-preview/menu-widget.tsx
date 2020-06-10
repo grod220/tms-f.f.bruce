@@ -58,7 +58,7 @@ const MenuWidget = () => {
 
   const data: MenuItemsAndPricesQuery = useStaticQuery(graphql`
     query MenuItemsAndPrices {
-      allContentfulMenuVersion(filter: { type: { eq: "Meat" } }) {
+      allContentfulMenuVersion(filter: { type: { eq: "Full menu" } }) {
         edges {
           node {
             type

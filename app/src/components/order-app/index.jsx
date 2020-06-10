@@ -19,7 +19,7 @@ const initializeModule = (catering) => {
   } else {
     OrderStore.orderType = 'normal';
     OrderStore.fulfillmentOption = 'pickup';
-    OrderStore.activeTab = 'Meat';
+    OrderStore.activeTab = 'Full menu';
   }
   OrderStore.dateStore.fulfillmentDate = getNextAvailableFulfillmentDateStr();
   OrderStore.dateStore.fulfillmentTime = getNextAvailableFulfillmentTimeStr();

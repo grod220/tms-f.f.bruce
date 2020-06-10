@@ -31,7 +31,7 @@ const MenuNavItemsWrapper = styled.div`
 `;
 
 const CATERING_MENUS = ['Catering Menu'];
-const NORMAL_MENUS = ['Meat', 'Vegetarian', 'Vegan', 'Gluten Free #meat'];
+const NORMAL_MENUS = ['Full menu', 'Vegetarian', 'Vegan', 'Gluten Free #meat'];
 
 const menuComparator = (menus: string[], a: string, b: string): number => {
   return menus.indexOf(a) - menus.indexOf(b);
