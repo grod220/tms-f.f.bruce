@@ -1,9 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
 
 import OrderStore from '../../stores/order-store';
 import addZero from '../../../../utilities/add-zero';
+import ItemStore from '../../stores/item-store';
 
 const Highlight = styled.div`
   color: #902e2d;
@@ -51,7 +52,12 @@ const SpaceBetween = styled.div`
   margin-bottom: 15px;
 `;
 
-const SummaryItem = observer(({ item, shoppingCartIndex }) => {
+interface SummaryItemProps {
+  item: ItemStore;
+  shoppingCartIndex: number;
+}
+
+const SummaryItem = observer(({ item, shoppingCartIndex }: SummaryItemProps) => {
   const removeFromCart = (index) => {
     OrderStore.shoppingCart.splice(index, 1);
   };
@@ -63,23 +69,22 @@ const SummaryItem = observer(({ item, shoppingCartIndex }) => {
         <Dots />
         <div>${addZero(item.basePrice)}</div>
       </ItemContainer>
-      {Boolean(Object.keys(item.choices).length) &&
-        Object.entries(item.choices).map(([optionName, picks], i) => (
-          <Choices key={i}>
-            <Category>{optionName}:</Category>
-            {picks.map((pick, i) => (
-              <PicksContainer key={i}>
-                <div>{pick.name}</div>
-                {pick.extra && (
-                  <>
-                    <Dots />
-                    <Price>+${addZero(pick.extra)}</Price>
-                  </>
-                )}
-              </PicksContainer>
-            ))}
-          </Choices>
-        ))}
+      {item.options.map(({ title, choices }, i) => (
+        <Choices key={i}>
+          <Category>{title}:</Category>
+          {choices.map((choice, i) => (
+            <PicksContainer key={i}>
+              <div>{choice.title}</div>
+              {Boolean(choice.price) && (
+                <>
+                  <Dots />
+                  <Price>+${addZero(choice.price)}</Price>
+                </>
+              )}
+            </PicksContainer>
+          ))}
+        </Choices>
+      ))}
     </SpaceBetween>
   );
 });
