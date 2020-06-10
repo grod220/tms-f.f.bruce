@@ -605,6 +605,7 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___options___internal___owner'
   | 'menuItems___options___internal___type'
   | 'menuItems___options___title'
+  | 'menuItems___options___minimum'
   | 'menuItems___options___pricedOptionItems'
   | 'menuItems___options___pricedOptionItems___id'
   | 'menuItems___options___pricedOptionItems___children'
@@ -639,7 +640,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___options___sys___revision'
   | 'menuItems___options___node_locale'
   | 'menuItems___options___maximum'
-  | 'menuItems___options___minimum'
   | 'menuItems___category'
   | 'menuItems___category___id'
   | 'menuItems___category___parent___id'
@@ -725,6 +725,7 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___option___internal___owner'
   | 'menuItems___option___internal___type'
   | 'menuItems___option___title'
+  | 'menuItems___option___minimum'
   | 'menuItems___option___pricedOptionItems'
   | 'menuItems___option___pricedOptionItems___id'
   | 'menuItems___option___pricedOptionItems___children'
@@ -759,7 +760,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___option___sys___revision'
   | 'menuItems___option___node_locale'
   | 'menuItems___option___maximum'
-  | 'menuItems___option___minimum'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___parent___children'
@@ -1592,6 +1592,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___internal___owner'
   | 'options___internal___type'
   | 'options___title'
+  | 'options___minimum'
   | 'options___pricedOptionItems'
   | 'options___pricedOptionItems___id'
   | 'options___pricedOptionItems___parent___id'
@@ -1614,6 +1615,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___pricedOptionItems___option___id'
   | 'options___pricedOptionItems___option___children'
   | 'options___pricedOptionItems___option___title'
+  | 'options___pricedOptionItems___option___minimum'
   | 'options___pricedOptionItems___option___pricedOptionItems'
   | 'options___pricedOptionItems___option___menu_item'
   | 'options___pricedOptionItems___option___spaceId'
@@ -1622,7 +1624,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___pricedOptionItems___option___updatedAt'
   | 'options___pricedOptionItems___option___node_locale'
   | 'options___pricedOptionItems___option___maximum'
-  | 'options___pricedOptionItems___option___minimum'
   | 'options___pricedOptionItems___spaceId'
   | 'options___pricedOptionItems___contentful_id'
   | 'options___pricedOptionItems___createdAt'
@@ -1657,6 +1658,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___menu_item___options___id'
   | 'options___menu_item___options___children'
   | 'options___menu_item___options___title'
+  | 'options___menu_item___options___minimum'
   | 'options___menu_item___options___pricedOptionItems'
   | 'options___menu_item___options___menu_item'
   | 'options___menu_item___options___spaceId'
@@ -1665,7 +1667,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___menu_item___options___updatedAt'
   | 'options___menu_item___options___node_locale'
   | 'options___menu_item___options___maximum'
-  | 'options___menu_item___options___minimum'
   | 'options___menu_item___category'
   | 'options___menu_item___category___id'
   | 'options___menu_item___category___children'
@@ -1691,6 +1692,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___menu_item___option___id'
   | 'options___menu_item___option___children'
   | 'options___menu_item___option___title'
+  | 'options___menu_item___option___minimum'
   | 'options___menu_item___option___pricedOptionItems'
   | 'options___menu_item___option___menu_item'
   | 'options___menu_item___option___spaceId'
@@ -1699,7 +1701,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___menu_item___option___updatedAt'
   | 'options___menu_item___option___node_locale'
   | 'options___menu_item___option___maximum'
-  | 'options___menu_item___option___minimum'
   | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___id'
   | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___children'
   | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___description'
@@ -1710,7 +1711,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___sys___revision'
   | 'options___node_locale'
   | 'options___maximum'
-  | 'options___minimum'
   | 'category'
   | 'category___id'
   | 'category___parent___id'
@@ -1779,6 +1779,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___options___id'
   | 'category___menuItems___options___children'
   | 'category___menuItems___options___title'
+  | 'category___menuItems___options___minimum'
   | 'category___menuItems___options___pricedOptionItems'
   | 'category___menuItems___options___menu_item'
   | 'category___menuItems___options___spaceId'
@@ -1787,7 +1788,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___options___updatedAt'
   | 'category___menuItems___options___node_locale'
   | 'category___menuItems___options___maximum'
-  | 'category___menuItems___options___minimum'
   | 'category___menuItems___category'
   | 'category___menuItems___category___id'
   | 'category___menuItems___category___children'
@@ -1813,6 +1813,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___option___id'
   | 'category___menuItems___option___children'
   | 'category___menuItems___option___title'
+  | 'category___menuItems___option___minimum'
   | 'category___menuItems___option___pricedOptionItems'
   | 'category___menuItems___option___menu_item'
   | 'category___menuItems___option___spaceId'
@@ -1821,7 +1822,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___option___updatedAt'
   | 'category___menuItems___option___node_locale'
   | 'category___menuItems___option___maximum'
-  | 'category___menuItems___option___minimum'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___children'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___description'
@@ -1954,6 +1954,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___internal___owner'
   | 'option___internal___type'
   | 'option___title'
+  | 'option___minimum'
   | 'option___pricedOptionItems'
   | 'option___pricedOptionItems___id'
   | 'option___pricedOptionItems___parent___id'
@@ -1976,6 +1977,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___pricedOptionItems___option___id'
   | 'option___pricedOptionItems___option___children'
   | 'option___pricedOptionItems___option___title'
+  | 'option___pricedOptionItems___option___minimum'
   | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___option___menu_item'
   | 'option___pricedOptionItems___option___spaceId'
@@ -1984,7 +1986,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___pricedOptionItems___option___updatedAt'
   | 'option___pricedOptionItems___option___node_locale'
   | 'option___pricedOptionItems___option___maximum'
-  | 'option___pricedOptionItems___option___minimum'
   | 'option___pricedOptionItems___spaceId'
   | 'option___pricedOptionItems___contentful_id'
   | 'option___pricedOptionItems___createdAt'
@@ -2019,6 +2020,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___menu_item___options___id'
   | 'option___menu_item___options___children'
   | 'option___menu_item___options___title'
+  | 'option___menu_item___options___minimum'
   | 'option___menu_item___options___pricedOptionItems'
   | 'option___menu_item___options___menu_item'
   | 'option___menu_item___options___spaceId'
@@ -2027,7 +2029,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___menu_item___options___updatedAt'
   | 'option___menu_item___options___node_locale'
   | 'option___menu_item___options___maximum'
-  | 'option___menu_item___options___minimum'
   | 'option___menu_item___category'
   | 'option___menu_item___category___id'
   | 'option___menu_item___category___children'
@@ -2053,6 +2054,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___menu_item___option___id'
   | 'option___menu_item___option___children'
   | 'option___menu_item___option___title'
+  | 'option___menu_item___option___minimum'
   | 'option___menu_item___option___pricedOptionItems'
   | 'option___menu_item___option___menu_item'
   | 'option___menu_item___option___spaceId'
@@ -2061,7 +2063,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___menu_item___option___updatedAt'
   | 'option___menu_item___option___node_locale'
   | 'option___menu_item___option___maximum'
-  | 'option___menu_item___option___minimum'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
@@ -2072,7 +2073,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___sys___revision'
   | 'option___node_locale'
   | 'option___maximum'
-  | 'option___minimum'
   | 'childContentfulMenuItemDescriptionTextNode___id'
   | 'childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'childContentfulMenuItemDescriptionTextNode___parent___parent___id'
@@ -2400,6 +2400,7 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___options___id'
   | 'categories___menuItems___options___children'
   | 'categories___menuItems___options___title'
+  | 'categories___menuItems___options___minimum'
   | 'categories___menuItems___options___pricedOptionItems'
   | 'categories___menuItems___options___menu_item'
   | 'categories___menuItems___options___spaceId'
@@ -2408,7 +2409,6 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___options___updatedAt'
   | 'categories___menuItems___options___node_locale'
   | 'categories___menuItems___options___maximum'
-  | 'categories___menuItems___options___minimum'
   | 'categories___menuItems___category'
   | 'categories___menuItems___category___id'
   | 'categories___menuItems___category___children'
@@ -2434,6 +2434,7 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___option___id'
   | 'categories___menuItems___option___children'
   | 'categories___menuItems___option___title'
+  | 'categories___menuItems___option___minimum'
   | 'categories___menuItems___option___pricedOptionItems'
   | 'categories___menuItems___option___menu_item'
   | 'categories___menuItems___option___spaceId'
@@ -2442,7 +2443,6 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___option___updatedAt'
   | 'categories___menuItems___option___node_locale'
   | 'categories___menuItems___option___maximum'
-  | 'categories___menuItems___option___minimum'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___children'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___description'
@@ -2567,6 +2567,7 @@ export type ContentfulOption = Node & {
   children: Array<Node>;
   internal: Internal;
   title?: Maybe<Scalars['String']>;
+  minimum?: Maybe<Scalars['Int']>;
   pricedOptionItems?: Maybe<Array<Maybe<ContentfulOptionItem>>>;
   menu_item?: Maybe<Array<Maybe<ContentfulMenuItem>>>;
   spaceId?: Maybe<Scalars['String']>;
@@ -2577,7 +2578,6 @@ export type ContentfulOption = Node & {
   node_locale?: Maybe<Scalars['String']>;
   maximum?: Maybe<Scalars['Int']>;
   freeOptionItem?: Maybe<Array<Maybe<ContentfulMenuItemContentfulOptionItemUnion>>>;
-  minimum?: Maybe<Scalars['Int']>;
 };
 
 
@@ -2711,6 +2711,7 @@ export type ContentfulOptionFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'title'
+  | 'minimum'
   | 'pricedOptionItems'
   | 'pricedOptionItems___id'
   | 'pricedOptionItems___parent___id'
@@ -2769,6 +2770,7 @@ export type ContentfulOptionFieldsEnum =
   | 'pricedOptionItems___option___internal___owner'
   | 'pricedOptionItems___option___internal___type'
   | 'pricedOptionItems___option___title'
+  | 'pricedOptionItems___option___minimum'
   | 'pricedOptionItems___option___pricedOptionItems'
   | 'pricedOptionItems___option___pricedOptionItems___id'
   | 'pricedOptionItems___option___pricedOptionItems___children'
@@ -2803,7 +2805,6 @@ export type ContentfulOptionFieldsEnum =
   | 'pricedOptionItems___option___sys___revision'
   | 'pricedOptionItems___option___node_locale'
   | 'pricedOptionItems___option___maximum'
-  | 'pricedOptionItems___option___minimum'
   | 'pricedOptionItems___spaceId'
   | 'pricedOptionItems___contentful_id'
   | 'pricedOptionItems___createdAt'
@@ -2929,6 +2930,7 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___options___internal___owner'
   | 'menu_item___options___internal___type'
   | 'menu_item___options___title'
+  | 'menu_item___options___minimum'
   | 'menu_item___options___pricedOptionItems'
   | 'menu_item___options___pricedOptionItems___id'
   | 'menu_item___options___pricedOptionItems___children'
@@ -2963,7 +2965,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___options___sys___revision'
   | 'menu_item___options___node_locale'
   | 'menu_item___options___maximum'
-  | 'menu_item___options___minimum'
   | 'menu_item___category'
   | 'menu_item___category___id'
   | 'menu_item___category___parent___id'
@@ -3049,6 +3050,7 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___option___internal___owner'
   | 'menu_item___option___internal___type'
   | 'menu_item___option___title'
+  | 'menu_item___option___minimum'
   | 'menu_item___option___pricedOptionItems'
   | 'menu_item___option___pricedOptionItems___id'
   | 'menu_item___option___pricedOptionItems___children'
@@ -3083,7 +3085,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___option___sys___revision'
   | 'menu_item___option___node_locale'
   | 'menu_item___option___maximum'
-  | 'menu_item___option___minimum'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___id'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___parent___children'
@@ -3109,8 +3110,7 @@ export type ContentfulOptionFieldsEnum =
   | 'sys___contentType___sys___id'
   | 'sys___contentType___sys___contentful_id'
   | 'node_locale'
-  | 'maximum'
-  | 'minimum';
+  | 'maximum';
 
 export type ContentfulOptionFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -3118,6 +3118,7 @@ export type ContentfulOptionFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  minimum?: Maybe<IntQueryOperatorInput>;
   pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
   menu_item?: Maybe<ContentfulMenuItemFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
@@ -3127,7 +3128,6 @@ export type ContentfulOptionFilterInput = {
   sys?: Maybe<ContentfulOptionSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   maximum?: Maybe<IntQueryOperatorInput>;
-  minimum?: Maybe<IntQueryOperatorInput>;
 };
 
 export type ContentfulOptionFilterListInput = {
@@ -3333,6 +3333,7 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___internal___owner'
   | 'option___internal___type'
   | 'option___title'
+  | 'option___minimum'
   | 'option___pricedOptionItems'
   | 'option___pricedOptionItems___id'
   | 'option___pricedOptionItems___parent___id'
@@ -3355,6 +3356,7 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___pricedOptionItems___option___id'
   | 'option___pricedOptionItems___option___children'
   | 'option___pricedOptionItems___option___title'
+  | 'option___pricedOptionItems___option___minimum'
   | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___option___menu_item'
   | 'option___pricedOptionItems___option___spaceId'
@@ -3363,7 +3365,6 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___pricedOptionItems___option___updatedAt'
   | 'option___pricedOptionItems___option___node_locale'
   | 'option___pricedOptionItems___option___maximum'
-  | 'option___pricedOptionItems___option___minimum'
   | 'option___pricedOptionItems___spaceId'
   | 'option___pricedOptionItems___contentful_id'
   | 'option___pricedOptionItems___createdAt'
@@ -3398,6 +3399,7 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___menu_item___options___id'
   | 'option___menu_item___options___children'
   | 'option___menu_item___options___title'
+  | 'option___menu_item___options___minimum'
   | 'option___menu_item___options___pricedOptionItems'
   | 'option___menu_item___options___menu_item'
   | 'option___menu_item___options___spaceId'
@@ -3406,7 +3408,6 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___menu_item___options___updatedAt'
   | 'option___menu_item___options___node_locale'
   | 'option___menu_item___options___maximum'
-  | 'option___menu_item___options___minimum'
   | 'option___menu_item___category'
   | 'option___menu_item___category___id'
   | 'option___menu_item___category___children'
@@ -3432,6 +3433,7 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___menu_item___option___id'
   | 'option___menu_item___option___children'
   | 'option___menu_item___option___title'
+  | 'option___menu_item___option___minimum'
   | 'option___menu_item___option___pricedOptionItems'
   | 'option___menu_item___option___menu_item'
   | 'option___menu_item___option___spaceId'
@@ -3440,7 +3442,6 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___menu_item___option___updatedAt'
   | 'option___menu_item___option___node_locale'
   | 'option___menu_item___option___maximum'
-  | 'option___menu_item___option___minimum'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
   | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
@@ -3451,7 +3452,6 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___sys___revision'
   | 'option___node_locale'
   | 'option___maximum'
-  | 'option___minimum'
   | 'spaceId'
   | 'contentful_id'
   | 'createdAt'
@@ -5114,8 +5114,6 @@ export type QueryAllSitePageArgs = {
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5213,6 +5211,7 @@ export type QueryContentfulOptionArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  minimum?: Maybe<IntQueryOperatorInput>;
   pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
   menu_item?: Maybe<ContentfulMenuItemFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
@@ -5222,7 +5221,6 @@ export type QueryContentfulOptionArgs = {
   sys?: Maybe<ContentfulOptionSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   maximum?: Maybe<IntQueryOperatorInput>;
-  minimum?: Maybe<IntQueryOperatorInput>;
 };
 
 
@@ -5394,8 +5392,6 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
-  port?: Maybe<Scalars['Date']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -5406,14 +5402,6 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-
-export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -5603,8 +5591,6 @@ export type SiteEdge = {
 
 export type SiteFieldsEnum = 
   | 'buildTime'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -5696,8 +5682,6 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
-  port?: Maybe<DateQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
