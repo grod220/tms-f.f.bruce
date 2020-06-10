@@ -1,15 +1,9 @@
 import Stripe from 'stripe';
-import { DishChoices } from '../../app/src/components/shared/menu-data/menu-types';
 import { OrderRequest, ShoppingCart } from '../../app/src/components/shared/menu-data/order-types';
+import { OptionChoice } from '../../app/src/components/order-app/stores/item-store';
 
-import StandardMenu from '../../app/src/components/shared/menu-data/standard-menu';
-import CateringMenu from '../../app/src/components/shared/menu-data/catering-menu';
-
-const formatDescription = (choices: DishChoices): string =>
-  Object.values(choices)
-    .reduce((acc, curr) => acc.concat(curr), [])
-    .map((obj) => (obj.extra ? `${obj.name} (+$${obj.extra})` : obj.name))
-    .join(' - ');
+const formatDescription = (choices: OptionChoice[]): string =>
+  choices.map((obj) => (obj.price ? `${obj.title} (+$${obj.price})` : obj.title)).join(' - ');
 
 export const formatCart = (
   shoppingCart: ShoppingCart,
@@ -25,8 +19,8 @@ export const formatCart = (
       quantity: 1,
     };
 
-    if (formatDescription(item.choices)) {
-      lineItem.description = formatDescription(item.choices);
+    if (item.allChoices.length) {
+      lineItem.description = formatDescription(item.allChoices);
     }
     return lineItem;
   });
@@ -75,8 +69,8 @@ export const formatPaymentIntentObj = (
 
   reqBody.shoppingCart
     .map((item) => {
-      if (formatDescription(item.choices)) {
-        return `${item.dishName} (${formatDescription(item.choices)})`;
+      if (item.allChoices.length) {
+        return `${item.dishName} (${formatDescription(item.allChoices)})`;
       } else {
         return item.dishName;
       }
@@ -99,84 +93,85 @@ export const formatPaymentIntentObj = (
   return paymentIntentObj;
 };
 
-export const validateOrderOrThrow = ({
-  shoppingCart,
-  orderType,
-  tip,
-  tax,
-  deliveryFee,
-  fulfillmentOption,
-}: OrderRequest) => {
-  console.log(
-    JSON.stringify({
-      shoppingCart,
-      orderType,
-      tip,
-      tax,
-      deliveryFee,
-      fulfillmentOption,
-    }),
-  );
-  const parsedTip = typeof tip === 'string' ? Number(tip) : tip;
-  if (parsedTip < 0) {
-    throw Error(`Tip is less than 0 zero`);
-  }
-
-  if (fulfillmentOption === 'delivery' && deliveryFee < 20) {
-    throw Error('Delivery fee is less than $20');
-  }
-
-  let orderSubTotal = 0;
-
-  const menuItems = (orderType === 'catering' ? CateringMenu : StandardMenu)
-    .map((group) => group.items)
-    .reduce((acc, itemArr) => acc.concat(itemArr), []);
-
-  shoppingCart.forEach((cartItem) => {
-    const matchingMenuItem = menuItems.find((menuItem) => menuItem.name === cartItem.dishName);
-
-    if (!matchingMenuItem) {
-      throw Error(`${cartItem.dishName} :: Could not find this dish in the official menu`);
-    }
-
-    if (cartItem.basePrice !== matchingMenuItem.price) {
-      throw Error(`${cartItem.dishName} :: basePrice doesn't match on client & server`);
-    }
-    let menuExtras = 0;
-    if (cartItem.choices) {
-      Object.entries(cartItem.choices).forEach(([optionName, choicesArr]) => {
-        if (!matchingMenuItem.options) {
-          throw Error(`matchingMenuItem: ${matchingMenuItem} :: doesn't have options`);
-        }
-        const matchingOptionObj = matchingMenuItem.options.find((optionObj) => optionObj.name === optionName);
-
-        if (!matchingOptionObj) {
-          throw Error(`Option: ${optionName} :: doesn't exist on the server`);
-        }
-
-        choicesArr.forEach(({ name, extra }) => {
-          const matchingChoiceItem = matchingOptionObj.choices.find((choice) => choice.name === name);
-          if (!matchingChoiceItem) {
-            throw Error(`Choice: ${name} :: doesn't exist on the server`);
-          }
-          if (matchingChoiceItem.extra) {
-            menuExtras += matchingChoiceItem.extra;
-          }
-          if (extra !== matchingChoiceItem.extra) {
-            throw Error(`Choice: ${name} :: extraPrice doesn't match on client & server`);
-          }
-        });
-      });
-    }
-    const menuItemTotal = matchingMenuItem.price + menuExtras;
-    if (cartItem.total !== menuItemTotal) {
-      throw Error(`${cartItem} :: total doesn't match on client & server`);
-    }
-
-    orderSubTotal += menuItemTotal;
-  });
-
-  if (Math.floor(Number(tax)) !== Math.floor(orderSubTotal * 0.07)) {
-    throw Error(`Tax doesn't match on client & server`);
-  }
-};
+// Deprecating due to complexity
+// export const validateOrderOrThrow = ({
+//   shoppingCart,
+//   orderType,
+//   tip,
+//   tax,
+//   deliveryFee,
+//   fulfillmentOption,
+// }: OrderRequest) => {
+//   console.log(
+//     JSON.stringify({
+//       shoppingCart,
+//       orderType,
+//       tip,
+//       tax,
+//       deliveryFee,
+//       fulfillmentOption,
+//     }),
+//   );
+//   const parsedTip = typeof tip === 'string' ? Number(tip) : tip;
+//   if (parsedTip < 0) {
+//     throw Error(`Tip is less than 0 zero`);
+//   }
+//
+//   if (fulfillmentOption === 'delivery' && deliveryFee < 20) {
+//     throw Error('Delivery fee is less than $20');
+//   }
+//
+//   let orderSubTotal = 0;
+//
+//   const menuItems = (orderType === 'catering' ? CateringMenu : StandardMenu)
+//     .map((group) => group.items)
+//     .reduce((acc, itemArr) => acc.concat(itemArr), []);
+//
+//   shoppingCart.forEach((cartItem) => {
+//     const matchingMenuItem = menuItems.find((menuItem) => menuItem.name === cartItem.dishName);
+//
+//     if (!matchingMenuItem) {
+//       throw Error(`${cartItem.dishName} :: Could not find this dish in the official menu`);
+//     }
+//
+//     if (cartItem.basePrice !== matchingMenuItem.price) {
+//       throw Error(`${cartItem.dishName} :: basePrice doesn't match on client & server`);
+//     }
+//     let menuExtras = 0;
+//     if (cartItem.choices) {
+//       Object.entries(cartItem.choices).forEach(([optionName, choicesArr]) => {
+//         if (!matchingMenuItem.options) {
+//           throw Error(`matchingMenuItem: ${matchingMenuItem} :: doesn't have options`);
+//         }
+//         const matchingOptionObj = matchingMenuItem.options.find((optionObj) => optionObj.name === optionName);
+//
+//         if (!matchingOptionObj) {
+//           throw Error(`Option: ${optionName} :: doesn't exist on the server`);
+//         }
+//
+//         choicesArr.forEach(({ name, extra }) => {
+//           const matchingChoiceItem = matchingOptionObj.choices.find((choice) => choice.name === name);
+//           if (!matchingChoiceItem) {
+//             throw Error(`Choice: ${name} :: doesn't exist on the server`);
+//           }
+//           if (matchingChoiceItem.extra) {
+//             menuExtras += matchingChoiceItem.extra;
+//           }
+//           if (extra !== matchingChoiceItem.extra) {
+//             throw Error(`Choice: ${name} :: extraPrice doesn't match on client & server`);
+//           }
+//         });
+//       });
+//     }
+//     const menuItemTotal = matchingMenuItem.price + menuExtras;
+//     if (cartItem.total !== menuItemTotal) {
+//       throw Error(`${cartItem} :: total doesn't match on client & server`);
+//     }
+//
+//     orderSubTotal += menuItemTotal;
+//   });
+//
+//   if (Math.floor(Number(tax)) !== Math.floor(orderSubTotal * 0.07)) {
+//     throw Error(`Tax doesn't match on client & server`);
+//   }
+// };

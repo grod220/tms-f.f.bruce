@@ -1,9 +1,10 @@
 import { config, Request, Response } from 'firebase-functions';
 import * as express from 'express';
-import { formatCart, formatPaymentIntentObj, validateOrderOrThrow } from './order-utils';
-const bodyParser = require('body-parser');
+import { formatCart, formatPaymentIntentObj } from './order-utils';
 import Stripe from 'stripe';
 import * as Sentry from '@sentry/node';
+
+const bodyParser = require('body-parser');
 
 const STRIPE_SECRET = config().secrets.stripe_prod_secret;
 // const STRIPE_SECRET = config().secrets.stripe_dev_secret;
@@ -16,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/order', async (req: Request, res: Response) => {
   try {
-    validateOrderOrThrow(req.body);
+    // validateOrderOrThrow(req.body);
 
     const sessionObj = {
       payment_method_types: ['card' as Stripe.Checkout.SessionCreateParams.PaymentMethodType],

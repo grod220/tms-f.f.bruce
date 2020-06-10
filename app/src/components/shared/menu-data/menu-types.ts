@@ -8,16 +8,18 @@ export interface Choice {
   addition?: boolean;
 }
 
-export type DishChoices = Record<string, Choice[]>;
+// Deprecated in favor of typed ItemStore
 
-export interface DishItem {
-  dishName: string;
-  basePrice: number;
-  choices: DishChoices;
-  selectionsRequired: number;
-  total: number;
-  additionsRequired: Record<string, number>;
-}
+// export type DishChoices = Record<string, Choice[]>;
+
+// interface DishItem {
+//   dishName: string;
+//   basePrice: number;
+//   choices: DishChoices;
+//   selectionsRequired: number;
+//   total: number;
+//   additionsRequired: Record<string, number>;
+// }
 
 interface ItemOption {
   name: string;

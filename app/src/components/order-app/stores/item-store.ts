@@ -2,7 +2,7 @@ import { action, computed, observable } from 'mobx';
 import { ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption } from '../../../../graphql-types';
 import { removeHashes } from '../../../utilities/contentful-formatter';
 
-type OptionChoice = { title: string; price: number };
+export type OptionChoice = { title: string; price: number };
 type ContentfulOptionWithChoices = ContentfulOption & { choices: OptionChoice[] };
 
 export class ItemStore {
@@ -42,6 +42,10 @@ export class ItemStore {
       }
       optionObj.choices.push({ title: optionItem.title as string, price: isFree ? 0 : optionItem.price ?? 0 });
     }
+  }
+
+  @computed get allChoices() {
+    return this.options.flatMap((option) => option.choices);
   }
 
   hasChosenMaximumItems(optionObj: ContentfulOptionWithChoices): boolean {

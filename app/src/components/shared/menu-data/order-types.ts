@@ -1,6 +1,6 @@
-import { DishItem } from './menu-types';
+import ItemStore from '../../order-app/stores/item-store';
 
-export type ShoppingCart = DishItem[];
+export type ShoppingCart = ItemStore[];
 
 export interface OrderRequest {
   orderType: string;
