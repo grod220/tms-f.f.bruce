@@ -71,7 +71,7 @@ const SummaryItem = observer(({ item, shoppingCartIndex }: SummaryItemProps) => 
       </ItemContainer>
       {item.options.map(({ title, choices }, i) => (
         <Choices key={i}>
-          <Category>{title}:</Category>
+          {Boolean(choices.length) && <Category>{title}:</Category>}
           {choices.map((choice, i) => (
             <PicksContainer key={i}>
               <div>{choice.title}</div>

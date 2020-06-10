@@ -15,6 +15,16 @@ export type Scalars = {
   JSON: any;
 };
 
+
+
+
+
+
+
+
+
+
+
 export type BooleanQueryOperatorInput = {
   eq?: Maybe<Scalars['Boolean']>;
   ne?: Maybe<Scalars['Boolean']>;
@@ -41,6 +51,7 @@ export type ContentfulAsset = Node & {
   resize?: Maybe<ContentfulResize>;
 };
 
+
 export type ContentfulAssetFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -51,6 +62,7 @@ export type ContentfulAssetFixedArgs = {
   background?: Maybe<Scalars['String']>;
 };
 
+
 export type ContentfulAssetResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -60,6 +72,7 @@ export type ContentfulAssetResolutionsArgs = {
   cropFocus?: Maybe<ContentfulImageCropFocus>;
   background?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulAssetFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -72,6 +85,7 @@ export type ContentfulAssetFluidArgs = {
   sizes?: Maybe<Scalars['String']>;
 };
 
+
 export type ContentfulAssetSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -82,6 +96,7 @@ export type ContentfulAssetSizesArgs = {
   background?: Maybe<Scalars['String']>;
   sizes?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulAssetResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -103,9 +118,11 @@ export type ContentfulAssetConnection = {
   group: Array<ContentfulAssetGroupConnection>;
 };
 
+
 export type ContentfulAssetConnectionDistinctArgs = {
   field: ContentfulAssetFieldsEnum;
 };
+
 
 export type ContentfulAssetConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -119,7 +136,7 @@ export type ContentfulAssetEdge = {
   previous?: Maybe<ContentfulAsset>;
 };
 
-export type ContentfulAssetFieldsEnum =
+export type ContentfulAssetFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -338,12 +355,14 @@ export type ContentfulCategory = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
+
 export type ContentfulCategoryCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulCategoryUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -361,9 +380,11 @@ export type ContentfulCategoryConnection = {
   group: Array<ContentfulCategoryGroupConnection>;
 };
 
+
 export type ContentfulCategoryConnectionDistinctArgs = {
   field: ContentfulCategoryFieldsEnum;
 };
+
 
 export type ContentfulCategoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -377,7 +398,7 @@ export type ContentfulCategoryEdge = {
   previous?: Maybe<ContentfulCategory>;
 };
 
-export type ContentfulCategoryFieldsEnum =
+export type ContentfulCategoryFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -943,9 +964,11 @@ export type ContentfulContentTypeConnection = {
   group: Array<ContentfulContentTypeGroupConnection>;
 };
 
+
 export type ContentfulContentTypeConnectionDistinctArgs = {
   field: ContentfulContentTypeFieldsEnum;
 };
+
 
 export type ContentfulContentTypeConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -959,7 +982,7 @@ export type ContentfulContentTypeEdge = {
   previous?: Maybe<ContentfulContentType>;
 };
 
-export type ContentfulContentTypeFieldsEnum =
+export type ContentfulContentTypeFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1120,7 +1143,7 @@ export type ContentfulFluidFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
-export type ContentfulImageCropFocus =
+export type ContentfulImageCropFocus = 
   | 'TOP'
   | 'TOP_LEFT'
   | 'TOP_RIGHT'
@@ -1133,7 +1156,11 @@ export type ContentfulImageCropFocus =
   | 'FACES'
   | 'CENTER';
 
-export type ContentfulImageFormat = 'NO_CHANGE' | 'JPG' | 'PNG' | 'WEBP';
+export type ContentfulImageFormat = 
+  | 'NO_CHANGE'
+  | 'JPG'
+  | 'PNG'
+  | 'WEBP';
 
 export type ContentfulMenuItem = Node & {
   id: Scalars['ID'];
@@ -1158,12 +1185,14 @@ export type ContentfulMenuItem = Node & {
   childContentfulMenuItemDescriptionTextNode?: Maybe<ContentfulMenuItemDescriptionTextNode>;
 };
 
+
 export type ContentfulMenuItemCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulMenuItemUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1181,9 +1210,11 @@ export type ContentfulMenuItemConnection = {
   group: Array<ContentfulMenuItemGroupConnection>;
 };
 
+
 export type ContentfulMenuItemConnectionDistinctArgs = {
   field: ContentfulMenuItemFieldsEnum;
 };
+
 
 export type ContentfulMenuItemConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1210,9 +1241,11 @@ export type ContentfulMenuItemDescriptionTextNodeConnection = {
   group: Array<ContentfulMenuItemDescriptionTextNodeGroupConnection>;
 };
 
+
 export type ContentfulMenuItemDescriptionTextNodeConnectionDistinctArgs = {
   field: ContentfulMenuItemDescriptionTextNodeFieldsEnum;
 };
+
 
 export type ContentfulMenuItemDescriptionTextNodeConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1226,7 +1259,7 @@ export type ContentfulMenuItemDescriptionTextNodeEdge = {
   previous?: Maybe<ContentfulMenuItemDescriptionTextNode>;
 };
 
-export type ContentfulMenuItemDescriptionTextNodeFieldsEnum =
+export type ContentfulMenuItemDescriptionTextNodeFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1343,7 +1376,7 @@ export type ContentfulMenuItemEdge = {
   previous?: Maybe<ContentfulMenuItem>;
 };
 
-export type ContentfulMenuItemFieldsEnum =
+export type ContentfulMenuItemFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2168,12 +2201,14 @@ export type ContentfulMenuVersion = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
+
 export type ContentfulMenuVersionCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulMenuVersionUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2191,9 +2226,11 @@ export type ContentfulMenuVersionConnection = {
   group: Array<ContentfulMenuVersionGroupConnection>;
 };
 
+
 export type ContentfulMenuVersionConnectionDistinctArgs = {
   field: ContentfulMenuVersionFieldsEnum;
 };
+
 
 export type ContentfulMenuVersionConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2207,7 +2244,7 @@ export type ContentfulMenuVersionEdge = {
   previous?: Maybe<ContentfulMenuVersion>;
 };
 
-export type ContentfulMenuVersionFieldsEnum =
+export type ContentfulMenuVersionFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2543,12 +2580,14 @@ export type ContentfulOption = Node & {
   freeOptionItem?: Maybe<Array<Maybe<ContentfulMenuItemContentfulOptionItemUnion>>>;
 };
 
+
 export type ContentfulOptionCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulOptionUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2566,9 +2605,11 @@ export type ContentfulOptionConnection = {
   group: Array<ContentfulOptionGroupConnection>;
 };
 
+
 export type ContentfulOptionConnectionDistinctArgs = {
   field: ContentfulOptionFieldsEnum;
 };
+
 
 export type ContentfulOptionConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2582,7 +2623,7 @@ export type ContentfulOptionEdge = {
   previous?: Maybe<ContentfulOption>;
 };
 
-export type ContentfulOptionFieldsEnum =
+export type ContentfulOptionFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3119,12 +3160,14 @@ export type ContentfulOptionItem = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
+
 export type ContentfulOptionItemCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type ContentfulOptionItemUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3142,9 +3185,11 @@ export type ContentfulOptionItemConnection = {
   group: Array<ContentfulOptionItemGroupConnection>;
 };
 
+
 export type ContentfulOptionItemConnectionDistinctArgs = {
   field: ContentfulOptionItemFieldsEnum;
 };
+
 
 export type ContentfulOptionItemConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3158,7 +3203,7 @@ export type ContentfulOptionItemEdge = {
   previous?: Maybe<ContentfulOptionItem>;
 };
 
-export type ContentfulOptionItemFieldsEnum =
+export type ContentfulOptionItemFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3586,6 +3631,7 @@ export type ContentfulSizesFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
   ne?: Maybe<Scalars['Date']>;
@@ -3639,12 +3685,14 @@ export type Directory = Node & {
   internal: Internal;
 };
 
+
 export type DirectoryModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3653,12 +3701,14 @@ export type DirectoryAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3667,6 +3717,7 @@ export type DirectoryBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -3674,12 +3725,14 @@ export type DirectoryAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type DirectoryMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type DirectoryCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3697,9 +3750,11 @@ export type DirectoryConnection = {
   group: Array<DirectoryGroupConnection>;
 };
 
+
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldsEnum;
 };
+
 
 export type DirectoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3713,7 +3768,7 @@ export type DirectoryEdge = {
   previous?: Maybe<Directory>;
 };
 
-export type DirectoryFieldsEnum =
+export type DirectoryFieldsEnum = 
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -3939,12 +3994,14 @@ export type File = Node & {
   internal: Internal;
 };
 
+
 export type FileModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3953,12 +4010,14 @@ export type FileAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3967,6 +4026,7 @@ export type FileBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -3974,12 +4034,14 @@ export type FileAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
+
 export type FileMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
+
 
 export type FileCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3997,9 +4059,11 @@ export type FileConnection = {
   group: Array<FileGroupConnection>;
 };
 
+
 export type FileConnectionDistinctArgs = {
   field: FileFieldsEnum;
 };
+
 
 export type FileConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4013,7 +4077,7 @@ export type FileEdge = {
   previous?: Maybe<File>;
 };
 
-export type FileFieldsEnum =
+export type FileFieldsEnum = 
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -4293,7 +4357,7 @@ export type FloatQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ImageCropFocus =
+export type ImageCropFocus = 
   | 'CENTER'
   | 'NORTH'
   | 'NORTHEAST'
@@ -4306,11 +4370,20 @@ export type ImageCropFocus =
   | 'ENTROPY'
   | 'ATTENTION';
 
-export type ImageFit = 'COVER' | 'CONTAIN' | 'FILL' | 'INSIDE' | 'OUTSIDE';
+export type ImageFit = 
+  | 'COVER'
+  | 'CONTAIN'
+  | 'FILL'
+  | 'INSIDE'
+  | 'OUTSIDE';
 
-export type ImageFormat = 'NO_CHANGE' | 'JPG' | 'PNG' | 'WEBP';
+export type ImageFormat = 
+  | 'NO_CHANGE'
+  | 'JPG'
+  | 'PNG'
+  | 'WEBP';
 
-export type ImageResizingBehavior =
+export type ImageResizingBehavior = 
   | 'NO_CHANGE'
   /** Same as the default resizing, but adds padding so that the generated image has the specified dimensions. */
   | 'PAD'
@@ -4341,6 +4414,7 @@ export type ImageSharp = Node & {
   internal: Internal;
 };
 
+
 export type ImageSharpFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -4363,6 +4437,7 @@ export type ImageSharpFixedArgs = {
   trim?: Maybe<Scalars['Float']>;
 };
 
+
 export type ImageSharpResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -4384,6 +4459,7 @@ export type ImageSharpResolutionsArgs = {
   rotate?: Maybe<Scalars['Int']>;
   trim?: Maybe<Scalars['Float']>;
 };
+
 
 export type ImageSharpFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -4409,6 +4485,7 @@ export type ImageSharpFluidArgs = {
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+
 export type ImageSharpSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -4432,6 +4509,7 @@ export type ImageSharpSizesArgs = {
   sizes?: Maybe<Scalars['String']>;
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
+
 
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -4464,9 +4542,11 @@ export type ImageSharpConnection = {
   group: Array<ImageSharpGroupConnection>;
 };
 
+
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldsEnum;
 };
+
 
 export type ImageSharpConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4480,7 +4560,7 @@ export type ImageSharpEdge = {
   previous?: Maybe<ImageSharp>;
 };
 
-export type ImageSharpFieldsEnum =
+export type ImageSharpFieldsEnum = 
   | 'fixed___base64'
   | 'fixed___tracedSVG'
   | 'fixed___aspectRatio'
@@ -4823,6 +4903,7 @@ export type IntQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+
 /** Node Interface */
 export type Node = {
   id: Scalars['ID'];
@@ -4864,7 +4945,7 @@ export type Potrace = {
   background?: Maybe<Scalars['String']>;
 };
 
-export type PotraceTurnPolicy =
+export type PotraceTurnPolicy = 
   | 'TURNPOLICY_BLACK'
   | 'TURNPOLICY_WHITE'
   | 'TURNPOLICY_LEFT'
@@ -4904,6 +4985,7 @@ export type Query = {
   sitePlugin?: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
 };
+
 
 export type QueryFileArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -4947,12 +5029,14 @@ export type QueryFileArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllFileArgs = {
   filter?: Maybe<FileFilterInput>;
   sort?: Maybe<FileSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryDirectoryArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -4994,12 +5078,14 @@ export type QueryDirectoryArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllDirectoryArgs = {
   filter?: Maybe<DirectoryFilterInput>;
   sort?: Maybe<DirectorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -5017,6 +5103,7 @@ export type QuerySitePageArgs = {
   componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
@@ -5024,8 +5111,11 @@ export type QueryAllSitePageArgs = {
   limit?: Maybe<Scalars['Int']>;
 };
 
+
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5034,12 +5124,14 @@ export type QuerySiteArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllSiteArgs = {
   filter?: Maybe<SiteFilterInput>;
   sort?: Maybe<SiteSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryImageSharpArgs = {
   fixed?: Maybe<ImageSharpFixedFilterInput>;
@@ -5054,12 +5146,14 @@ export type QueryImageSharpArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
+
 export type QueryAllImageSharpArgs = {
   filter?: Maybe<ImageSharpFilterInput>;
   sort?: Maybe<ImageSharpSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5078,12 +5172,14 @@ export type QueryContentfulAssetArgs = {
   resize?: Maybe<ContentfulResizeFilterInput>;
 };
 
+
 export type QueryAllContentfulAssetArgs = {
   filter?: Maybe<ContentfulAssetFilterInput>;
   sort?: Maybe<ContentfulAssetSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulOptionItemArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5102,12 +5198,14 @@ export type QueryContentfulOptionItemArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulOptionItemArgs = {
   filter?: Maybe<ContentfulOptionItemFilterInput>;
   sort?: Maybe<ContentfulOptionItemSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulOptionArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5127,12 +5225,14 @@ export type QueryContentfulOptionArgs = {
   maximum?: Maybe<IntQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulOptionArgs = {
   filter?: Maybe<ContentfulOptionFilterInput>;
   sort?: Maybe<ContentfulOptionSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulMenuVersionArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5149,12 +5249,14 @@ export type QueryContentfulMenuVersionArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulMenuVersionArgs = {
   filter?: Maybe<ContentfulMenuVersionFilterInput>;
   sort?: Maybe<ContentfulMenuVersionSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulMenuItemDescriptionTextNodeArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5164,12 +5266,14 @@ export type QueryContentfulMenuItemDescriptionTextNodeArgs = {
   description?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulMenuItemDescriptionTextNodeArgs = {
   filter?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
   sort?: Maybe<ContentfulMenuItemDescriptionTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulMenuItemArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5194,12 +5298,14 @@ export type QueryContentfulMenuItemArgs = {
   childContentfulMenuItemDescriptionTextNode?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
 };
 
+
 export type QueryAllContentfulMenuItemArgs = {
   filter?: Maybe<ContentfulMenuItemFilterInput>;
   sort?: Maybe<ContentfulMenuItemSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulCategoryArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5217,12 +5323,14 @@ export type QueryContentfulCategoryArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulCategoryArgs = {
   filter?: Maybe<ContentfulCategoryFilterInput>;
   sort?: Maybe<ContentfulCategorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QueryContentfulContentTypeArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5234,12 +5342,14 @@ export type QueryContentfulContentTypeArgs = {
   description?: Maybe<StringQueryOperatorInput>;
 };
 
+
 export type QueryAllContentfulContentTypeArgs = {
   filter?: Maybe<ContentfulContentTypeFilterInput>;
   sort?: Maybe<ContentfulContentTypeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySiteBuildMetadataArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5249,12 +5359,14 @@ export type QuerySiteBuildMetadataArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
 };
 
+
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: Maybe<SiteBuildMetadataFilterInput>;
   sort?: Maybe<SiteBuildMetadataSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
+
 
 export type QuerySitePluginArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5272,6 +5384,7 @@ export type QuerySitePluginArgs = {
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
 
+
 export type QueryAllSitePluginArgs = {
   filter?: Maybe<SitePluginFilterInput>;
   sort?: Maybe<SitePluginSortInput>;
@@ -5281,6 +5394,8 @@ export type QueryAllSitePluginArgs = {
 
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
+  port?: Maybe<Scalars['Date']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -5289,7 +5404,16 @@ export type Site = Node & {
   internal: Internal;
 };
 
+
 export type SiteBuildTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -5303,6 +5427,7 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
   buildTime?: Maybe<Scalars['Date']>;
 };
+
 
 export type SiteBuildMetadataBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -5320,9 +5445,11 @@ export type SiteBuildMetadataConnection = {
   group: Array<SiteBuildMetadataGroupConnection>;
 };
 
+
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
+
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5336,7 +5463,7 @@ export type SiteBuildMetadataEdge = {
   previous?: Maybe<SiteBuildMetadata>;
 };
 
-export type SiteBuildMetadataFieldsEnum =
+export type SiteBuildMetadataFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -5456,9 +5583,11 @@ export type SiteConnection = {
   group: Array<SiteGroupConnection>;
 };
 
+
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldsEnum;
 };
+
 
 export type SiteConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5472,8 +5601,10 @@ export type SiteEdge = {
   previous?: Maybe<Site>;
 };
 
-export type SiteFieldsEnum =
+export type SiteFieldsEnum = 
   | 'buildTime'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -5565,6 +5696,8 @@ export type SiteFieldsEnum =
 
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -5607,9 +5740,11 @@ export type SitePageConnection = {
   group: Array<SitePageGroupConnection>;
 };
 
+
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldsEnum;
 };
+
 
 export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5623,7 +5758,7 @@ export type SitePageEdge = {
   previous?: Maybe<SitePage>;
 };
 
-export type SitePageFieldsEnum =
+export type SitePageFieldsEnum = 
   | 'path'
   | 'component'
   | 'internalComponentName'
@@ -5855,9 +5990,11 @@ export type SitePluginConnection = {
   group: Array<SitePluginGroupConnection>;
 };
 
+
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldsEnum;
 };
+
 
 export type SitePluginConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5871,7 +6008,7 @@ export type SitePluginEdge = {
   previous?: Maybe<SitePlugin>;
 };
 
-export type SitePluginFieldsEnum =
+export type SitePluginFieldsEnum = 
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -6151,7 +6288,9 @@ export type SiteSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type SortOrderEnum = 'ASC' | 'DESC';
+export type SortOrderEnum = 
+  | 'ASC'
+  | 'DESC';
 
 export type StringQueryOperatorInput = {
   eq?: Maybe<Scalars['String']>;
@@ -6164,92 +6303,44 @@ export type StringQueryOperatorInput = {
 
 export type MenuItemsAndPricesQueryVariables = {};
 
-export type MenuItemsAndPricesQuery = {
-  allContentfulMenuVersion: {
-    edges: Array<{
-      node: Pick<ContentfulMenuVersion, 'type'> & {
-        categories?: Maybe<
-          Array<
-            Maybe<
-              Pick<ContentfulCategory, 'title'> & {
-                menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>>;
-              }
-            >
-          >
-        >;
-      };
-    }>;
-  };
-};
+
+export type MenuItemsAndPricesQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
+        Pick<ContentfulMenuVersion, 'type'>
+        & { categories?: Maybe<Array<Maybe<(
+          Pick<ContentfulCategory, 'title'>
+          & { menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>> }
+        )>>> }
+      ) }> } };
 
 export type MenuPreviewPanelsQueryVariables = {};
 
-export type MenuPreviewPanelsQuery = {
-  allContentfulMenuVersion: {
-    edges: Array<{
-      node: Pick<ContentfulMenuVersion, 'type'> & {
-        categories?: Maybe<
-          Array<
-            Maybe<
-              Pick<ContentfulCategory, 'title'> & {
-                menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>>;
-              }
-            >
-          >
-        >;
-      };
-    }>;
-  };
-};
+
+export type MenuPreviewPanelsQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
+        Pick<ContentfulMenuVersion, 'type'>
+        & { categories?: Maybe<Array<Maybe<(
+          Pick<ContentfulCategory, 'title'>
+          & { menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>> }
+        )>>> }
+      ) }> } };
 
 export type OnlineOrderingQueryVariables = {};
 
-export type OnlineOrderingQuery = {
-  allContentfulMenuVersion: {
-    edges: Array<{
-      node: Pick<ContentfulMenuVersion, 'type'> & {
-        categories?: Maybe<
-          Array<
-            Maybe<
-              Pick<ContentfulCategory, 'title'> & {
-                menuItems?: Maybe<
-                  Array<
-                    Maybe<
-                      Pick<ContentfulMenuItem, 'title' | 'price'> & {
-                        description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
-                        image?: Maybe<{ fluid?: Maybe<Pick<ContentfulFluid, 'src'>> }>;
-                        options?: Maybe<
-                          Array<
-                            Maybe<
-                              Pick<ContentfulOption, 'title' | 'maximum' | 'minimum'> & {
-                                freeOptionItem?: Maybe<
-                                  Array<
-                                    Maybe<
-                                      | Pick<ContentfulMenuItem, 'id' | 'title' | 'price'>
-                                      | Pick<ContentfulOptionItem, 'id' | 'title' | 'price'>
-                                    >
-                                  >
-                                >;
-                                pricedOptionItems?: Maybe<Array<Maybe<Pick<ContentfulOptionItem, 'title' | 'price'>>>>;
-                              }
-                            >
-                          >
-                        >;
-                      }
-                    >
-                  >
-                >;
-              }
-            >
-          >
-        >;
-      };
-    }>;
-  };
-};
+
+export type OnlineOrderingQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
+        Pick<ContentfulMenuVersion, 'type'>
+        & { categories?: Maybe<Array<Maybe<(
+          Pick<ContentfulCategory, 'title'>
+          & { menuItems?: Maybe<Array<Maybe<(
+            Pick<ContentfulMenuItem, 'title' | 'price'>
+            & { description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>, image?: Maybe<{ fluid?: Maybe<Pick<ContentfulFluid, 'src'>> }>, options?: Maybe<Array<Maybe<(
+              Pick<ContentfulOption, 'title' | 'maximum' | 'minimum'>
+              & { freeOptionItem?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'id' | 'title' | 'price'> | Pick<ContentfulOptionItem, 'id' | 'title' | 'price'>>>>, pricedOptionItems?: Maybe<Array<Maybe<Pick<ContentfulOptionItem, 'title' | 'price'>>>> }
+            )>>> }
+          )>>> }
+        )>>> }
+      ) }> } };
 
 export type MenuVersionDataQueryVariables = {};
 
-export type MenuVersionDataQuery = {
-  allContentfulMenuVersion: { edges: Array<{ node: Pick<ContentfulMenuVersion, 'type'> }> };
-};
+
+export type MenuVersionDataQuery = { allContentfulMenuVersion: { edges: Array<{ node: Pick<ContentfulMenuVersion, 'type'> }> } };
