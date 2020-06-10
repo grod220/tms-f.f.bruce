@@ -1,12 +1,12 @@
 import * as React from 'react';
-import {useState} from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import formatPrice from '../../../../../utilities/add-zero';
-import {removeHashes} from '../../../../../utilities/contentful-formatter';
+import { removeHashes } from '../../../../../utilities/contentful-formatter';
 import OrderStore from '../../../stores/order-store';
 import MenuItemModal from './modal';
-import {ContentfulMenuItem} from '../../../../../../graphql-types';
+import { ContentfulMenuItem } from '../../../../../../graphql-types';
 
 const ItemContainer = styled.div<{ hasItem: boolean }>`
   border: ${({ hasItem }) => (hasItem ? '3px solid #84bf5b' : '1px solid #cecece')};

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
-import {media} from '../../../utilities/media';
+import { media } from '../../../utilities/media';
 
 import OrderStore from '../stores/order-store';
-import {removeHashes} from '../../../utilities/contentful-formatter';
+import { removeHashes } from '../../../utilities/contentful-formatter';
 
 export const Section = styled.div`
   color: ${({ active }) => (active ? '#902e2d' : '#4c4c4c')};

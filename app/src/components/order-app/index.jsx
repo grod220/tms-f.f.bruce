@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react';
-import {observer} from 'mobx-react-lite';
+import React, { useEffect } from 'react';
+import { observer } from 'mobx-react-lite';
 import 'mobx-react-lite/batchingForReactDom';
 
 import OrderNav from './order-nav';
 import OrderStore from './stores/order-store';
 import Checkout from './checkout';
-import {getNextAvailableFulfillmentDateStr, getNextAvailableFulfillmentTimeStr} from './stores/date-utils';
+import { getNextAvailableFulfillmentDateStr, getNextAvailableFulfillmentTimeStr } from './stores/date-utils';
 import OrderMenu from './order-menu';
 
 const initializeModule = (catering) => {

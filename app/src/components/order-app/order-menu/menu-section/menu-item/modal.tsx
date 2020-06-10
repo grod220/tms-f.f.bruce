@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import ReactModal from 'react-modal';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 
 import OrderStore from '../../../stores/order-store';
 import ItemStore from '../../../stores/item-store';
@@ -9,7 +9,7 @@ import AddToCart from './add-to-cart';
 import MenuItemOptions from './menu-item-options';
 
 import './modal.css';
-import {ContentfulMenuItem, ContentfulOption} from '../../../../../../graphql-types';
+import { ContentfulMenuItem, ContentfulOption } from '../../../../../../graphql-types';
 
 const Content = styled.div`
   width: 100%;

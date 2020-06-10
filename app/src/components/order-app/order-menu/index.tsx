@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
 import MenuSection from './menu-section';
-import {graphql, useStaticQuery} from 'gatsby';
-import {ContentfulCategory, OnlineOrderingQuery} from '../../../../graphql-types';
+import { graphql, useStaticQuery } from 'gatsby';
+import { ContentfulCategory, OnlineOrderingQuery } from '../../../../graphql-types';
 
 const Container = styled.div`
   display: flex;

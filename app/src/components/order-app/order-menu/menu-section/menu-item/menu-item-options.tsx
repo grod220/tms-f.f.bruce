@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import ItemStore from '../../../stores/item-store';
 
 import AddZero from '../../../../../utilities/add-zero';
-import {ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption} from '../../../../../../graphql-types';
-import {removeHashes} from '../../../../../utilities/contentful-formatter';
+import { ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption } from '../../../../../../graphql-types';
+import { removeHashes } from '../../../../../utilities/contentful-formatter';
 
 const SectionHeader = styled.div`
   font-size: 22px;

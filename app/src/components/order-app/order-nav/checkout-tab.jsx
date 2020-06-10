@@ -1,9 +1,9 @@
 import React from 'react';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 import styled from 'styled-components';
 
 import OrderStore from '../stores/order-store';
-import {Section} from './section-tab';
+import { Section } from './section-tab';
 
 const CartCount = styled.div`
   background-color: #8f2e2d;

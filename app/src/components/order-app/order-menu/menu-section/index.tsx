@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 import MenuItem from './menu-item';
-import {ContentfulCategory, ContentfulMenuItem} from '../../../../../graphql-types';
-import {removeHashes} from '../../../../utilities/contentful-formatter';
+import { ContentfulCategory, ContentfulMenuItem } from '../../../../../graphql-types';
+import { removeHashes } from '../../../../utilities/contentful-formatter';
 
 const CategoryTitle = styled.h2`
   font-weight: normal;

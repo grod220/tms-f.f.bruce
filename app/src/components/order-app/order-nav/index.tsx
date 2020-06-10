@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import {observer} from 'mobx-react-lite';
+import { observer } from 'mobx-react-lite';
 
 import SectionTab from './section-tab';
 import CheckoutTab from './checkout-tab';
-import {graphql, useStaticQuery} from 'gatsby';
-import {MenuVersionDataQuery} from '../../../../graphql-types';
+import { graphql, useStaticQuery } from 'gatsby';
+import { MenuVersionDataQuery } from '../../../../graphql-types';
 
 const Container = styled.div`
   height: 7rem;
