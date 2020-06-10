@@ -1,6 +1,6 @@
-import {action, computed, observable} from 'mobx';
-import {ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption} from '../../../../graphql-types';
-import {removeHashes} from '../../../utilities/contentful-formatter';
+import { action, computed, observable } from 'mobx';
+import { ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption } from '../../../../graphql-types';
+import { removeHashes } from '../../../utilities/contentful-formatter';
 
 type OptionChoice = { title: string; price: number };
 type ContentfulOptionWithChoices = ContentfulOption & { choices: OptionChoice[] };
