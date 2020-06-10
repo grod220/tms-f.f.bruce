@@ -4,8 +4,8 @@ import {observer} from 'mobx-react-lite';
 import ItemStore from '../../../stores/item-store';
 
 import AddZero from '../../../../../utilities/add-zero';
-import {removeHashes} from '../../../../../utilities/contentful-formatter';
 import {ContentfulMenuItemContentfulOptionItemUnion, ContentfulOption} from '../../../../../../graphql-types';
+import {removeHashes} from '../../../../../utilities/contentful-formatter';
 
 const SectionHeader = styled.div`
   font-size: 22px;
@@ -76,12 +76,6 @@ const MaxNotify = styled.div`
   color: #4c4c4c;
 `;
 
-const Divider = styled.div`
-  margin-bottom: 20px;
-  color: #4c4c4c;
-  width: 100%;
-`;
-
 const ExtraCost = styled.span`
   color: #4c4c4c;
   font-size: 16px;
@@ -95,56 +89,42 @@ const combineOptionItems = (
   pricedOptionItems: ContentfulOption['pricedOptionItems'],
 ): CombinedOptionItem[] => {
   const returnArr: CombinedOptionItem[] = [];
+  // @ts-ignore
   freeOptionItems?.forEach((optionItem) => returnArr.push({ ...optionItem, isFree: true }));
+  // @ts-ignore
   pricedOptionItems?.forEach((optionItem) => returnArr.push({ ...optionItem, isFree: false }));
   return returnArr;
 };
 
 interface MenuItemOptionsProps {
-  store: ItemStore;
-  options?: ContentfulOption[];
+  itemStore: ItemStore;
 }
 
-const MenuItemOptions = observer(({ store, options }: MenuItemOptionsProps) => {
-  const handleChoice = (
-    option: ContentfulOption,
-    optionItem: ContentfulMenuItemContentfulOptionItemUnion,
-    isFree: boolean,
-  ): void => {
-    const optionObj = store.options.find((storeOptionObj) => storeOptionObj.title === option.title);
-    if (!optionObj) return;
-    // if (optionObj.maximum && optionObj.choices.length === optionObj.maximum) return;
-    optionObj.choices.push({ title: optionItem.title as string, price: isFree ? 0 : optionItem.price ?? 0 });
-  };
-
-  const verifySelected = (option: string, choiceName: string) => {
-    return store.isSelected(option, choiceName);
-  };
-
-  if (!options) return <></>;
+const MenuItemOptions = observer(({ itemStore }: MenuItemOptionsProps) => {
+  if (!itemStore.options.length) return <></>;
 
   return (
     <>
-      {options.map((option, i) => (
+      {itemStore.options.map((option, i) => (
         <div key={i}>
           <SectionHeader>
-            {removeHashes(option.title)}
-            {option.maximum && <MaxNotify>Choose {option.maximum} maximum</MaxNotify>}
+            {option.title}
+            {option.maximum && option.maximum > 1 && <MaxNotify>Choose {option.maximum} maximum</MaxNotify>}
           </SectionHeader>
           <OptionsContainer>
             {combineOptionItems(option.freeOptionItem, option.pricedOptionItems).map((optionItem, i) => (
-              <SingleOption key={i} onClick={() => handleChoice(option, optionItem, optionItem.isFree)}>
+              <SingleOption key={i} onClick={() => itemStore.handleChoice(option, optionItem, optionItem.isFree)}>
                 <SelectWrapper>
                   {option.maximum === 1 ? (
                     <SelectionBox>
-                      <InnerSelect selected={verifySelected(option.title ?? '', optionItem.title ?? '')} />
+                      <InnerSelect selected={itemStore.isSelected(option.title, optionItem.title)} />
                     </SelectionBox>
                   ) : (
                     <AdditionsCheckbox>
-                      <InnerCheck selected={false} />
+                      <InnerCheck selected={itemStore.isSelected(option.title, optionItem.title)} />
                     </AdditionsCheckbox>
                   )}
-                  {optionItem?.title}
+                  {removeHashes(optionItem?.title)}
                 </SelectWrapper>
                 {!optionItem.isFree && (
                   <ExtraCost>

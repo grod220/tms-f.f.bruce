@@ -102,7 +102,7 @@ const Modal = observer(({ itemData, closeFunc }: ModalProps) => {
           </Name>
           <div>{itemData.description?.description}</div>
         </Description>
-        <MenuItemOptions store={itemStoreInstance} options={itemData.options as ContentfulOption[] | undefined} />
+        <MenuItemOptions itemStore={itemStoreInstance} />
         {/* @ts-ignore */}
         <AddToCart shoppingCart={OrderStore.shoppingCart} itemStore={itemStoreInstance} closeFunc={closeFunc} />
       </Content>
