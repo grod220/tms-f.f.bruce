@@ -62,11 +62,9 @@ export default function Overlay() {
       <BlurredBackground onClick={() => setOpen(false)}>
         <Modal onClick={(e) => e.stopPropagation()}>
           <X onClick={() => setOpen(false)}>X</X>
-          <WelcomeTitle>Happy Memorial Day</WelcomeTitle>
+          <WelcomeTitle>Come Dine in with us</WelcomeTitle>
           <p>
-            To all of The Meatball Stoppe Famiglia! We will be closed Monday to allow time for our celebration of past
-            and present hero’s. <b>We will reopen Tuesday at 11am</b> and we’d be honored to serve you in our newly
-            remodeled dining room. Curbside pickup and Delivery is our norm.
+            We are open safely and also maintaining curbside delivery permanently for those of our friends that prefer!
           </p>
           <p>
             <i>— Jeff & Isabella Morgia</i>

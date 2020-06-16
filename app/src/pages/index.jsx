@@ -11,6 +11,7 @@ import LaDifferenzaPromo from '../components/homepage/la-differenza-promo';
 import Map from '../components/homepage/map';
 import Passion from '../components/homepage/passion';
 import Footer from '../components/homepage/footer';
+import Overlay from '../components/homepage/modal-overlay';
 
 export default function Index() {
   return (
@@ -22,7 +23,7 @@ export default function Index() {
           content="An authentic Italian restaurant loved by Guy Fieri & the entire community. Orlando's #1 ranked most family-friendly restaurant by USA Today."
         />
       </Helmet>
-      {/*{onOrBeforeMemorialDay && <Overlay />} buggy...*/}
+      <Overlay />
       <BigHero />
       <OrderBar />
       <LazyLoad height={350}>
