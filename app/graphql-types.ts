@@ -15,16 +15,6 @@ export type Scalars = {
   JSON: any;
 };
 
-
-
-
-
-
-
-
-
-
-
 export type BooleanQueryOperatorInput = {
   eq?: Maybe<Scalars['Boolean']>;
   ne?: Maybe<Scalars['Boolean']>;
@@ -51,7 +41,6 @@ export type ContentfulAsset = Node & {
   resize?: Maybe<ContentfulResize>;
 };
 
-
 export type ContentfulAssetFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -62,7 +51,6 @@ export type ContentfulAssetFixedArgs = {
   background?: Maybe<Scalars['String']>;
 };
 
-
 export type ContentfulAssetResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -72,7 +60,6 @@ export type ContentfulAssetResolutionsArgs = {
   cropFocus?: Maybe<ContentfulImageCropFocus>;
   background?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulAssetFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -85,7 +72,6 @@ export type ContentfulAssetFluidArgs = {
   sizes?: Maybe<Scalars['String']>;
 };
 
-
 export type ContentfulAssetSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -96,7 +82,6 @@ export type ContentfulAssetSizesArgs = {
   background?: Maybe<Scalars['String']>;
   sizes?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulAssetResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -118,11 +103,9 @@ export type ContentfulAssetConnection = {
   group: Array<ContentfulAssetGroupConnection>;
 };
 
-
 export type ContentfulAssetConnectionDistinctArgs = {
   field: ContentfulAssetFieldsEnum;
 };
-
 
 export type ContentfulAssetConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -136,7 +119,7 @@ export type ContentfulAssetEdge = {
   previous?: Maybe<ContentfulAsset>;
 };
 
-export type ContentfulAssetFieldsEnum = 
+export type ContentfulAssetFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -355,14 +338,12 @@ export type ContentfulCategory = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
-
 export type ContentfulCategoryCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulCategoryUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -380,11 +361,9 @@ export type ContentfulCategoryConnection = {
   group: Array<ContentfulCategoryGroupConnection>;
 };
 
-
 export type ContentfulCategoryConnectionDistinctArgs = {
   field: ContentfulCategoryFieldsEnum;
 };
-
 
 export type ContentfulCategoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -398,7 +377,7 @@ export type ContentfulCategoryEdge = {
   previous?: Maybe<ContentfulCategory>;
 };
 
-export type ContentfulCategoryFieldsEnum = 
+export type ContentfulCategoryFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -527,6 +506,7 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___internal___type'
   | 'menuItems___title'
   | 'menuItems___price'
+  | 'menuItems___submitImageToUber'
   | 'menuItems___temperature'
   | 'menuItems___image___id'
   | 'menuItems___image___parent___id'
@@ -605,7 +585,29 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___options___internal___owner'
   | 'menuItems___options___internal___type'
   | 'menuItems___options___title'
+  | 'menuItems___options___maximum'
   | 'menuItems___options___minimum'
+  | 'menuItems___options___menu_item'
+  | 'menuItems___options___menu_item___id'
+  | 'menuItems___options___menu_item___children'
+  | 'menuItems___options___menu_item___title'
+  | 'menuItems___options___menu_item___price'
+  | 'menuItems___options___menu_item___submitImageToUber'
+  | 'menuItems___options___menu_item___temperature'
+  | 'menuItems___options___menu_item___options'
+  | 'menuItems___options___menu_item___category'
+  | 'menuItems___options___menu_item___spaceId'
+  | 'menuItems___options___menu_item___contentful_id'
+  | 'menuItems___options___menu_item___createdAt'
+  | 'menuItems___options___menu_item___updatedAt'
+  | 'menuItems___options___menu_item___node_locale'
+  | 'menuItems___options___menu_item___option'
+  | 'menuItems___options___spaceId'
+  | 'menuItems___options___contentful_id'
+  | 'menuItems___options___createdAt'
+  | 'menuItems___options___updatedAt'
+  | 'menuItems___options___sys___revision'
+  | 'menuItems___options___node_locale'
   | 'menuItems___options___pricedOptionItems'
   | 'menuItems___options___pricedOptionItems___id'
   | 'menuItems___options___pricedOptionItems___children'
@@ -618,28 +620,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___options___pricedOptionItems___createdAt'
   | 'menuItems___options___pricedOptionItems___updatedAt'
   | 'menuItems___options___pricedOptionItems___node_locale'
-  | 'menuItems___options___menu_item'
-  | 'menuItems___options___menu_item___id'
-  | 'menuItems___options___menu_item___children'
-  | 'menuItems___options___menu_item___title'
-  | 'menuItems___options___menu_item___price'
-  | 'menuItems___options___menu_item___temperature'
-  | 'menuItems___options___menu_item___options'
-  | 'menuItems___options___menu_item___category'
-  | 'menuItems___options___menu_item___spaceId'
-  | 'menuItems___options___menu_item___contentful_id'
-  | 'menuItems___options___menu_item___createdAt'
-  | 'menuItems___options___menu_item___updatedAt'
-  | 'menuItems___options___menu_item___node_locale'
-  | 'menuItems___options___menu_item___submitImageToUber'
-  | 'menuItems___options___menu_item___option'
-  | 'menuItems___options___spaceId'
-  | 'menuItems___options___contentful_id'
-  | 'menuItems___options___createdAt'
-  | 'menuItems___options___updatedAt'
-  | 'menuItems___options___sys___revision'
-  | 'menuItems___options___node_locale'
-  | 'menuItems___options___maximum'
   | 'menuItems___category'
   | 'menuItems___category___id'
   | 'menuItems___category___parent___id'
@@ -661,6 +641,7 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___category___menuItems___children'
   | 'menuItems___category___menuItems___title'
   | 'menuItems___category___menuItems___price'
+  | 'menuItems___category___menuItems___submitImageToUber'
   | 'menuItems___category___menuItems___temperature'
   | 'menuItems___category___menuItems___options'
   | 'menuItems___category___menuItems___category'
@@ -669,7 +650,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___category___menuItems___createdAt'
   | 'menuItems___category___menuItems___updatedAt'
   | 'menuItems___category___menuItems___node_locale'
-  | 'menuItems___category___menuItems___submitImageToUber'
   | 'menuItems___category___menuItems___option'
   | 'menuItems___category___menu_version'
   | 'menuItems___category___menu_version___id'
@@ -708,7 +688,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___description___internal___owner'
   | 'menuItems___description___internal___type'
   | 'menuItems___description___description'
-  | 'menuItems___submitImageToUber'
   | 'menuItems___option'
   | 'menuItems___option___id'
   | 'menuItems___option___parent___id'
@@ -725,7 +704,29 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___option___internal___owner'
   | 'menuItems___option___internal___type'
   | 'menuItems___option___title'
+  | 'menuItems___option___maximum'
   | 'menuItems___option___minimum'
+  | 'menuItems___option___menu_item'
+  | 'menuItems___option___menu_item___id'
+  | 'menuItems___option___menu_item___children'
+  | 'menuItems___option___menu_item___title'
+  | 'menuItems___option___menu_item___price'
+  | 'menuItems___option___menu_item___submitImageToUber'
+  | 'menuItems___option___menu_item___temperature'
+  | 'menuItems___option___menu_item___options'
+  | 'menuItems___option___menu_item___category'
+  | 'menuItems___option___menu_item___spaceId'
+  | 'menuItems___option___menu_item___contentful_id'
+  | 'menuItems___option___menu_item___createdAt'
+  | 'menuItems___option___menu_item___updatedAt'
+  | 'menuItems___option___menu_item___node_locale'
+  | 'menuItems___option___menu_item___option'
+  | 'menuItems___option___spaceId'
+  | 'menuItems___option___contentful_id'
+  | 'menuItems___option___createdAt'
+  | 'menuItems___option___updatedAt'
+  | 'menuItems___option___sys___revision'
+  | 'menuItems___option___node_locale'
   | 'menuItems___option___pricedOptionItems'
   | 'menuItems___option___pricedOptionItems___id'
   | 'menuItems___option___pricedOptionItems___children'
@@ -738,28 +739,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menuItems___option___pricedOptionItems___createdAt'
   | 'menuItems___option___pricedOptionItems___updatedAt'
   | 'menuItems___option___pricedOptionItems___node_locale'
-  | 'menuItems___option___menu_item'
-  | 'menuItems___option___menu_item___id'
-  | 'menuItems___option___menu_item___children'
-  | 'menuItems___option___menu_item___title'
-  | 'menuItems___option___menu_item___price'
-  | 'menuItems___option___menu_item___temperature'
-  | 'menuItems___option___menu_item___options'
-  | 'menuItems___option___menu_item___category'
-  | 'menuItems___option___menu_item___spaceId'
-  | 'menuItems___option___menu_item___contentful_id'
-  | 'menuItems___option___menu_item___createdAt'
-  | 'menuItems___option___menu_item___updatedAt'
-  | 'menuItems___option___menu_item___node_locale'
-  | 'menuItems___option___menu_item___submitImageToUber'
-  | 'menuItems___option___menu_item___option'
-  | 'menuItems___option___spaceId'
-  | 'menuItems___option___contentful_id'
-  | 'menuItems___option___createdAt'
-  | 'menuItems___option___updatedAt'
-  | 'menuItems___option___sys___revision'
-  | 'menuItems___option___node_locale'
-  | 'menuItems___option___maximum'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'menuItems___childContentfulMenuItemDescriptionTextNode___parent___children'
@@ -836,6 +815,7 @@ export type ContentfulCategoryFieldsEnum =
   | 'menu_version___categories___menuItems___children'
   | 'menu_version___categories___menuItems___title'
   | 'menu_version___categories___menuItems___price'
+  | 'menu_version___categories___menuItems___submitImageToUber'
   | 'menu_version___categories___menuItems___temperature'
   | 'menu_version___categories___menuItems___options'
   | 'menu_version___categories___menuItems___category'
@@ -844,7 +824,6 @@ export type ContentfulCategoryFieldsEnum =
   | 'menu_version___categories___menuItems___createdAt'
   | 'menu_version___categories___menuItems___updatedAt'
   | 'menu_version___categories___menuItems___node_locale'
-  | 'menu_version___categories___menuItems___submitImageToUber'
   | 'menu_version___categories___menuItems___option'
   | 'menu_version___categories___menu_version'
   | 'menu_version___categories___menu_version___id'
@@ -964,11 +943,9 @@ export type ContentfulContentTypeConnection = {
   group: Array<ContentfulContentTypeGroupConnection>;
 };
 
-
 export type ContentfulContentTypeConnectionDistinctArgs = {
   field: ContentfulContentTypeFieldsEnum;
 };
-
 
 export type ContentfulContentTypeConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -982,7 +959,7 @@ export type ContentfulContentTypeEdge = {
   previous?: Maybe<ContentfulContentType>;
 };
 
-export type ContentfulContentTypeFieldsEnum = 
+export type ContentfulContentTypeFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1143,7 +1120,7 @@ export type ContentfulFluidFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
-export type ContentfulImageCropFocus = 
+export type ContentfulImageCropFocus =
   | 'TOP'
   | 'TOP_LEFT'
   | 'TOP_RIGHT'
@@ -1156,11 +1133,7 @@ export type ContentfulImageCropFocus =
   | 'FACES'
   | 'CENTER';
 
-export type ContentfulImageFormat = 
-  | 'NO_CHANGE'
-  | 'JPG'
-  | 'PNG'
-  | 'WEBP';
+export type ContentfulImageFormat = 'NO_CHANGE' | 'JPG' | 'PNG' | 'WEBP';
 
 export type ContentfulMenuItem = Node & {
   id: Scalars['ID'];
@@ -1169,6 +1142,7 @@ export type ContentfulMenuItem = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   price?: Maybe<Scalars['Float']>;
+  submitImageToUber?: Maybe<Scalars['Boolean']>;
   temperature?: Maybe<Array<Maybe<Scalars['String']>>>;
   image?: Maybe<ContentfulAsset>;
   options?: Maybe<Array<Maybe<ContentfulOption>>>;
@@ -1180,11 +1154,9 @@ export type ContentfulMenuItem = Node & {
   sys?: Maybe<ContentfulMenuItemSys>;
   node_locale?: Maybe<Scalars['String']>;
   description?: Maybe<ContentfulMenuItemDescriptionTextNode>;
-  submitImageToUber?: Maybe<Scalars['Boolean']>;
   option?: Maybe<Array<Maybe<ContentfulOption>>>;
   childContentfulMenuItemDescriptionTextNode?: Maybe<ContentfulMenuItemDescriptionTextNode>;
 };
-
 
 export type ContentfulMenuItemCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1192,7 +1164,6 @@ export type ContentfulMenuItemCreatedAtArgs = {
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulMenuItemUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -1210,11 +1181,9 @@ export type ContentfulMenuItemConnection = {
   group: Array<ContentfulMenuItemGroupConnection>;
 };
 
-
 export type ContentfulMenuItemConnectionDistinctArgs = {
   field: ContentfulMenuItemFieldsEnum;
 };
-
 
 export type ContentfulMenuItemConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1241,11 +1210,9 @@ export type ContentfulMenuItemDescriptionTextNodeConnection = {
   group: Array<ContentfulMenuItemDescriptionTextNodeGroupConnection>;
 };
 
-
 export type ContentfulMenuItemDescriptionTextNodeConnectionDistinctArgs = {
   field: ContentfulMenuItemDescriptionTextNodeFieldsEnum;
 };
-
 
 export type ContentfulMenuItemDescriptionTextNodeConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -1259,7 +1226,7 @@ export type ContentfulMenuItemDescriptionTextNodeEdge = {
   previous?: Maybe<ContentfulMenuItemDescriptionTextNode>;
 };
 
-export type ContentfulMenuItemDescriptionTextNodeFieldsEnum = 
+export type ContentfulMenuItemDescriptionTextNodeFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1376,7 +1343,7 @@ export type ContentfulMenuItemEdge = {
   previous?: Maybe<ContentfulMenuItem>;
 };
 
-export type ContentfulMenuItemFieldsEnum = 
+export type ContentfulMenuItemFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1465,6 +1432,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'internal___type'
   | 'title'
   | 'price'
+  | 'submitImageToUber'
   | 'temperature'
   | 'image___id'
   | 'image___parent___id'
@@ -1592,7 +1560,88 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___internal___owner'
   | 'options___internal___type'
   | 'options___title'
+  | 'options___maximum'
   | 'options___minimum'
+  | 'options___menu_item'
+  | 'options___menu_item___id'
+  | 'options___menu_item___parent___id'
+  | 'options___menu_item___parent___children'
+  | 'options___menu_item___children'
+  | 'options___menu_item___children___id'
+  | 'options___menu_item___children___children'
+  | 'options___menu_item___internal___content'
+  | 'options___menu_item___internal___contentDigest'
+  | 'options___menu_item___internal___description'
+  | 'options___menu_item___internal___fieldOwners'
+  | 'options___menu_item___internal___ignoreType'
+  | 'options___menu_item___internal___mediaType'
+  | 'options___menu_item___internal___owner'
+  | 'options___menu_item___internal___type'
+  | 'options___menu_item___title'
+  | 'options___menu_item___price'
+  | 'options___menu_item___submitImageToUber'
+  | 'options___menu_item___temperature'
+  | 'options___menu_item___image___id'
+  | 'options___menu_item___image___children'
+  | 'options___menu_item___image___contentful_id'
+  | 'options___menu_item___image___title'
+  | 'options___menu_item___image___description'
+  | 'options___menu_item___image___node_locale'
+  | 'options___menu_item___options'
+  | 'options___menu_item___options___id'
+  | 'options___menu_item___options___children'
+  | 'options___menu_item___options___title'
+  | 'options___menu_item___options___maximum'
+  | 'options___menu_item___options___minimum'
+  | 'options___menu_item___options___menu_item'
+  | 'options___menu_item___options___spaceId'
+  | 'options___menu_item___options___contentful_id'
+  | 'options___menu_item___options___createdAt'
+  | 'options___menu_item___options___updatedAt'
+  | 'options___menu_item___options___node_locale'
+  | 'options___menu_item___options___pricedOptionItems'
+  | 'options___menu_item___category'
+  | 'options___menu_item___category___id'
+  | 'options___menu_item___category___children'
+  | 'options___menu_item___category___title'
+  | 'options___menu_item___category___menuItems'
+  | 'options___menu_item___category___menu_version'
+  | 'options___menu_item___category___spaceId'
+  | 'options___menu_item___category___contentful_id'
+  | 'options___menu_item___category___createdAt'
+  | 'options___menu_item___category___updatedAt'
+  | 'options___menu_item___category___node_locale'
+  | 'options___menu_item___spaceId'
+  | 'options___menu_item___contentful_id'
+  | 'options___menu_item___createdAt'
+  | 'options___menu_item___updatedAt'
+  | 'options___menu_item___sys___revision'
+  | 'options___menu_item___node_locale'
+  | 'options___menu_item___description___id'
+  | 'options___menu_item___description___children'
+  | 'options___menu_item___description___description'
+  | 'options___menu_item___option'
+  | 'options___menu_item___option___id'
+  | 'options___menu_item___option___children'
+  | 'options___menu_item___option___title'
+  | 'options___menu_item___option___maximum'
+  | 'options___menu_item___option___minimum'
+  | 'options___menu_item___option___menu_item'
+  | 'options___menu_item___option___spaceId'
+  | 'options___menu_item___option___contentful_id'
+  | 'options___menu_item___option___createdAt'
+  | 'options___menu_item___option___updatedAt'
+  | 'options___menu_item___option___node_locale'
+  | 'options___menu_item___option___pricedOptionItems'
+  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___id'
+  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___children'
+  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___description'
+  | 'options___spaceId'
+  | 'options___contentful_id'
+  | 'options___createdAt'
+  | 'options___updatedAt'
+  | 'options___sys___revision'
+  | 'options___node_locale'
   | 'options___pricedOptionItems'
   | 'options___pricedOptionItems___id'
   | 'options___pricedOptionItems___parent___id'
@@ -1615,102 +1664,21 @@ export type ContentfulMenuItemFieldsEnum =
   | 'options___pricedOptionItems___option___id'
   | 'options___pricedOptionItems___option___children'
   | 'options___pricedOptionItems___option___title'
+  | 'options___pricedOptionItems___option___maximum'
   | 'options___pricedOptionItems___option___minimum'
-  | 'options___pricedOptionItems___option___pricedOptionItems'
   | 'options___pricedOptionItems___option___menu_item'
   | 'options___pricedOptionItems___option___spaceId'
   | 'options___pricedOptionItems___option___contentful_id'
   | 'options___pricedOptionItems___option___createdAt'
   | 'options___pricedOptionItems___option___updatedAt'
   | 'options___pricedOptionItems___option___node_locale'
-  | 'options___pricedOptionItems___option___maximum'
+  | 'options___pricedOptionItems___option___pricedOptionItems'
   | 'options___pricedOptionItems___spaceId'
   | 'options___pricedOptionItems___contentful_id'
   | 'options___pricedOptionItems___createdAt'
   | 'options___pricedOptionItems___updatedAt'
   | 'options___pricedOptionItems___sys___revision'
   | 'options___pricedOptionItems___node_locale'
-  | 'options___menu_item'
-  | 'options___menu_item___id'
-  | 'options___menu_item___parent___id'
-  | 'options___menu_item___parent___children'
-  | 'options___menu_item___children'
-  | 'options___menu_item___children___id'
-  | 'options___menu_item___children___children'
-  | 'options___menu_item___internal___content'
-  | 'options___menu_item___internal___contentDigest'
-  | 'options___menu_item___internal___description'
-  | 'options___menu_item___internal___fieldOwners'
-  | 'options___menu_item___internal___ignoreType'
-  | 'options___menu_item___internal___mediaType'
-  | 'options___menu_item___internal___owner'
-  | 'options___menu_item___internal___type'
-  | 'options___menu_item___title'
-  | 'options___menu_item___price'
-  | 'options___menu_item___temperature'
-  | 'options___menu_item___image___id'
-  | 'options___menu_item___image___children'
-  | 'options___menu_item___image___contentful_id'
-  | 'options___menu_item___image___title'
-  | 'options___menu_item___image___description'
-  | 'options___menu_item___image___node_locale'
-  | 'options___menu_item___options'
-  | 'options___menu_item___options___id'
-  | 'options___menu_item___options___children'
-  | 'options___menu_item___options___title'
-  | 'options___menu_item___options___minimum'
-  | 'options___menu_item___options___pricedOptionItems'
-  | 'options___menu_item___options___menu_item'
-  | 'options___menu_item___options___spaceId'
-  | 'options___menu_item___options___contentful_id'
-  | 'options___menu_item___options___createdAt'
-  | 'options___menu_item___options___updatedAt'
-  | 'options___menu_item___options___node_locale'
-  | 'options___menu_item___options___maximum'
-  | 'options___menu_item___category'
-  | 'options___menu_item___category___id'
-  | 'options___menu_item___category___children'
-  | 'options___menu_item___category___title'
-  | 'options___menu_item___category___menuItems'
-  | 'options___menu_item___category___menu_version'
-  | 'options___menu_item___category___spaceId'
-  | 'options___menu_item___category___contentful_id'
-  | 'options___menu_item___category___createdAt'
-  | 'options___menu_item___category___updatedAt'
-  | 'options___menu_item___category___node_locale'
-  | 'options___menu_item___spaceId'
-  | 'options___menu_item___contentful_id'
-  | 'options___menu_item___createdAt'
-  | 'options___menu_item___updatedAt'
-  | 'options___menu_item___sys___revision'
-  | 'options___menu_item___node_locale'
-  | 'options___menu_item___description___id'
-  | 'options___menu_item___description___children'
-  | 'options___menu_item___description___description'
-  | 'options___menu_item___submitImageToUber'
-  | 'options___menu_item___option'
-  | 'options___menu_item___option___id'
-  | 'options___menu_item___option___children'
-  | 'options___menu_item___option___title'
-  | 'options___menu_item___option___minimum'
-  | 'options___menu_item___option___pricedOptionItems'
-  | 'options___menu_item___option___menu_item'
-  | 'options___menu_item___option___spaceId'
-  | 'options___menu_item___option___contentful_id'
-  | 'options___menu_item___option___createdAt'
-  | 'options___menu_item___option___updatedAt'
-  | 'options___menu_item___option___node_locale'
-  | 'options___menu_item___option___maximum'
-  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___id'
-  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___children'
-  | 'options___menu_item___childContentfulMenuItemDescriptionTextNode___description'
-  | 'options___spaceId'
-  | 'options___contentful_id'
-  | 'options___createdAt'
-  | 'options___updatedAt'
-  | 'options___sys___revision'
-  | 'options___node_locale'
-  | 'options___maximum'
   | 'category'
   | 'category___id'
   | 'category___parent___id'
@@ -1768,6 +1736,7 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___internal___type'
   | 'category___menuItems___title'
   | 'category___menuItems___price'
+  | 'category___menuItems___submitImageToUber'
   | 'category___menuItems___temperature'
   | 'category___menuItems___image___id'
   | 'category___menuItems___image___children'
@@ -1779,15 +1748,15 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___options___id'
   | 'category___menuItems___options___children'
   | 'category___menuItems___options___title'
+  | 'category___menuItems___options___maximum'
   | 'category___menuItems___options___minimum'
-  | 'category___menuItems___options___pricedOptionItems'
   | 'category___menuItems___options___menu_item'
   | 'category___menuItems___options___spaceId'
   | 'category___menuItems___options___contentful_id'
   | 'category___menuItems___options___createdAt'
   | 'category___menuItems___options___updatedAt'
   | 'category___menuItems___options___node_locale'
-  | 'category___menuItems___options___maximum'
+  | 'category___menuItems___options___pricedOptionItems'
   | 'category___menuItems___category'
   | 'category___menuItems___category___id'
   | 'category___menuItems___category___children'
@@ -1808,20 +1777,19 @@ export type ContentfulMenuItemFieldsEnum =
   | 'category___menuItems___description___id'
   | 'category___menuItems___description___children'
   | 'category___menuItems___description___description'
-  | 'category___menuItems___submitImageToUber'
   | 'category___menuItems___option'
   | 'category___menuItems___option___id'
   | 'category___menuItems___option___children'
   | 'category___menuItems___option___title'
+  | 'category___menuItems___option___maximum'
   | 'category___menuItems___option___minimum'
-  | 'category___menuItems___option___pricedOptionItems'
   | 'category___menuItems___option___menu_item'
   | 'category___menuItems___option___spaceId'
   | 'category___menuItems___option___contentful_id'
   | 'category___menuItems___option___createdAt'
   | 'category___menuItems___option___updatedAt'
   | 'category___menuItems___option___node_locale'
-  | 'category___menuItems___option___maximum'
+  | 'category___menuItems___option___pricedOptionItems'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___children'
   | 'category___menuItems___childContentfulMenuItemDescriptionTextNode___description'
@@ -1913,7 +1881,6 @@ export type ContentfulMenuItemFieldsEnum =
   | 'description___internal___owner'
   | 'description___internal___type'
   | 'description___description'
-  | 'submitImageToUber'
   | 'option'
   | 'option___id'
   | 'option___parent___id'
@@ -1954,7 +1921,88 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___internal___owner'
   | 'option___internal___type'
   | 'option___title'
+  | 'option___maximum'
   | 'option___minimum'
+  | 'option___menu_item'
+  | 'option___menu_item___id'
+  | 'option___menu_item___parent___id'
+  | 'option___menu_item___parent___children'
+  | 'option___menu_item___children'
+  | 'option___menu_item___children___id'
+  | 'option___menu_item___children___children'
+  | 'option___menu_item___internal___content'
+  | 'option___menu_item___internal___contentDigest'
+  | 'option___menu_item___internal___description'
+  | 'option___menu_item___internal___fieldOwners'
+  | 'option___menu_item___internal___ignoreType'
+  | 'option___menu_item___internal___mediaType'
+  | 'option___menu_item___internal___owner'
+  | 'option___menu_item___internal___type'
+  | 'option___menu_item___title'
+  | 'option___menu_item___price'
+  | 'option___menu_item___submitImageToUber'
+  | 'option___menu_item___temperature'
+  | 'option___menu_item___image___id'
+  | 'option___menu_item___image___children'
+  | 'option___menu_item___image___contentful_id'
+  | 'option___menu_item___image___title'
+  | 'option___menu_item___image___description'
+  | 'option___menu_item___image___node_locale'
+  | 'option___menu_item___options'
+  | 'option___menu_item___options___id'
+  | 'option___menu_item___options___children'
+  | 'option___menu_item___options___title'
+  | 'option___menu_item___options___maximum'
+  | 'option___menu_item___options___minimum'
+  | 'option___menu_item___options___menu_item'
+  | 'option___menu_item___options___spaceId'
+  | 'option___menu_item___options___contentful_id'
+  | 'option___menu_item___options___createdAt'
+  | 'option___menu_item___options___updatedAt'
+  | 'option___menu_item___options___node_locale'
+  | 'option___menu_item___options___pricedOptionItems'
+  | 'option___menu_item___category'
+  | 'option___menu_item___category___id'
+  | 'option___menu_item___category___children'
+  | 'option___menu_item___category___title'
+  | 'option___menu_item___category___menuItems'
+  | 'option___menu_item___category___menu_version'
+  | 'option___menu_item___category___spaceId'
+  | 'option___menu_item___category___contentful_id'
+  | 'option___menu_item___category___createdAt'
+  | 'option___menu_item___category___updatedAt'
+  | 'option___menu_item___category___node_locale'
+  | 'option___menu_item___spaceId'
+  | 'option___menu_item___contentful_id'
+  | 'option___menu_item___createdAt'
+  | 'option___menu_item___updatedAt'
+  | 'option___menu_item___sys___revision'
+  | 'option___menu_item___node_locale'
+  | 'option___menu_item___description___id'
+  | 'option___menu_item___description___children'
+  | 'option___menu_item___description___description'
+  | 'option___menu_item___option'
+  | 'option___menu_item___option___id'
+  | 'option___menu_item___option___children'
+  | 'option___menu_item___option___title'
+  | 'option___menu_item___option___maximum'
+  | 'option___menu_item___option___minimum'
+  | 'option___menu_item___option___menu_item'
+  | 'option___menu_item___option___spaceId'
+  | 'option___menu_item___option___contentful_id'
+  | 'option___menu_item___option___createdAt'
+  | 'option___menu_item___option___updatedAt'
+  | 'option___menu_item___option___node_locale'
+  | 'option___menu_item___option___pricedOptionItems'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
+  | 'option___spaceId'
+  | 'option___contentful_id'
+  | 'option___createdAt'
+  | 'option___updatedAt'
+  | 'option___sys___revision'
+  | 'option___node_locale'
   | 'option___pricedOptionItems'
   | 'option___pricedOptionItems___id'
   | 'option___pricedOptionItems___parent___id'
@@ -1977,102 +2025,21 @@ export type ContentfulMenuItemFieldsEnum =
   | 'option___pricedOptionItems___option___id'
   | 'option___pricedOptionItems___option___children'
   | 'option___pricedOptionItems___option___title'
+  | 'option___pricedOptionItems___option___maximum'
   | 'option___pricedOptionItems___option___minimum'
-  | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___option___menu_item'
   | 'option___pricedOptionItems___option___spaceId'
   | 'option___pricedOptionItems___option___contentful_id'
   | 'option___pricedOptionItems___option___createdAt'
   | 'option___pricedOptionItems___option___updatedAt'
   | 'option___pricedOptionItems___option___node_locale'
-  | 'option___pricedOptionItems___option___maximum'
+  | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___spaceId'
   | 'option___pricedOptionItems___contentful_id'
   | 'option___pricedOptionItems___createdAt'
   | 'option___pricedOptionItems___updatedAt'
   | 'option___pricedOptionItems___sys___revision'
   | 'option___pricedOptionItems___node_locale'
-  | 'option___menu_item'
-  | 'option___menu_item___id'
-  | 'option___menu_item___parent___id'
-  | 'option___menu_item___parent___children'
-  | 'option___menu_item___children'
-  | 'option___menu_item___children___id'
-  | 'option___menu_item___children___children'
-  | 'option___menu_item___internal___content'
-  | 'option___menu_item___internal___contentDigest'
-  | 'option___menu_item___internal___description'
-  | 'option___menu_item___internal___fieldOwners'
-  | 'option___menu_item___internal___ignoreType'
-  | 'option___menu_item___internal___mediaType'
-  | 'option___menu_item___internal___owner'
-  | 'option___menu_item___internal___type'
-  | 'option___menu_item___title'
-  | 'option___menu_item___price'
-  | 'option___menu_item___temperature'
-  | 'option___menu_item___image___id'
-  | 'option___menu_item___image___children'
-  | 'option___menu_item___image___contentful_id'
-  | 'option___menu_item___image___title'
-  | 'option___menu_item___image___description'
-  | 'option___menu_item___image___node_locale'
-  | 'option___menu_item___options'
-  | 'option___menu_item___options___id'
-  | 'option___menu_item___options___children'
-  | 'option___menu_item___options___title'
-  | 'option___menu_item___options___minimum'
-  | 'option___menu_item___options___pricedOptionItems'
-  | 'option___menu_item___options___menu_item'
-  | 'option___menu_item___options___spaceId'
-  | 'option___menu_item___options___contentful_id'
-  | 'option___menu_item___options___createdAt'
-  | 'option___menu_item___options___updatedAt'
-  | 'option___menu_item___options___node_locale'
-  | 'option___menu_item___options___maximum'
-  | 'option___menu_item___category'
-  | 'option___menu_item___category___id'
-  | 'option___menu_item___category___children'
-  | 'option___menu_item___category___title'
-  | 'option___menu_item___category___menuItems'
-  | 'option___menu_item___category___menu_version'
-  | 'option___menu_item___category___spaceId'
-  | 'option___menu_item___category___contentful_id'
-  | 'option___menu_item___category___createdAt'
-  | 'option___menu_item___category___updatedAt'
-  | 'option___menu_item___category___node_locale'
-  | 'option___menu_item___spaceId'
-  | 'option___menu_item___contentful_id'
-  | 'option___menu_item___createdAt'
-  | 'option___menu_item___updatedAt'
-  | 'option___menu_item___sys___revision'
-  | 'option___menu_item___node_locale'
-  | 'option___menu_item___description___id'
-  | 'option___menu_item___description___children'
-  | 'option___menu_item___description___description'
-  | 'option___menu_item___submitImageToUber'
-  | 'option___menu_item___option'
-  | 'option___menu_item___option___id'
-  | 'option___menu_item___option___children'
-  | 'option___menu_item___option___title'
-  | 'option___menu_item___option___minimum'
-  | 'option___menu_item___option___pricedOptionItems'
-  | 'option___menu_item___option___menu_item'
-  | 'option___menu_item___option___spaceId'
-  | 'option___menu_item___option___contentful_id'
-  | 'option___menu_item___option___createdAt'
-  | 'option___menu_item___option___updatedAt'
-  | 'option___menu_item___option___node_locale'
-  | 'option___menu_item___option___maximum'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
-  | 'option___spaceId'
-  | 'option___contentful_id'
-  | 'option___createdAt'
-  | 'option___updatedAt'
-  | 'option___sys___revision'
-  | 'option___node_locale'
-  | 'option___maximum'
   | 'childContentfulMenuItemDescriptionTextNode___id'
   | 'childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'childContentfulMenuItemDescriptionTextNode___parent___parent___id'
@@ -2120,6 +2087,7 @@ export type ContentfulMenuItemFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   price?: Maybe<FloatQueryOperatorInput>;
+  submitImageToUber?: Maybe<BooleanQueryOperatorInput>;
   temperature?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
   options?: Maybe<ContentfulOptionFilterListInput>;
@@ -2131,7 +2099,6 @@ export type ContentfulMenuItemFilterInput = {
   sys?: Maybe<ContentfulMenuItemSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
-  submitImageToUber?: Maybe<BooleanQueryOperatorInput>;
   option?: Maybe<ContentfulOptionFilterListInput>;
   childContentfulMenuItemDescriptionTextNode?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
 };
@@ -2201,14 +2168,12 @@ export type ContentfulMenuVersion = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
-
 export type ContentfulMenuVersionCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulMenuVersionUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2226,11 +2191,9 @@ export type ContentfulMenuVersionConnection = {
   group: Array<ContentfulMenuVersionGroupConnection>;
 };
 
-
 export type ContentfulMenuVersionConnectionDistinctArgs = {
   field: ContentfulMenuVersionFieldsEnum;
 };
-
 
 export type ContentfulMenuVersionConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2244,7 +2207,7 @@ export type ContentfulMenuVersionEdge = {
   previous?: Maybe<ContentfulMenuVersion>;
 };
 
-export type ContentfulMenuVersionFieldsEnum = 
+export type ContentfulMenuVersionFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2389,6 +2352,7 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___internal___type'
   | 'categories___menuItems___title'
   | 'categories___menuItems___price'
+  | 'categories___menuItems___submitImageToUber'
   | 'categories___menuItems___temperature'
   | 'categories___menuItems___image___id'
   | 'categories___menuItems___image___children'
@@ -2400,15 +2364,15 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___options___id'
   | 'categories___menuItems___options___children'
   | 'categories___menuItems___options___title'
+  | 'categories___menuItems___options___maximum'
   | 'categories___menuItems___options___minimum'
-  | 'categories___menuItems___options___pricedOptionItems'
   | 'categories___menuItems___options___menu_item'
   | 'categories___menuItems___options___spaceId'
   | 'categories___menuItems___options___contentful_id'
   | 'categories___menuItems___options___createdAt'
   | 'categories___menuItems___options___updatedAt'
   | 'categories___menuItems___options___node_locale'
-  | 'categories___menuItems___options___maximum'
+  | 'categories___menuItems___options___pricedOptionItems'
   | 'categories___menuItems___category'
   | 'categories___menuItems___category___id'
   | 'categories___menuItems___category___children'
@@ -2429,20 +2393,19 @@ export type ContentfulMenuVersionFieldsEnum =
   | 'categories___menuItems___description___id'
   | 'categories___menuItems___description___children'
   | 'categories___menuItems___description___description'
-  | 'categories___menuItems___submitImageToUber'
   | 'categories___menuItems___option'
   | 'categories___menuItems___option___id'
   | 'categories___menuItems___option___children'
   | 'categories___menuItems___option___title'
+  | 'categories___menuItems___option___maximum'
   | 'categories___menuItems___option___minimum'
-  | 'categories___menuItems___option___pricedOptionItems'
   | 'categories___menuItems___option___menu_item'
   | 'categories___menuItems___option___spaceId'
   | 'categories___menuItems___option___contentful_id'
   | 'categories___menuItems___option___createdAt'
   | 'categories___menuItems___option___updatedAt'
   | 'categories___menuItems___option___node_locale'
-  | 'categories___menuItems___option___maximum'
+  | 'categories___menuItems___option___pricedOptionItems'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___id'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___children'
   | 'categories___menuItems___childContentfulMenuItemDescriptionTextNode___description'
@@ -2567,8 +2530,9 @@ export type ContentfulOption = Node & {
   children: Array<Node>;
   internal: Internal;
   title?: Maybe<Scalars['String']>;
+  maximum?: Maybe<Scalars['Int']>;
   minimum?: Maybe<Scalars['Int']>;
-  pricedOptionItems?: Maybe<Array<Maybe<ContentfulOptionItem>>>;
+  freeOptionItem?: Maybe<Array<Maybe<ContentfulMenuItemContentfulOptionItemUnion>>>;
   menu_item?: Maybe<Array<Maybe<ContentfulMenuItem>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
@@ -2576,10 +2540,8 @@ export type ContentfulOption = Node & {
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulOptionSys>;
   node_locale?: Maybe<Scalars['String']>;
-  maximum?: Maybe<Scalars['Int']>;
-  freeOptionItem?: Maybe<Array<Maybe<ContentfulMenuItemContentfulOptionItemUnion>>>;
+  pricedOptionItems?: Maybe<Array<Maybe<ContentfulOptionItem>>>;
 };
-
 
 export type ContentfulOptionCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2587,7 +2549,6 @@ export type ContentfulOptionCreatedAtArgs = {
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulOptionUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -2605,11 +2566,9 @@ export type ContentfulOptionConnection = {
   group: Array<ContentfulOptionGroupConnection>;
 };
 
-
 export type ContentfulOptionConnectionDistinctArgs = {
   field: ContentfulOptionFieldsEnum;
 };
-
 
 export type ContentfulOptionConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -2623,7 +2582,7 @@ export type ContentfulOptionEdge = {
   previous?: Maybe<ContentfulOption>;
 };
 
-export type ContentfulOptionFieldsEnum = 
+export type ContentfulOptionFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2711,106 +2670,8 @@ export type ContentfulOptionFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
   | 'title'
+  | 'maximum'
   | 'minimum'
-  | 'pricedOptionItems'
-  | 'pricedOptionItems___id'
-  | 'pricedOptionItems___parent___id'
-  | 'pricedOptionItems___parent___parent___id'
-  | 'pricedOptionItems___parent___parent___children'
-  | 'pricedOptionItems___parent___children'
-  | 'pricedOptionItems___parent___children___id'
-  | 'pricedOptionItems___parent___children___children'
-  | 'pricedOptionItems___parent___internal___content'
-  | 'pricedOptionItems___parent___internal___contentDigest'
-  | 'pricedOptionItems___parent___internal___description'
-  | 'pricedOptionItems___parent___internal___fieldOwners'
-  | 'pricedOptionItems___parent___internal___ignoreType'
-  | 'pricedOptionItems___parent___internal___mediaType'
-  | 'pricedOptionItems___parent___internal___owner'
-  | 'pricedOptionItems___parent___internal___type'
-  | 'pricedOptionItems___children'
-  | 'pricedOptionItems___children___id'
-  | 'pricedOptionItems___children___parent___id'
-  | 'pricedOptionItems___children___parent___children'
-  | 'pricedOptionItems___children___children'
-  | 'pricedOptionItems___children___children___id'
-  | 'pricedOptionItems___children___children___children'
-  | 'pricedOptionItems___children___internal___content'
-  | 'pricedOptionItems___children___internal___contentDigest'
-  | 'pricedOptionItems___children___internal___description'
-  | 'pricedOptionItems___children___internal___fieldOwners'
-  | 'pricedOptionItems___children___internal___ignoreType'
-  | 'pricedOptionItems___children___internal___mediaType'
-  | 'pricedOptionItems___children___internal___owner'
-  | 'pricedOptionItems___children___internal___type'
-  | 'pricedOptionItems___internal___content'
-  | 'pricedOptionItems___internal___contentDigest'
-  | 'pricedOptionItems___internal___description'
-  | 'pricedOptionItems___internal___fieldOwners'
-  | 'pricedOptionItems___internal___ignoreType'
-  | 'pricedOptionItems___internal___mediaType'
-  | 'pricedOptionItems___internal___owner'
-  | 'pricedOptionItems___internal___type'
-  | 'pricedOptionItems___title'
-  | 'pricedOptionItems___price'
-  | 'pricedOptionItems___temperature'
-  | 'pricedOptionItems___option'
-  | 'pricedOptionItems___option___id'
-  | 'pricedOptionItems___option___parent___id'
-  | 'pricedOptionItems___option___parent___children'
-  | 'pricedOptionItems___option___children'
-  | 'pricedOptionItems___option___children___id'
-  | 'pricedOptionItems___option___children___children'
-  | 'pricedOptionItems___option___internal___content'
-  | 'pricedOptionItems___option___internal___contentDigest'
-  | 'pricedOptionItems___option___internal___description'
-  | 'pricedOptionItems___option___internal___fieldOwners'
-  | 'pricedOptionItems___option___internal___ignoreType'
-  | 'pricedOptionItems___option___internal___mediaType'
-  | 'pricedOptionItems___option___internal___owner'
-  | 'pricedOptionItems___option___internal___type'
-  | 'pricedOptionItems___option___title'
-  | 'pricedOptionItems___option___minimum'
-  | 'pricedOptionItems___option___pricedOptionItems'
-  | 'pricedOptionItems___option___pricedOptionItems___id'
-  | 'pricedOptionItems___option___pricedOptionItems___children'
-  | 'pricedOptionItems___option___pricedOptionItems___title'
-  | 'pricedOptionItems___option___pricedOptionItems___price'
-  | 'pricedOptionItems___option___pricedOptionItems___temperature'
-  | 'pricedOptionItems___option___pricedOptionItems___option'
-  | 'pricedOptionItems___option___pricedOptionItems___spaceId'
-  | 'pricedOptionItems___option___pricedOptionItems___contentful_id'
-  | 'pricedOptionItems___option___pricedOptionItems___createdAt'
-  | 'pricedOptionItems___option___pricedOptionItems___updatedAt'
-  | 'pricedOptionItems___option___pricedOptionItems___node_locale'
-  | 'pricedOptionItems___option___menu_item'
-  | 'pricedOptionItems___option___menu_item___id'
-  | 'pricedOptionItems___option___menu_item___children'
-  | 'pricedOptionItems___option___menu_item___title'
-  | 'pricedOptionItems___option___menu_item___price'
-  | 'pricedOptionItems___option___menu_item___temperature'
-  | 'pricedOptionItems___option___menu_item___options'
-  | 'pricedOptionItems___option___menu_item___category'
-  | 'pricedOptionItems___option___menu_item___spaceId'
-  | 'pricedOptionItems___option___menu_item___contentful_id'
-  | 'pricedOptionItems___option___menu_item___createdAt'
-  | 'pricedOptionItems___option___menu_item___updatedAt'
-  | 'pricedOptionItems___option___menu_item___node_locale'
-  | 'pricedOptionItems___option___menu_item___submitImageToUber'
-  | 'pricedOptionItems___option___menu_item___option'
-  | 'pricedOptionItems___option___spaceId'
-  | 'pricedOptionItems___option___contentful_id'
-  | 'pricedOptionItems___option___createdAt'
-  | 'pricedOptionItems___option___updatedAt'
-  | 'pricedOptionItems___option___sys___revision'
-  | 'pricedOptionItems___option___node_locale'
-  | 'pricedOptionItems___option___maximum'
-  | 'pricedOptionItems___spaceId'
-  | 'pricedOptionItems___contentful_id'
-  | 'pricedOptionItems___createdAt'
-  | 'pricedOptionItems___updatedAt'
-  | 'pricedOptionItems___sys___revision'
-  | 'pricedOptionItems___node_locale'
   | 'menu_item'
   | 'menu_item___id'
   | 'menu_item___parent___id'
@@ -2852,6 +2713,7 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___internal___type'
   | 'menu_item___title'
   | 'menu_item___price'
+  | 'menu_item___submitImageToUber'
   | 'menu_item___temperature'
   | 'menu_item___image___id'
   | 'menu_item___image___parent___id'
@@ -2930,7 +2792,29 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___options___internal___owner'
   | 'menu_item___options___internal___type'
   | 'menu_item___options___title'
+  | 'menu_item___options___maximum'
   | 'menu_item___options___minimum'
+  | 'menu_item___options___menu_item'
+  | 'menu_item___options___menu_item___id'
+  | 'menu_item___options___menu_item___children'
+  | 'menu_item___options___menu_item___title'
+  | 'menu_item___options___menu_item___price'
+  | 'menu_item___options___menu_item___submitImageToUber'
+  | 'menu_item___options___menu_item___temperature'
+  | 'menu_item___options___menu_item___options'
+  | 'menu_item___options___menu_item___category'
+  | 'menu_item___options___menu_item___spaceId'
+  | 'menu_item___options___menu_item___contentful_id'
+  | 'menu_item___options___menu_item___createdAt'
+  | 'menu_item___options___menu_item___updatedAt'
+  | 'menu_item___options___menu_item___node_locale'
+  | 'menu_item___options___menu_item___option'
+  | 'menu_item___options___spaceId'
+  | 'menu_item___options___contentful_id'
+  | 'menu_item___options___createdAt'
+  | 'menu_item___options___updatedAt'
+  | 'menu_item___options___sys___revision'
+  | 'menu_item___options___node_locale'
   | 'menu_item___options___pricedOptionItems'
   | 'menu_item___options___pricedOptionItems___id'
   | 'menu_item___options___pricedOptionItems___children'
@@ -2943,28 +2827,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___options___pricedOptionItems___createdAt'
   | 'menu_item___options___pricedOptionItems___updatedAt'
   | 'menu_item___options___pricedOptionItems___node_locale'
-  | 'menu_item___options___menu_item'
-  | 'menu_item___options___menu_item___id'
-  | 'menu_item___options___menu_item___children'
-  | 'menu_item___options___menu_item___title'
-  | 'menu_item___options___menu_item___price'
-  | 'menu_item___options___menu_item___temperature'
-  | 'menu_item___options___menu_item___options'
-  | 'menu_item___options___menu_item___category'
-  | 'menu_item___options___menu_item___spaceId'
-  | 'menu_item___options___menu_item___contentful_id'
-  | 'menu_item___options___menu_item___createdAt'
-  | 'menu_item___options___menu_item___updatedAt'
-  | 'menu_item___options___menu_item___node_locale'
-  | 'menu_item___options___menu_item___submitImageToUber'
-  | 'menu_item___options___menu_item___option'
-  | 'menu_item___options___spaceId'
-  | 'menu_item___options___contentful_id'
-  | 'menu_item___options___createdAt'
-  | 'menu_item___options___updatedAt'
-  | 'menu_item___options___sys___revision'
-  | 'menu_item___options___node_locale'
-  | 'menu_item___options___maximum'
   | 'menu_item___category'
   | 'menu_item___category___id'
   | 'menu_item___category___parent___id'
@@ -2986,6 +2848,7 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___category___menuItems___children'
   | 'menu_item___category___menuItems___title'
   | 'menu_item___category___menuItems___price'
+  | 'menu_item___category___menuItems___submitImageToUber'
   | 'menu_item___category___menuItems___temperature'
   | 'menu_item___category___menuItems___options'
   | 'menu_item___category___menuItems___category'
@@ -2994,7 +2857,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___category___menuItems___createdAt'
   | 'menu_item___category___menuItems___updatedAt'
   | 'menu_item___category___menuItems___node_locale'
-  | 'menu_item___category___menuItems___submitImageToUber'
   | 'menu_item___category___menuItems___option'
   | 'menu_item___category___menu_version'
   | 'menu_item___category___menu_version___id'
@@ -3033,7 +2895,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___description___internal___owner'
   | 'menu_item___description___internal___type'
   | 'menu_item___description___description'
-  | 'menu_item___submitImageToUber'
   | 'menu_item___option'
   | 'menu_item___option___id'
   | 'menu_item___option___parent___id'
@@ -3050,7 +2911,29 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___option___internal___owner'
   | 'menu_item___option___internal___type'
   | 'menu_item___option___title'
+  | 'menu_item___option___maximum'
   | 'menu_item___option___minimum'
+  | 'menu_item___option___menu_item'
+  | 'menu_item___option___menu_item___id'
+  | 'menu_item___option___menu_item___children'
+  | 'menu_item___option___menu_item___title'
+  | 'menu_item___option___menu_item___price'
+  | 'menu_item___option___menu_item___submitImageToUber'
+  | 'menu_item___option___menu_item___temperature'
+  | 'menu_item___option___menu_item___options'
+  | 'menu_item___option___menu_item___category'
+  | 'menu_item___option___menu_item___spaceId'
+  | 'menu_item___option___menu_item___contentful_id'
+  | 'menu_item___option___menu_item___createdAt'
+  | 'menu_item___option___menu_item___updatedAt'
+  | 'menu_item___option___menu_item___node_locale'
+  | 'menu_item___option___menu_item___option'
+  | 'menu_item___option___spaceId'
+  | 'menu_item___option___contentful_id'
+  | 'menu_item___option___createdAt'
+  | 'menu_item___option___updatedAt'
+  | 'menu_item___option___sys___revision'
+  | 'menu_item___option___node_locale'
   | 'menu_item___option___pricedOptionItems'
   | 'menu_item___option___pricedOptionItems___id'
   | 'menu_item___option___pricedOptionItems___children'
@@ -3063,28 +2946,6 @@ export type ContentfulOptionFieldsEnum =
   | 'menu_item___option___pricedOptionItems___createdAt'
   | 'menu_item___option___pricedOptionItems___updatedAt'
   | 'menu_item___option___pricedOptionItems___node_locale'
-  | 'menu_item___option___menu_item'
-  | 'menu_item___option___menu_item___id'
-  | 'menu_item___option___menu_item___children'
-  | 'menu_item___option___menu_item___title'
-  | 'menu_item___option___menu_item___price'
-  | 'menu_item___option___menu_item___temperature'
-  | 'menu_item___option___menu_item___options'
-  | 'menu_item___option___menu_item___category'
-  | 'menu_item___option___menu_item___spaceId'
-  | 'menu_item___option___menu_item___contentful_id'
-  | 'menu_item___option___menu_item___createdAt'
-  | 'menu_item___option___menu_item___updatedAt'
-  | 'menu_item___option___menu_item___node_locale'
-  | 'menu_item___option___menu_item___submitImageToUber'
-  | 'menu_item___option___menu_item___option'
-  | 'menu_item___option___spaceId'
-  | 'menu_item___option___contentful_id'
-  | 'menu_item___option___createdAt'
-  | 'menu_item___option___updatedAt'
-  | 'menu_item___option___sys___revision'
-  | 'menu_item___option___node_locale'
-  | 'menu_item___option___maximum'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___id'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___parent___id'
   | 'menu_item___childContentfulMenuItemDescriptionTextNode___parent___children'
@@ -3110,7 +2971,105 @@ export type ContentfulOptionFieldsEnum =
   | 'sys___contentType___sys___id'
   | 'sys___contentType___sys___contentful_id'
   | 'node_locale'
-  | 'maximum';
+  | 'pricedOptionItems'
+  | 'pricedOptionItems___id'
+  | 'pricedOptionItems___parent___id'
+  | 'pricedOptionItems___parent___parent___id'
+  | 'pricedOptionItems___parent___parent___children'
+  | 'pricedOptionItems___parent___children'
+  | 'pricedOptionItems___parent___children___id'
+  | 'pricedOptionItems___parent___children___children'
+  | 'pricedOptionItems___parent___internal___content'
+  | 'pricedOptionItems___parent___internal___contentDigest'
+  | 'pricedOptionItems___parent___internal___description'
+  | 'pricedOptionItems___parent___internal___fieldOwners'
+  | 'pricedOptionItems___parent___internal___ignoreType'
+  | 'pricedOptionItems___parent___internal___mediaType'
+  | 'pricedOptionItems___parent___internal___owner'
+  | 'pricedOptionItems___parent___internal___type'
+  | 'pricedOptionItems___children'
+  | 'pricedOptionItems___children___id'
+  | 'pricedOptionItems___children___parent___id'
+  | 'pricedOptionItems___children___parent___children'
+  | 'pricedOptionItems___children___children'
+  | 'pricedOptionItems___children___children___id'
+  | 'pricedOptionItems___children___children___children'
+  | 'pricedOptionItems___children___internal___content'
+  | 'pricedOptionItems___children___internal___contentDigest'
+  | 'pricedOptionItems___children___internal___description'
+  | 'pricedOptionItems___children___internal___fieldOwners'
+  | 'pricedOptionItems___children___internal___ignoreType'
+  | 'pricedOptionItems___children___internal___mediaType'
+  | 'pricedOptionItems___children___internal___owner'
+  | 'pricedOptionItems___children___internal___type'
+  | 'pricedOptionItems___internal___content'
+  | 'pricedOptionItems___internal___contentDigest'
+  | 'pricedOptionItems___internal___description'
+  | 'pricedOptionItems___internal___fieldOwners'
+  | 'pricedOptionItems___internal___ignoreType'
+  | 'pricedOptionItems___internal___mediaType'
+  | 'pricedOptionItems___internal___owner'
+  | 'pricedOptionItems___internal___type'
+  | 'pricedOptionItems___title'
+  | 'pricedOptionItems___price'
+  | 'pricedOptionItems___temperature'
+  | 'pricedOptionItems___option'
+  | 'pricedOptionItems___option___id'
+  | 'pricedOptionItems___option___parent___id'
+  | 'pricedOptionItems___option___parent___children'
+  | 'pricedOptionItems___option___children'
+  | 'pricedOptionItems___option___children___id'
+  | 'pricedOptionItems___option___children___children'
+  | 'pricedOptionItems___option___internal___content'
+  | 'pricedOptionItems___option___internal___contentDigest'
+  | 'pricedOptionItems___option___internal___description'
+  | 'pricedOptionItems___option___internal___fieldOwners'
+  | 'pricedOptionItems___option___internal___ignoreType'
+  | 'pricedOptionItems___option___internal___mediaType'
+  | 'pricedOptionItems___option___internal___owner'
+  | 'pricedOptionItems___option___internal___type'
+  | 'pricedOptionItems___option___title'
+  | 'pricedOptionItems___option___maximum'
+  | 'pricedOptionItems___option___minimum'
+  | 'pricedOptionItems___option___menu_item'
+  | 'pricedOptionItems___option___menu_item___id'
+  | 'pricedOptionItems___option___menu_item___children'
+  | 'pricedOptionItems___option___menu_item___title'
+  | 'pricedOptionItems___option___menu_item___price'
+  | 'pricedOptionItems___option___menu_item___submitImageToUber'
+  | 'pricedOptionItems___option___menu_item___temperature'
+  | 'pricedOptionItems___option___menu_item___options'
+  | 'pricedOptionItems___option___menu_item___category'
+  | 'pricedOptionItems___option___menu_item___spaceId'
+  | 'pricedOptionItems___option___menu_item___contentful_id'
+  | 'pricedOptionItems___option___menu_item___createdAt'
+  | 'pricedOptionItems___option___menu_item___updatedAt'
+  | 'pricedOptionItems___option___menu_item___node_locale'
+  | 'pricedOptionItems___option___menu_item___option'
+  | 'pricedOptionItems___option___spaceId'
+  | 'pricedOptionItems___option___contentful_id'
+  | 'pricedOptionItems___option___createdAt'
+  | 'pricedOptionItems___option___updatedAt'
+  | 'pricedOptionItems___option___sys___revision'
+  | 'pricedOptionItems___option___node_locale'
+  | 'pricedOptionItems___option___pricedOptionItems'
+  | 'pricedOptionItems___option___pricedOptionItems___id'
+  | 'pricedOptionItems___option___pricedOptionItems___children'
+  | 'pricedOptionItems___option___pricedOptionItems___title'
+  | 'pricedOptionItems___option___pricedOptionItems___price'
+  | 'pricedOptionItems___option___pricedOptionItems___temperature'
+  | 'pricedOptionItems___option___pricedOptionItems___option'
+  | 'pricedOptionItems___option___pricedOptionItems___spaceId'
+  | 'pricedOptionItems___option___pricedOptionItems___contentful_id'
+  | 'pricedOptionItems___option___pricedOptionItems___createdAt'
+  | 'pricedOptionItems___option___pricedOptionItems___updatedAt'
+  | 'pricedOptionItems___option___pricedOptionItems___node_locale'
+  | 'pricedOptionItems___spaceId'
+  | 'pricedOptionItems___contentful_id'
+  | 'pricedOptionItems___createdAt'
+  | 'pricedOptionItems___updatedAt'
+  | 'pricedOptionItems___sys___revision'
+  | 'pricedOptionItems___node_locale';
 
 export type ContentfulOptionFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -3118,8 +3077,8 @@ export type ContentfulOptionFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  maximum?: Maybe<IntQueryOperatorInput>;
   minimum?: Maybe<IntQueryOperatorInput>;
-  pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
   menu_item?: Maybe<ContentfulMenuItemFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
@@ -3127,7 +3086,7 @@ export type ContentfulOptionFilterInput = {
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulOptionSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  maximum?: Maybe<IntQueryOperatorInput>;
+  pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
 };
 
 export type ContentfulOptionFilterListInput = {
@@ -3160,14 +3119,12 @@ export type ContentfulOptionItem = Node & {
   node_locale?: Maybe<Scalars['String']>;
 };
 
-
 export type ContentfulOptionItemCreatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type ContentfulOptionItemUpdatedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3185,11 +3142,9 @@ export type ContentfulOptionItemConnection = {
   group: Array<ContentfulOptionItemGroupConnection>;
 };
 
-
 export type ContentfulOptionItemConnectionDistinctArgs = {
   field: ContentfulOptionItemFieldsEnum;
 };
-
 
 export type ContentfulOptionItemConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3203,7 +3158,7 @@ export type ContentfulOptionItemEdge = {
   previous?: Maybe<ContentfulOptionItem>;
 };
 
-export type ContentfulOptionItemFieldsEnum = 
+export type ContentfulOptionItemFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3333,7 +3288,88 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___internal___owner'
   | 'option___internal___type'
   | 'option___title'
+  | 'option___maximum'
   | 'option___minimum'
+  | 'option___menu_item'
+  | 'option___menu_item___id'
+  | 'option___menu_item___parent___id'
+  | 'option___menu_item___parent___children'
+  | 'option___menu_item___children'
+  | 'option___menu_item___children___id'
+  | 'option___menu_item___children___children'
+  | 'option___menu_item___internal___content'
+  | 'option___menu_item___internal___contentDigest'
+  | 'option___menu_item___internal___description'
+  | 'option___menu_item___internal___fieldOwners'
+  | 'option___menu_item___internal___ignoreType'
+  | 'option___menu_item___internal___mediaType'
+  | 'option___menu_item___internal___owner'
+  | 'option___menu_item___internal___type'
+  | 'option___menu_item___title'
+  | 'option___menu_item___price'
+  | 'option___menu_item___submitImageToUber'
+  | 'option___menu_item___temperature'
+  | 'option___menu_item___image___id'
+  | 'option___menu_item___image___children'
+  | 'option___menu_item___image___contentful_id'
+  | 'option___menu_item___image___title'
+  | 'option___menu_item___image___description'
+  | 'option___menu_item___image___node_locale'
+  | 'option___menu_item___options'
+  | 'option___menu_item___options___id'
+  | 'option___menu_item___options___children'
+  | 'option___menu_item___options___title'
+  | 'option___menu_item___options___maximum'
+  | 'option___menu_item___options___minimum'
+  | 'option___menu_item___options___menu_item'
+  | 'option___menu_item___options___spaceId'
+  | 'option___menu_item___options___contentful_id'
+  | 'option___menu_item___options___createdAt'
+  | 'option___menu_item___options___updatedAt'
+  | 'option___menu_item___options___node_locale'
+  | 'option___menu_item___options___pricedOptionItems'
+  | 'option___menu_item___category'
+  | 'option___menu_item___category___id'
+  | 'option___menu_item___category___children'
+  | 'option___menu_item___category___title'
+  | 'option___menu_item___category___menuItems'
+  | 'option___menu_item___category___menu_version'
+  | 'option___menu_item___category___spaceId'
+  | 'option___menu_item___category___contentful_id'
+  | 'option___menu_item___category___createdAt'
+  | 'option___menu_item___category___updatedAt'
+  | 'option___menu_item___category___node_locale'
+  | 'option___menu_item___spaceId'
+  | 'option___menu_item___contentful_id'
+  | 'option___menu_item___createdAt'
+  | 'option___menu_item___updatedAt'
+  | 'option___menu_item___sys___revision'
+  | 'option___menu_item___node_locale'
+  | 'option___menu_item___description___id'
+  | 'option___menu_item___description___children'
+  | 'option___menu_item___description___description'
+  | 'option___menu_item___option'
+  | 'option___menu_item___option___id'
+  | 'option___menu_item___option___children'
+  | 'option___menu_item___option___title'
+  | 'option___menu_item___option___maximum'
+  | 'option___menu_item___option___minimum'
+  | 'option___menu_item___option___menu_item'
+  | 'option___menu_item___option___spaceId'
+  | 'option___menu_item___option___contentful_id'
+  | 'option___menu_item___option___createdAt'
+  | 'option___menu_item___option___updatedAt'
+  | 'option___menu_item___option___node_locale'
+  | 'option___menu_item___option___pricedOptionItems'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
+  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
+  | 'option___spaceId'
+  | 'option___contentful_id'
+  | 'option___createdAt'
+  | 'option___updatedAt'
+  | 'option___sys___revision'
+  | 'option___node_locale'
   | 'option___pricedOptionItems'
   | 'option___pricedOptionItems___id'
   | 'option___pricedOptionItems___parent___id'
@@ -3356,102 +3392,21 @@ export type ContentfulOptionItemFieldsEnum =
   | 'option___pricedOptionItems___option___id'
   | 'option___pricedOptionItems___option___children'
   | 'option___pricedOptionItems___option___title'
+  | 'option___pricedOptionItems___option___maximum'
   | 'option___pricedOptionItems___option___minimum'
-  | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___option___menu_item'
   | 'option___pricedOptionItems___option___spaceId'
   | 'option___pricedOptionItems___option___contentful_id'
   | 'option___pricedOptionItems___option___createdAt'
   | 'option___pricedOptionItems___option___updatedAt'
   | 'option___pricedOptionItems___option___node_locale'
-  | 'option___pricedOptionItems___option___maximum'
+  | 'option___pricedOptionItems___option___pricedOptionItems'
   | 'option___pricedOptionItems___spaceId'
   | 'option___pricedOptionItems___contentful_id'
   | 'option___pricedOptionItems___createdAt'
   | 'option___pricedOptionItems___updatedAt'
   | 'option___pricedOptionItems___sys___revision'
   | 'option___pricedOptionItems___node_locale'
-  | 'option___menu_item'
-  | 'option___menu_item___id'
-  | 'option___menu_item___parent___id'
-  | 'option___menu_item___parent___children'
-  | 'option___menu_item___children'
-  | 'option___menu_item___children___id'
-  | 'option___menu_item___children___children'
-  | 'option___menu_item___internal___content'
-  | 'option___menu_item___internal___contentDigest'
-  | 'option___menu_item___internal___description'
-  | 'option___menu_item___internal___fieldOwners'
-  | 'option___menu_item___internal___ignoreType'
-  | 'option___menu_item___internal___mediaType'
-  | 'option___menu_item___internal___owner'
-  | 'option___menu_item___internal___type'
-  | 'option___menu_item___title'
-  | 'option___menu_item___price'
-  | 'option___menu_item___temperature'
-  | 'option___menu_item___image___id'
-  | 'option___menu_item___image___children'
-  | 'option___menu_item___image___contentful_id'
-  | 'option___menu_item___image___title'
-  | 'option___menu_item___image___description'
-  | 'option___menu_item___image___node_locale'
-  | 'option___menu_item___options'
-  | 'option___menu_item___options___id'
-  | 'option___menu_item___options___children'
-  | 'option___menu_item___options___title'
-  | 'option___menu_item___options___minimum'
-  | 'option___menu_item___options___pricedOptionItems'
-  | 'option___menu_item___options___menu_item'
-  | 'option___menu_item___options___spaceId'
-  | 'option___menu_item___options___contentful_id'
-  | 'option___menu_item___options___createdAt'
-  | 'option___menu_item___options___updatedAt'
-  | 'option___menu_item___options___node_locale'
-  | 'option___menu_item___options___maximum'
-  | 'option___menu_item___category'
-  | 'option___menu_item___category___id'
-  | 'option___menu_item___category___children'
-  | 'option___menu_item___category___title'
-  | 'option___menu_item___category___menuItems'
-  | 'option___menu_item___category___menu_version'
-  | 'option___menu_item___category___spaceId'
-  | 'option___menu_item___category___contentful_id'
-  | 'option___menu_item___category___createdAt'
-  | 'option___menu_item___category___updatedAt'
-  | 'option___menu_item___category___node_locale'
-  | 'option___menu_item___spaceId'
-  | 'option___menu_item___contentful_id'
-  | 'option___menu_item___createdAt'
-  | 'option___menu_item___updatedAt'
-  | 'option___menu_item___sys___revision'
-  | 'option___menu_item___node_locale'
-  | 'option___menu_item___description___id'
-  | 'option___menu_item___description___children'
-  | 'option___menu_item___description___description'
-  | 'option___menu_item___submitImageToUber'
-  | 'option___menu_item___option'
-  | 'option___menu_item___option___id'
-  | 'option___menu_item___option___children'
-  | 'option___menu_item___option___title'
-  | 'option___menu_item___option___minimum'
-  | 'option___menu_item___option___pricedOptionItems'
-  | 'option___menu_item___option___menu_item'
-  | 'option___menu_item___option___spaceId'
-  | 'option___menu_item___option___contentful_id'
-  | 'option___menu_item___option___createdAt'
-  | 'option___menu_item___option___updatedAt'
-  | 'option___menu_item___option___node_locale'
-  | 'option___menu_item___option___maximum'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___id'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___children'
-  | 'option___menu_item___childContentfulMenuItemDescriptionTextNode___description'
-  | 'option___spaceId'
-  | 'option___contentful_id'
-  | 'option___createdAt'
-  | 'option___updatedAt'
-  | 'option___sys___revision'
-  | 'option___node_locale'
-  | 'option___maximum'
   | 'spaceId'
   | 'contentful_id'
   | 'createdAt'
@@ -3631,7 +3586,6 @@ export type ContentfulSizesFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
   ne?: Maybe<Scalars['Date']>;
@@ -3685,14 +3639,12 @@ export type Directory = Node & {
   internal: Internal;
 };
 
-
 export type DirectoryModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3701,14 +3653,12 @@ export type DirectoryAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3717,7 +3667,6 @@ export type DirectoryBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -3725,14 +3674,12 @@ export type DirectoryAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type DirectoryMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type DirectoryCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -3750,11 +3697,9 @@ export type DirectoryConnection = {
   group: Array<DirectoryGroupConnection>;
 };
 
-
 export type DirectoryConnectionDistinctArgs = {
   field: DirectoryFieldsEnum;
 };
-
 
 export type DirectoryConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -3768,7 +3713,7 @@ export type DirectoryEdge = {
   previous?: Maybe<Directory>;
 };
 
-export type DirectoryFieldsEnum = 
+export type DirectoryFieldsEnum =
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -3994,14 +3939,12 @@ export type File = Node & {
   internal: Internal;
 };
 
-
 export type FileModifiedTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileAccessTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -4010,14 +3953,12 @@ export type FileAccessTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileChangeTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileBirthTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -4026,7 +3967,6 @@ export type FileBirthTimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileAtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
@@ -4034,14 +3974,12 @@ export type FileAtimeArgs = {
   locale?: Maybe<Scalars['String']>;
 };
 
-
 export type FileMtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type FileCtimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -4059,11 +3997,9 @@ export type FileConnection = {
   group: Array<FileGroupConnection>;
 };
 
-
 export type FileConnectionDistinctArgs = {
   field: FileFieldsEnum;
 };
-
 
 export type FileConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4077,7 +4013,7 @@ export type FileEdge = {
   previous?: Maybe<File>;
 };
 
-export type FileFieldsEnum = 
+export type FileFieldsEnum =
   | 'sourceInstanceName'
   | 'absolutePath'
   | 'relativePath'
@@ -4357,7 +4293,7 @@ export type FloatQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ImageCropFocus = 
+export type ImageCropFocus =
   | 'CENTER'
   | 'NORTH'
   | 'NORTHEAST'
@@ -4370,20 +4306,11 @@ export type ImageCropFocus =
   | 'ENTROPY'
   | 'ATTENTION';
 
-export type ImageFit = 
-  | 'COVER'
-  | 'CONTAIN'
-  | 'FILL'
-  | 'INSIDE'
-  | 'OUTSIDE';
+export type ImageFit = 'COVER' | 'CONTAIN' | 'FILL' | 'INSIDE' | 'OUTSIDE';
 
-export type ImageFormat = 
-  | 'NO_CHANGE'
-  | 'JPG'
-  | 'PNG'
-  | 'WEBP';
+export type ImageFormat = 'NO_CHANGE' | 'JPG' | 'PNG' | 'WEBP';
 
-export type ImageResizingBehavior = 
+export type ImageResizingBehavior =
   | 'NO_CHANGE'
   /** Same as the default resizing, but adds padding so that the generated image has the specified dimensions. */
   | 'PAD'
@@ -4414,7 +4341,6 @@ export type ImageSharp = Node & {
   internal: Internal;
 };
 
-
 export type ImageSharpFixedArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -4437,7 +4363,6 @@ export type ImageSharpFixedArgs = {
   trim?: Maybe<Scalars['Float']>;
 };
 
-
 export type ImageSharpResolutionsArgs = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
@@ -4459,7 +4384,6 @@ export type ImageSharpResolutionsArgs = {
   rotate?: Maybe<Scalars['Int']>;
   trim?: Maybe<Scalars['Float']>;
 };
-
 
 export type ImageSharpFluidArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
@@ -4485,7 +4409,6 @@ export type ImageSharpFluidArgs = {
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-
 export type ImageSharpSizesArgs = {
   maxWidth?: Maybe<Scalars['Int']>;
   maxHeight?: Maybe<Scalars['Int']>;
@@ -4509,7 +4432,6 @@ export type ImageSharpSizesArgs = {
   sizes?: Maybe<Scalars['String']>;
   srcSetBreakpoints?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
-
 
 export type ImageSharpResizeArgs = {
   width?: Maybe<Scalars['Int']>;
@@ -4542,11 +4464,9 @@ export type ImageSharpConnection = {
   group: Array<ImageSharpGroupConnection>;
 };
 
-
 export type ImageSharpConnectionDistinctArgs = {
   field: ImageSharpFieldsEnum;
 };
-
 
 export type ImageSharpConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -4560,7 +4480,7 @@ export type ImageSharpEdge = {
   previous?: Maybe<ImageSharp>;
 };
 
-export type ImageSharpFieldsEnum = 
+export type ImageSharpFieldsEnum =
   | 'fixed___base64'
   | 'fixed___tracedSVG'
   | 'fixed___aspectRatio'
@@ -4903,7 +4823,6 @@ export type IntQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-
 /** Node Interface */
 export type Node = {
   id: Scalars['ID'];
@@ -4945,7 +4864,7 @@ export type Potrace = {
   background?: Maybe<Scalars['String']>;
 };
 
-export type PotraceTurnPolicy = 
+export type PotraceTurnPolicy =
   | 'TURNPOLICY_BLACK'
   | 'TURNPOLICY_WHITE'
   | 'TURNPOLICY_LEFT'
@@ -4985,7 +4904,6 @@ export type Query = {
   sitePlugin?: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
 };
-
 
 export type QueryFileArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -5029,14 +4947,12 @@ export type QueryFileArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllFileArgs = {
   filter?: Maybe<FileFilterInput>;
   sort?: Maybe<FileSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryDirectoryArgs = {
   sourceInstanceName?: Maybe<StringQueryOperatorInput>;
@@ -5078,14 +4994,12 @@ export type QueryDirectoryArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllDirectoryArgs = {
   filter?: Maybe<DirectoryFilterInput>;
   sort?: Maybe<DirectorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySitePageArgs = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -5103,14 +5017,12 @@ export type QuerySitePageArgs = {
   componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
@@ -5124,14 +5036,12 @@ export type QuerySiteArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllSiteArgs = {
   filter?: Maybe<SiteFilterInput>;
   sort?: Maybe<SiteSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryImageSharpArgs = {
   fixed?: Maybe<ImageSharpFixedFilterInput>;
@@ -5146,14 +5056,12 @@ export type QueryImageSharpArgs = {
   internal?: Maybe<InternalFilterInput>;
 };
 
-
 export type QueryAllImageSharpArgs = {
   filter?: Maybe<ImageSharpFilterInput>;
   sort?: Maybe<ImageSharpSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5172,14 +5080,12 @@ export type QueryContentfulAssetArgs = {
   resize?: Maybe<ContentfulResizeFilterInput>;
 };
 
-
 export type QueryAllContentfulAssetArgs = {
   filter?: Maybe<ContentfulAssetFilterInput>;
   sort?: Maybe<ContentfulAssetSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulOptionItemArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5198,7 +5104,6 @@ export type QueryContentfulOptionItemArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllContentfulOptionItemArgs = {
   filter?: Maybe<ContentfulOptionItemFilterInput>;
   sort?: Maybe<ContentfulOptionItemSortInput>;
@@ -5206,15 +5111,14 @@ export type QueryAllContentfulOptionItemArgs = {
   limit?: Maybe<Scalars['Int']>;
 };
 
-
 export type QueryContentfulOptionArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  maximum?: Maybe<IntQueryOperatorInput>;
   minimum?: Maybe<IntQueryOperatorInput>;
-  pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
   menu_item?: Maybe<ContentfulMenuItemFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
@@ -5222,9 +5126,8 @@ export type QueryContentfulOptionArgs = {
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulOptionSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  maximum?: Maybe<IntQueryOperatorInput>;
+  pricedOptionItems?: Maybe<ContentfulOptionItemFilterListInput>;
 };
-
 
 export type QueryAllContentfulOptionArgs = {
   filter?: Maybe<ContentfulOptionFilterInput>;
@@ -5232,7 +5135,6 @@ export type QueryAllContentfulOptionArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulMenuVersionArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5249,14 +5151,12 @@ export type QueryContentfulMenuVersionArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllContentfulMenuVersionArgs = {
   filter?: Maybe<ContentfulMenuVersionFilterInput>;
   sort?: Maybe<ContentfulMenuVersionSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulMenuItemDescriptionTextNodeArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5266,14 +5166,12 @@ export type QueryContentfulMenuItemDescriptionTextNodeArgs = {
   description?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllContentfulMenuItemDescriptionTextNodeArgs = {
   filter?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
   sort?: Maybe<ContentfulMenuItemDescriptionTextNodeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulMenuItemArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5282,6 +5180,7 @@ export type QueryContentfulMenuItemArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   price?: Maybe<FloatQueryOperatorInput>;
+  submitImageToUber?: Maybe<BooleanQueryOperatorInput>;
   temperature?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
   options?: Maybe<ContentfulOptionFilterListInput>;
@@ -5293,11 +5192,9 @@ export type QueryContentfulMenuItemArgs = {
   sys?: Maybe<ContentfulMenuItemSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
-  submitImageToUber?: Maybe<BooleanQueryOperatorInput>;
   option?: Maybe<ContentfulOptionFilterListInput>;
   childContentfulMenuItemDescriptionTextNode?: Maybe<ContentfulMenuItemDescriptionTextNodeFilterInput>;
 };
-
 
 export type QueryAllContentfulMenuItemArgs = {
   filter?: Maybe<ContentfulMenuItemFilterInput>;
@@ -5305,7 +5202,6 @@ export type QueryAllContentfulMenuItemArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulCategoryArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5323,14 +5219,12 @@ export type QueryContentfulCategoryArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllContentfulCategoryArgs = {
   filter?: Maybe<ContentfulCategoryFilterInput>;
   sort?: Maybe<ContentfulCategorySortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QueryContentfulContentTypeArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5342,14 +5236,12 @@ export type QueryContentfulContentTypeArgs = {
   description?: Maybe<StringQueryOperatorInput>;
 };
 
-
 export type QueryAllContentfulContentTypeArgs = {
   filter?: Maybe<ContentfulContentTypeFilterInput>;
   sort?: Maybe<ContentfulContentTypeSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySiteBuildMetadataArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5359,14 +5251,12 @@ export type QuerySiteBuildMetadataArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
 };
 
-
 export type QueryAllSiteBuildMetadataArgs = {
   filter?: Maybe<SiteBuildMetadataFilterInput>;
   sort?: Maybe<SiteBuildMetadataSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
-
 
 export type QuerySitePluginArgs = {
   id?: Maybe<StringQueryOperatorInput>;
@@ -5383,7 +5273,6 @@ export type QuerySitePluginArgs = {
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
-
 
 export type QueryAllSitePluginArgs = {
   filter?: Maybe<SitePluginFilterInput>;
@@ -5404,14 +5293,12 @@ export type Site = Node & {
   internal: Internal;
 };
 
-
 export type SiteBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
 };
-
 
 export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -5427,7 +5314,6 @@ export type SiteBuildMetadata = Node & {
   internal: Internal;
   buildTime?: Maybe<Scalars['Date']>;
 };
-
 
 export type SiteBuildMetadataBuildTimeArgs = {
   formatString?: Maybe<Scalars['String']>;
@@ -5445,11 +5331,9 @@ export type SiteBuildMetadataConnection = {
   group: Array<SiteBuildMetadataGroupConnection>;
 };
 
-
 export type SiteBuildMetadataConnectionDistinctArgs = {
   field: SiteBuildMetadataFieldsEnum;
 };
-
 
 export type SiteBuildMetadataConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5463,7 +5347,7 @@ export type SiteBuildMetadataEdge = {
   previous?: Maybe<SiteBuildMetadata>;
 };
 
-export type SiteBuildMetadataFieldsEnum = 
+export type SiteBuildMetadataFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -5583,11 +5467,9 @@ export type SiteConnection = {
   group: Array<SiteGroupConnection>;
 };
 
-
 export type SiteConnectionDistinctArgs = {
   field: SiteFieldsEnum;
 };
-
 
 export type SiteConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5601,7 +5483,7 @@ export type SiteEdge = {
   previous?: Maybe<Site>;
 };
 
-export type SiteFieldsEnum = 
+export type SiteFieldsEnum =
   | 'buildTime'
   | 'port'
   | 'host'
@@ -5740,11 +5622,9 @@ export type SitePageConnection = {
   group: Array<SitePageGroupConnection>;
 };
 
-
 export type SitePageConnectionDistinctArgs = {
   field: SitePageFieldsEnum;
 };
-
 
 export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -5758,7 +5638,7 @@ export type SitePageEdge = {
   previous?: Maybe<SitePage>;
 };
 
-export type SitePageFieldsEnum = 
+export type SitePageFieldsEnum =
   | 'path'
   | 'component'
   | 'internalComponentName'
@@ -5990,11 +5870,9 @@ export type SitePluginConnection = {
   group: Array<SitePluginGroupConnection>;
 };
 
-
 export type SitePluginConnectionDistinctArgs = {
   field: SitePluginFieldsEnum;
 };
-
 
 export type SitePluginConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
@@ -6008,7 +5886,7 @@ export type SitePluginEdge = {
   previous?: Maybe<SitePlugin>;
 };
 
-export type SitePluginFieldsEnum = 
+export type SitePluginFieldsEnum =
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -6288,9 +6166,7 @@ export type SiteSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type SortOrderEnum = 
-  | 'ASC'
-  | 'DESC';
+export type SortOrderEnum = 'ASC' | 'DESC';
 
 export type StringQueryOperatorInput = {
   eq?: Maybe<Scalars['String']>;
@@ -6303,44 +6179,92 @@ export type StringQueryOperatorInput = {
 
 export type MenuItemsAndPricesQueryVariables = {};
 
-
-export type MenuItemsAndPricesQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
-        Pick<ContentfulMenuVersion, 'type'>
-        & { categories?: Maybe<Array<Maybe<(
-          Pick<ContentfulCategory, 'title'>
-          & { menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>> }
-        )>>> }
-      ) }> } };
+export type MenuItemsAndPricesQuery = {
+  allContentfulMenuVersion: {
+    edges: Array<{
+      node: Pick<ContentfulMenuVersion, 'type'> & {
+        categories?: Maybe<
+          Array<
+            Maybe<
+              Pick<ContentfulCategory, 'title'> & {
+                menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>>;
+              }
+            >
+          >
+        >;
+      };
+    }>;
+  };
+};
 
 export type MenuPreviewPanelsQueryVariables = {};
 
-
-export type MenuPreviewPanelsQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
-        Pick<ContentfulMenuVersion, 'type'>
-        & { categories?: Maybe<Array<Maybe<(
-          Pick<ContentfulCategory, 'title'>
-          & { menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>> }
-        )>>> }
-      ) }> } };
+export type MenuPreviewPanelsQuery = {
+  allContentfulMenuVersion: {
+    edges: Array<{
+      node: Pick<ContentfulMenuVersion, 'type'> & {
+        categories?: Maybe<
+          Array<
+            Maybe<
+              Pick<ContentfulCategory, 'title'> & {
+                menuItems?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'title' | 'price'>>>>;
+              }
+            >
+          >
+        >;
+      };
+    }>;
+  };
+};
 
 export type OnlineOrderingQueryVariables = {};
 
-
-export type OnlineOrderingQuery = { allContentfulMenuVersion: { edges: Array<{ node: (
-        Pick<ContentfulMenuVersion, 'type'>
-        & { categories?: Maybe<Array<Maybe<(
-          Pick<ContentfulCategory, 'title'>
-          & { menuItems?: Maybe<Array<Maybe<(
-            Pick<ContentfulMenuItem, 'title' | 'price'>
-            & { description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>, image?: Maybe<{ fluid?: Maybe<Pick<ContentfulFluid, 'src'>> }>, options?: Maybe<Array<Maybe<(
-              Pick<ContentfulOption, 'title' | 'maximum' | 'minimum'>
-              & { freeOptionItem?: Maybe<Array<Maybe<Pick<ContentfulMenuItem, 'id' | 'title' | 'price'> | Pick<ContentfulOptionItem, 'id' | 'title' | 'price'>>>>, pricedOptionItems?: Maybe<Array<Maybe<Pick<ContentfulOptionItem, 'title' | 'price'>>>> }
-            )>>> }
-          )>>> }
-        )>>> }
-      ) }> } };
+export type OnlineOrderingQuery = {
+  allContentfulMenuVersion: {
+    edges: Array<{
+      node: Pick<ContentfulMenuVersion, 'type'> & {
+        categories?: Maybe<
+          Array<
+            Maybe<
+              Pick<ContentfulCategory, 'title'> & {
+                menuItems?: Maybe<
+                  Array<
+                    Maybe<
+                      Pick<ContentfulMenuItem, 'title' | 'price'> & {
+                        description?: Maybe<Pick<ContentfulMenuItemDescriptionTextNode, 'description'>>;
+                        image?: Maybe<{ fluid?: Maybe<Pick<ContentfulFluid, 'src'>> }>;
+                        options?: Maybe<
+                          Array<
+                            Maybe<
+                              Pick<ContentfulOption, 'title' | 'maximum' | 'minimum'> & {
+                                freeOptionItem?: Maybe<
+                                  Array<
+                                    Maybe<
+                                      | Pick<ContentfulMenuItem, 'id' | 'title' | 'price'>
+                                      | Pick<ContentfulOptionItem, 'id' | 'title' | 'price'>
+                                    >
+                                  >
+                                >;
+                                pricedOptionItems?: Maybe<Array<Maybe<Pick<ContentfulOptionItem, 'title' | 'price'>>>>;
+                              }
+                            >
+                          >
+                        >;
+                      }
+                    >
+                  >
+                >;
+              }
+            >
+          >
+        >;
+      };
+    }>;
+  };
+};
 
 export type MenuVersionDataQueryVariables = {};
 
-
-export type MenuVersionDataQuery = { allContentfulMenuVersion: { edges: Array<{ node: Pick<ContentfulMenuVersion, 'type'> }> } };
+export type MenuVersionDataQuery = {
+  allContentfulMenuVersion: { edges: Array<{ node: Pick<ContentfulMenuVersion, 'type'> }> };
+};
