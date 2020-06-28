@@ -77,10 +77,10 @@ export default function Overlay() {
           </p>
           <DateCentering>
             <p>
-              <Highlight b>Monday-Wednesday: 3 to 9pm</Highlight>
+              <Highlight b>Monday-Wednesday: 3pm to 9pm</Highlight>
             </p>
             <p>
-              <Highlight b>Thursday-Saturday: 11 to 9pm</Highlight>
+              <Highlight b>Thursday-Saturday: 11am to 9pm</Highlight>
             </p>
           </DateCentering>
           <p>Grazie for your ongoing support.</p>
