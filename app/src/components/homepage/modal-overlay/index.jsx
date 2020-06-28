@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { addDays, isBefore } from 'date-fns';
+import Highlight from '../../shared/highlight';
 
 const BlurredBackground = styled.div`
   position: fixed;
@@ -52,8 +52,9 @@ const WelcomeTitle = styled.h2`
   }
 `;
 
-const MEMORIAL_DAY_2020 = new Date(2020, 4, 25, 0, 0);
-export const onOrBeforeMemorialDay = isBefore(Date.now(), addDays(MEMORIAL_DAY_2020, 1));
+const DateCentering = styled.div`
+  text-align: center;
+`;
 
 export default function Overlay() {
   const [open, setOpen] = useState(true);
@@ -62,10 +63,27 @@ export default function Overlay() {
       <BlurredBackground onClick={() => setOpen(false)}>
         <Modal onClick={(e) => e.stopPropagation()}>
           <X onClick={() => setOpen(false)}>X</X>
-          <WelcomeTitle>Come Dine in with us</WelcomeTitle>
+          <WelcomeTitle>We are taking covid-19 seriously</WelcomeTitle>
           <p>
-            We are open safely and also maintaining curbside delivery permanently for those of our friends that prefer!
+            Nothing is more important to us than the safety and well being of our staff, customers and family. In the
+            interest of minimizing the exposure of our staff and more opportunity to clean and sanitize the entire
+            restaurant, we have decided to modify our hours of operation.
           </p>
+          <p>
+            Effective <Highlight b>Monday, June 29th</Highlight>  our hours will be as listed below until further
+            notice. we will continue to have dine in service, delivery and curb side pickup while adhering to all state
+            mandated guidelines.  we pray this horrible situation will soon pass and everyone takes every necessary
+            precaution to be safe and healthy.
+          </p>
+          <DateCentering>
+            <p>
+              <Highlight b>Monday-Wednesday: 3 to 9pm</Highlight>
+            </p>
+            <p>
+              <Highlight b>Thursday-Saturday: 11 to 9pm</Highlight>
+            </p>
+          </DateCentering>
+          <p>Grazie for your ongoing support.</p>
           <p>
             <i>— Jeff & Isabella Morgia</i>
           </p>

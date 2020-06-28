@@ -24,15 +24,15 @@ const openingHours = {
     close: 0,
   },
   Monday: {
-    open: 11,
+    open: 15,
     close: 21,
   },
   Tuesday: {
-    open: 11,
+    open: 15,
     close: 21,
   },
   Wednesday: {
-    open: 11,
+    open: 15,
     close: 21,
   },
   Thursday: {
