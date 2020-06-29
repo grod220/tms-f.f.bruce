@@ -50,5 +50,13 @@ module.exports = {
         documentPaths: ['./src/**/*.{ts,tsx}'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://37c553e6cb9c4d7b91443519ccd448a9@o284806.ingest.sentry.io/1514998',
+        environment: process.env.NODE_ENV,
+        enabled: (() => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
 };
