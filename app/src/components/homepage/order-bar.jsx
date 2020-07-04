@@ -76,25 +76,23 @@ const RedButton = styled(OrderButton)`
   box-shadow: -0.5rem 0.1rem 1rem 0 rgba(0, 0, 0, 0.3);
 `;
 
-// const Announcement = styled.h3`
-//   font-size: 31px;
-//   font-style: italic;
-//   font-weight: normal;
-//   color: white;
-// `;
+const Announcement = styled.h3`
+  font-size: 31px;
+  font-style: italic;
+  font-weight: normal;
+  color: white;
+`;
 
 const OrderBar = () => (
   <RedBar>
     <Container>
-      {/*{onOrBeforeMemorialDay ? (*/}
-      {/*  <Announcement>⚠️ Closed for Memorial Day</Announcement>*/}
-      {/*) : (*/}
-      <Link to="/order">
-        <WhiteButton>Order Online</WhiteButton>
-      </Link>
-      <Link to="/order/catering">
-        <RedButton>Order Catering</RedButton>
-      </Link>
+      <Announcement>⚠️ Closed for July 4th</Announcement>
+      {/*<Link to="/order">*/}
+      {/*  <WhiteButton>Order Online</WhiteButton>*/}
+      {/*</Link>*/}
+      {/*<Link to="/order/catering">*/}
+      {/*  <RedButton>Order Catering</RedButton>*/}
+      {/*</Link>*/}
     </Container>
   </RedBar>
 );
