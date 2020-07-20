@@ -86,9 +86,6 @@ export default function Overlay() {
           <p>
             <i>— Jeff & Isabella Morgia</i>
           </p>
-          <p>
-            <i>— Jeff & Isabella Morgia</i>
-          </p>
         </Modal>
       </BlurredBackground>
     )
