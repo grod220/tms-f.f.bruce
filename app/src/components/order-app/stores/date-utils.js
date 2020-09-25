@@ -36,7 +36,7 @@ const openingHours = {
     close: 21,
   },
   Thursday: {
-    open: 15,
+    open: 11,
     close: 21,
   },
   Friday: {

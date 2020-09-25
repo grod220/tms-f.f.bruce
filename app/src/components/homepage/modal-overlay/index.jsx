@@ -65,21 +65,21 @@ export default function Overlay() {
           <X onClick={() => setOpen(false)}>X</X>
           <WelcomeTitle>We are taking covid-19 seriously</WelcomeTitle>
           <p>
-            Nothing is more important to us than the safety and well being of our staff, customers and family. In the
+            Nothing is more important to us than the safety and well being of our staff, customers and family. In the
             interest of minimizing the exposure of our staff and more opportunity to clean and sanitize the entire
             restaurant, we have decided to modify our hours of operation.
           </p>
           <p>
-            Effective now,  our hours will be as listed below until further notice. we will continue to have dine in
-            service, delivery and curb side pickup while adhering to all state mandated guidelines.  we pray this
+            Effective now, our hours will be as listed below until further notice. we will continue to have dine in
+            service, delivery and curb side pickup while adhering to all state mandated guidelines. We pray this
             horrible situation will soon pass and everyone takes every necessary precaution to be safe and healthy.
           </p>
           <DateCentering>
             <p>
-              <Highlight b>Monday-Thursday: 3pm to 9pm</Highlight>
+              <Highlight b>Monday-Wednesday: 3pm to 9pm</Highlight>
             </p>
             <p>
-              <Highlight b>Friday-Saturday: 11am to 9pm</Highlight>
+              <Highlight b>Thursday-Saturday: 11am to 9pm</Highlight>
             </p>
           </DateCentering>
           <p>Grazie for your ongoing support.</p>
