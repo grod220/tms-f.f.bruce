@@ -11,6 +11,7 @@ import LaDifferenzaPromo from '../components/homepage/la-differenza-promo';
 import Map from '../components/homepage/map';
 import Passion from '../components/homepage/passion';
 import Footer from '../components/homepage/footer';
+import { YelpReservations } from '../components/homepage/yelp-reservations';
 
 export default function Index() {
   return (
@@ -27,6 +28,9 @@ export default function Index() {
       <OrderBar />
       <LazyLoad height={350}>
         <SocialBar />
+      </LazyLoad>
+      <LazyLoad height={100}>
+        <YelpReservations />
       </LazyLoad>
       <LazyLoad height={400}>
         <MenuPreview />
