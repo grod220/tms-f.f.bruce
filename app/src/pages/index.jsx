@@ -26,11 +26,11 @@ export default function Index() {
       {/*<Overlay />*/}
       <BigHero />
       <OrderBar />
-      <LazyLoad height={350}>
-        <SocialBar />
-      </LazyLoad>
       <LazyLoad height={100}>
         <YelpReservations />
+      </LazyLoad>
+      <LazyLoad height={350}>
+        <SocialBar />
       </LazyLoad>
       <LazyLoad height={400}>
         <MenuPreview />

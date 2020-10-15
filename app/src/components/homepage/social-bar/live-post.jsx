@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import FBSmallIcon from './images/fblogo.svg';
 import { useFetch } from 'use-http';
+import { media } from '../../../utilities/media';
 
 const OuterBox = styled.div`
   box-shadow: -0.5rem 0.1rem 1.3rem 0 rgba(0, 0, 0, 0.5);
-  margin: -4.5rem 0 2rem 0;
+  margin: -12.5rem 0 2rem 0;
   background: #fff;
   padding: 1rem;
   transition: all 0.6s;
@@ -14,10 +15,18 @@ const OuterBox = styled.div`
     transform: scale(1.03);
     box-shadow: -0.5rem 0.1rem 5rem 0 rgba(0, 0, 0, 0.4);
   }
+
+  ${media.tablet`
+    margin: -4.5rem 0 2rem 0;
+  `}
+
+  ${media.phone`
+    margin: -4.5rem 0 2rem 0;
+  `}
 `;
 
 const SocialWrapper = styled.div`
-  height: 37rem;
+  height: 42rem;
   overflow: hidden;
   position: relative;
   color: #337ab7;
@@ -25,6 +34,14 @@ const SocialWrapper = styled.div`
   &:hover {
     color: coral;
   }
+
+  ${media.tablet`
+    height: 37rem;
+  `}
+
+  ${media.phone`
+    height: 37rem;
+  `}
 `;
 
 const FBImage = styled.div`
